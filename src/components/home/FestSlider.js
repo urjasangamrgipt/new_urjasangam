@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 const fests = [
     { name: 'Energia', className: 'energia', image: './photos/UrjaSangam/Energia.jpg', route: '/energia', color: '#a855f7' },
     { name: 'Urjotsav', className: 'urjotsav', image: './photos/UrjaSangam/Urjotsav.jpg', route: '/urjotsav', color: '#3b82f6' },
-    { name: 'Souardhya', className: 'souhardya', image: './photos/UrjaSangam/Souhardya.jpg', route: '/souhardya', color: '#f59e0b' },
+    { name: 'Souhardya', className: 'souhardya', image: './photos/UrjaSangam/Souhardya.jpg', route: '/souhardya', color: '#f59e0b' },
     { name: 'Kaltarang', className: 'kaltarang', image: './photos/UrjaSangam/Kaltarang.jpg', route: '/kaltarang', color: '#ef4444' }
 ];
 
@@ -183,13 +183,7 @@ const FestSlider = () => {
         <section className="min-h-screen relative flex flex-col items-center justify-center py-8 md:py-16 px-4 md:px-8">
             <style>{styles}</style>
             
-            {/* Section Title */}
-            <h2 className="font-['Exo_2'] text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-center mb-2 md:mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent tracking-[2px] md:tracking-[4px] uppercase px-4">
-                THE FOUR REALMS
-            </h2>
-            <p className="text-center text-sm sm:text-base md:text-xl lg:text-2xl text-white/70 mb-4 md:mb-8 font-light px-4">
-                Harness the power of cosmic convergence. <span className="hidden md:inline">Hover to pause.</span>
-            </p>
+            {/* Section Title removed per request */}
             
             {/* Slider Wrapper */}
             <div 
@@ -240,28 +234,8 @@ const FestSlider = () => {
                                         alt={fest.name} 
                                         className={`w-full h-full object-cover transition-transform duration-600 ${isActive ? 'scale-105' : ''}`}
                                     />
-                                    {/* Gradient Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent z-[1]" />
                                 </div>
-                                
-                                {/* Content */}
-                                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-10 z-[2] bg-gradient-to-t from-black/90 via-black/60 to-transparent">
-                                    <h3 
-                                        className="font-['Exo_2'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-[2px] md:tracking-[4px] leading-none uppercase text-white mb-2 md:mb-4"
-                                        style={{
-                                            textShadow: `0 0 20px ${fest.color}, 0 0 40px ${fest.color}, 0 4px 20px rgba(0, 0, 0, 0.8)`
-                                        }}
-                                    >
-                                        {fest.name}
-                                    </h3>
-                                    <div 
-                                        className="w-16 md:w-20 h-[2px] md:h-[3px] rounded-sm mt-2 md:mt-4"
-                                        style={{
-                                            background: `linear-gradient(90deg, ${fest.color}, transparent)`,
-                                            boxShadow: `0 0 10px ${fest.color}`
-                                        }}
-                                    />
-                                </div>
+                                {/* Content removed per request */}
                             </div>
                         );
                     })}
