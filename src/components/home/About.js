@@ -90,11 +90,7 @@ const Convergence = () => {
       init();
     };
 
-    const handleMouseMove = (e) => {
-      const rect = container.getBoundingClientRect();
-      mouseRef.current.x = e.clientX - rect.left;
-      mouseRef.current.y = e.clientY - rect.top;
-    };
+    const handleMouseMove = () => {};
 
     const handleMouseLeave = () => {
       mouseRef.current.x = null;

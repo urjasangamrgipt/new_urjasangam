@@ -72,37 +72,7 @@ export default function EnergiaAbout() {
     };
   }, [hasAnimated]);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const trail = document.createElement('div');
-      trail.style.position = 'fixed';
-      trail.style.left = e.clientX + 'px';
-      trail.style.top = e.clientY + 'px';
-      trail.style.width = '5px';
-      trail.style.height = '5px';
-      trail.style.borderRadius = '50%';
-      trail.style.background = 'rgba(124, 77, 255, 0.6)';
-      trail.style.pointerEvents = 'none';
-      trail.style.zIndex = '9999';
-      trail.style.transition = 'all 0.5s ease';
-      document.body.appendChild(trail);
-
-      setTimeout(() => {
-        trail.style.opacity = '0';
-        trail.style.transform = 'scale(2)';
-      }, 50);
-
-      setTimeout(() => {
-        trail.remove();
-      }, 550);
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+  // Removed cursor trail effect
 
   const handleExperienceClick = () => {
     window.location.href = '/gallery';

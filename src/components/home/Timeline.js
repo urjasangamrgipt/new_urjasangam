@@ -1,339 +1,223 @@
-'use client'
+import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { useRef } from 'react'
-import { useRouter } from 'next/navigation'
-import { FiCalendar, FiMapPin, FiUsers, FiArrowRight } from 'react-icons/fi'
+// Festival data remains the same
+const festivals = [
+  { id: 'energia', name: 'Energia', date: 'OCT 10-11', description: 'Witness the spirit of sportsmanship and competitive excellence.', image: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069', tags: ['Sports Complex', '2000+'], color: '#9D50FF' },
+  { id: 'urjotsav', name: 'Urjotsav', date: 'OCT 12-13', description: 'A battle of wits and digital craftsmanship, showcasing technological innovation.', image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070', tags: ['Main Auditorium', '30+ Events'], color: '#007BFF' },
+  { id: 'souhardya', name: 'Souhardya', date: 'OCT 13', description: 'An initiative for community engagement and social change.', image: 'https://images.unsplash.com/photo-1531063221974-73656894c794?q=80&w=2070', tags: ['Campus Quad', 'Community'], color: '#FF9933' },
+  { id: 'kaltarang', name: 'Kaltarang', date: 'OCT 14-16', description: 'A vibrant explosion of art, music, and dance that celebrates our culture.', image: 'https://images.unsplash.com/photo-1514525253161-7a4ed0bab8c5?q=80&w=1974', tags: ['Open Air Theatre', '500+ Artists'], color: '#E53935' }
+];
 
-export default function Timeline() {
-  const router = useRouter()
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
-  const timelineRef = useRef(null)
+export default function TimelineComponent() {
+  const [activeSection, setActiveSection] = useState(0);
+  const [timelineVisible, setTimelineVisible] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
   
-  // Scroll-based animation for the moving element
-  const { scrollYProgress } = useScroll({
-    target: timelineRef,
-    offset: ["start center", "end center"]
-  })
+  // NEW: State to detect if the view is mobile
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  const timelineEvents = [
-    {
-      date: 'Oct 10-11, 2025',
-      title: 'Energia',
-      description: 'Kick off the week with intense athletic competitions. From cricket to football, basketball to athletics - witness the spirit of sportsmanship and competitive excellence.',
-      color: '#9333EA',
-      gradient: 'from-purple-600 to-purple-400',
-      side: 'left',
-      icon: '⚡',
-      image: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=80',
-      venue: 'Sports Complex',
-      participants: '2000+',
-      route: '/energia',
-    },
-    {
-      date: 'Oct 12-13, 2025',
-      title: 'Urjotsav',
-      description: 'Enter the realm of technology and innovation. 48-hour hackathons, coding competitions, tech talks, and pitch competitions await the brightest technical minds.',
-      color: '#3B82F6',
-      gradient: 'from-blue-600 to-blue-400',
-      side: 'right',
-      icon: '💻',
-      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80',
-      venue: 'Tech Hub',
-      participants: '1500+',
-      route: '/urjotsav',
-    },
-    {
-      date: 'Oct 14-15, 2025',
-      title: 'Souhardya',
-      description: 'Make a difference that matters. Join social initiatives, community service projects, awareness campaigns, and contribute to meaningful social change.',
-      color: '#F59E0B',
-      gradient: 'from-amber-600 to-amber-400',
-      side: 'left',
-      icon: '🤝',
-      image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80',
-      venue: 'Community Center',
-      participants: '1000+',
-      route: '/souhardya',
-    },
-    {
-      date: 'Oct 16-17, 2025',
-      title: 'Kaltarang',
-      description: 'Conclude with a grand celebration of arts and culture. Music concerts, dance performances, drama, fashion shows, and cultural exhibitions that showcase talent.',
-      color: '#EF4444',
-      gradient: 'from-red-600 to-red-400',
-      side: 'right',
-      icon: '🎭',
-      image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80',
-      venue: 'Cultural Arena',
-      participants: '1800+',
-      route: '/kaltarang',
-    },
-  ]
+  const scrollerRef = useRef(null);
+  const sectionRefs = useRef([]);
+  const timelineContainerRef = useRef(null);
 
-  // Transform scroll progress to Y position
-  const lineProgress = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
+  // NEW: Effect to update the isMobile state on window resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  const handleNavigate = (route) => {
-    router.push(route)
-  }
+  useEffect(() => {
+    const observerOptions = { threshold: 0.6 };
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = sectionRefs.current.findIndex(ref => ref === entry.target);
+          if (index !== -1) {
+            setActiveSection(index);
+          }
+        }
+      });
+    }, observerOptions);
+
+    sectionRefs.current.forEach(ref => {
+      if (ref) sectionObserver.observe(ref);
+    });
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => setTimelineVisible(entry.isIntersecting));
+    }, { threshold: 0.1 });
+
+    if (timelineContainerRef.current) {
+      navObserver.observe(timelineContainerRef.current);
+    }
+
+    return () => {
+      sectionRefs.current.forEach(ref => {
+        if (ref) sectionObserver.unobserve(ref);
+      });
+      if (timelineContainerRef.current) {
+        navObserver.unobserve(timelineContainerRef.current);
+      }
+    };
+  }, []);
+
+  // UPDATED: Scroll-hijacking effect now respects the isMobile state
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller || isMobile) return; // Do not attach listener on mobile
+
+    const handleWheel = (event) => {
+      if (isScrolling) {
+        event.preventDefault();
+        return;
+      }
+      const scrollDirection = event.deltaY;
+      if (Math.abs(scrollDirection) > 1) {
+        if (scrollDirection > 0 && activeSection < festivals.length - 1) {
+          event.preventDefault();
+          setIsScrolling(true);
+          const nextSection = sectionRefs.current[activeSection + 1];
+          scroller.scrollTop = nextSection.offsetTop;
+          setTimeout(() => setIsScrolling(false), 1200);
+        } else if (scrollDirection < 0 && activeSection > 0) {
+          event.preventDefault();
+          setIsScrolling(true);
+          const prevSection = sectionRefs.current[activeSection - 1];
+          scroller.scrollTop = prevSection.offsetTop;
+          setTimeout(() => setIsScrolling(false), 1200);
+        }
+      }
+    };
+    scroller.addEventListener('wheel', handleWheel, { passive: false });
+    return () => scroller.removeEventListener('wheel', handleWheel);
+  }, [activeSection, isScrolling, isMobile]); // Added isMobile dependency
+
+  const getOrbPosition = () => `${(activeSection / (festivals.length - 1)) * 100}%`;
 
   return (
-    <section id="timeline" className="section-padding relative overflow-hidden" ref={ref}>
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.08)_0%,transparent_60%)]" />
+    <div id="timeline" className="h-screen overflow-hidden text-[#f0f0f0]" style={{ fontFamily: 'Poppins, sans-serif' }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap');
+        .main-scroller::-webkit-scrollbar { display: none; }
+        .main-scroller { -ms-overflow-style: none; scrollbar-width: none; }
+      `}</style>
       
-      {/* Animated Background Orbs */}
-      <motion.div
-        className="absolute top-1/4 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          x: [0, 50, 0],
-          y: [0, 30, 0],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.1, 1],
-          x: [0, -40, 0],
-          y: [0, -50, 0],
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-      />
-
-      <div className="relative z-10">
-        {/* Title */}
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="font-turret text-center mb-12 font-black tracking-wider"
-          style={{
-            fontSize: 'clamp(2.5rem, 8vw, 6rem)',
-            background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6B6B 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
+      {/* UPDATED: Timeline Navigation with conditional render so it only exists within the section */}
+      {timelineVisible && (
+        <nav 
+          className={`fixed top-1/2 z-50 pointer-events-none transition-all duration-500 ease-in-out 
+            md:left-1/2 left-6 opacity-100 visible scale-100`}
+          style={{ transform: isMobile ? 'translateY(-50%)' : 'translate(-50%, -50%)' }}
         >
-          Events Timeline
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.2 }}
-          className="text-center text-white/90 max-w-3xl mx-auto mb-16 md:mb-24 text-lg md:text-xl"
-        >
-          Your journey through Urja Sangam 2025
-        </motion.p>
-
-        {/* Timeline Container */}
-        <div ref={timelineRef} className="max-w-6xl mx-auto relative py-12 md:py-24">
-          {/* Timeline Line - Only visible within container */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 md:-translate-x-1/2 bg-gradient-to-b from-transparent via-yellow-500/30 to-transparent">
-            {/* Animated gradient line */}
-            <motion.div 
-              className="absolute w-full bg-gradient-to-b from-yellow-500 via-orange-500 to-yellow-500"
-              style={{
-                height: lineProgress,
-                boxShadow: '0 0 20px rgba(255, 215, 0, 0.8)',
-              }}
+          <div className="relative w-1 h-[50vh] bg-white/10 rounded-full">
+            <div 
+              className="absolute left-1/2 w-10 h-10 rounded-full -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] -z-10"
+              style={{ top: getOrbPosition(), background: `radial-gradient(circle, ${festivals[activeSection].color} 0%, rgba(0,0,0,0) 60%)` }}
             />
+            <ul className="relative h-full flex flex-col justify-between">
+              {festivals.map((fest, idx) => (
+                <li key={fest.id} className={`w-3 h-3 rounded-full relative left-1/2 -translate-x-1/2 transition-all duration-300 ${activeSection === idx ? 'bg-white scale-150' : 'bg-white/30'}`} />
+              ))}
+            </ul>
           </div>
+        </nav>
+      )}
 
-          {/* Scrolling Indicator Ball */}
-          <motion.div
-            className="hidden md:block absolute left-1/2 -translate-x-1/2 z-20 pointer-events-none"
-            style={{
-              top: useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
-            }}
-          >
-            <motion.div
-              animate={{
-                scale: [1, 1.3, 1],
-                rotate: [0, 360],
-              }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500"
-              style={{
-                boxShadow: '0 0 30px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 165, 0, 0.6)',
-              }}
-            >
-              {/* Inner glow */}
-              <div className="absolute inset-1 rounded-full bg-white/50 blur-sm" />
-            </motion.div>
-          </motion.div>
-
-          {/* Timeline Events */}
-          {timelineEvents.map((event, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: event.side === 'left' ? -100 : 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              className={`relative mb-16 md:mb-32 ${
-                event.side === 'left' 
-                  ? 'md:pr-[calc(50%+60px)] pl-16 md:pl-0' 
-                  : 'md:pl-[calc(50%+60px)] pl-16 md:pl-0'
-              }`}
-            >
-              {/* Node on timeline */}
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 + 0.3, type: 'spring', stiffness: 200 }}
-                className="absolute left-8 md:left-1/2 top-12 md:-translate-x-1/2 z-10"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.3, rotate: 180 }}
-                  animate={{
-                    boxShadow: [
-                      `0 0 20px ${event.color}80`,
-                      `0 0 40px ${event.color}`,
-                      `0 0 20px ${event.color}80`,
-                    ],
-                  }}
-                  transition={{ 
-                    boxShadow: { duration: 2, repeat: Infinity },
-                    hover: { duration: 0.3 }
-                  }}
-                  className={`w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br ${event.gradient} flex items-center justify-center text-white font-bold cursor-pointer`}
-                >
-                  <span className="text-xs md:text-sm">{index + 1}</span>
-                </motion.div>
-              </motion.div>
-
-              {/* Content Card */}
-              <motion.div
-                whileHover={{ 
-                  y: -10, 
-                  scale: 1.02,
-                  boxShadow: `0 30px 80px ${event.color}60`
-                }}
-                className="relative group"
-              >
-                {/* Glass Card */}
-                <div className="backdrop-blur-xl bg-white/5 rounded-3xl overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
-                  {/* Image Section */}
-                  <div className="relative h-48 md:h-64 overflow-hidden">
-                    <motion.img
-                      src={event.image}
-                      alt={event.title}
-                      className="w-full h-full object-cover"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                    />
-                    {/* Gradient Overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-t ${event.gradient} opacity-60`} />
-                    
-                    {/* Icon Badge */}
-                    <motion.div
-                      initial={{ scale: 0, rotate: -180 }}
-                      whileInView={{ scale: 1, rotate: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.2 + 0.5, type: 'spring' }}
-                      className="absolute top-4 right-4 w-16 h-16 md:w-20 md:h-20 rounded-full backdrop-blur-md bg-black/30 border-2 border-white/30 flex items-center justify-center text-4xl md:text-5xl"
-                    >
-                      {event.icon}
-                    </motion.div>
-
-                    {/* Date Badge */}
-                    <div className="absolute top-4 left-4 px-4 py-2 rounded-full backdrop-blur-md bg-black/50 border border-white/30">
-                      <div className="flex items-center gap-2 text-white">
-                        <FiCalendar />
-                        <span className="font-bold text-sm">{event.date}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="p-6 md:p-8">
-                    {/* Title */}
-                    <motion.h3
-                      className="font-turret text-3xl md:text-4xl font-black mb-4"
-                      style={{ color: event.color }}
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: 'spring', stiffness: 300 }}
-                    >
-                      {event.title}
-                    </motion.h3>
-
-                    {/* Description */}
-                    <p className="text-white/85 text-base md:text-lg leading-relaxed mb-6">
-                      {event.description}
-                    </p>
-
-                    {/* Stats */}
-                    <div className="flex flex-wrap gap-4 mb-6">
-                      <div className="flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md bg-white/5 border border-white/10">
-                        <FiMapPin className="text-white/70" />
-                        <span className="text-white/90 text-sm font-semibold">{event.venue}</span>
-                      </div>
-                      <div className="flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md bg-white/5 border border-white/10">
-                        <FiUsers className="text-white/70" />
-                        <span className="text-white/90 text-sm font-semibold">{event.participants}</span>
-                      </div>
-                    </div>
-
-                    {/* CTA Button */}
-                    <motion.button
-                      onClick={() => handleNavigate(event.route)}
-                      whileHover={{ scale: 1.05, x: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${event.gradient} rounded-full font-semibold text-white shadow-lg hover:shadow-xl transition-all cursor-pointer`}
-                    >
-                      <span>View Events</span>
-                      <FiArrowRight />
-                    </motion.button>
-                  </div>
-
-                  {/* Hover Glow Effect */}
-                  <motion.div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{
-                      background: `radial-gradient(circle at center, ${event.color}20 0%, transparent 70%)`,
-                    }}
-                  />
-                </div>
-
-                {/* Connecting Line to Timeline (Desktop) */}
-                <div className={`hidden md:block absolute top-12 w-12 h-0.5 bg-gradient-to-r ${
-                  event.side === 'left' 
-                    ? 'right-0 translate-x-full from-transparent to-yellow-500/50' 
-                    : 'left-0 -translate-x-full from-yellow-500/50 to-transparent'
-                }`} />
-              </motion.div>
-            </motion.div>
-          ))}
-
-          {/* End Marker */}
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            className="absolute left-8 md:left-1/2 bottom-0 md:-translate-x-1/2 z-10"
-          >
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-                boxShadow: [
-                  '0 0 20px rgba(255, 215, 0, 0.8)',
-                  '0 0 40px rgba(255, 215, 0, 1)',
-                  '0 0 20px rgba(255, 215, 0, 0.8)',
-                ],
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-6 h-6 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 flex items-center justify-center"
-            >
-              <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-white" />
-            </motion.div>
-          </motion.div>
-        </div>
+      {/* Heading */}
+      <div className="w-full text-center pt-16">
+        <h2 className="text-4xl md:text-6xl font-black" style={{ fontFamily: 'Orbitron, sans-serif' }}>Timeline</h2>
       </div>
-    </section>
-  )
+
+      {/* UPDATED: Main Scroller with mobile snap-scroll */}
+      <div ref={scrollerRef} className="main-scroller h-screen overflow-y-scroll md:scroll-smooth snap-y snap-mandatory">
+        <main ref={timelineContainerRef} className="relative">
+          {festivals.map((fest, idx) => (
+            <section
+              key={fest.id}
+              ref={el => sectionRefs.current[idx] = el}
+              className="h-screen w-full relative flex items-center snap-start md:block"
+              style={{ perspective: isMobile ? 'none' : '1000px' }}
+            >
+              {/* UPDATED: Event Card with responsive classes and styles */}
+              <Link href={`/${fest.id}`} className="block">
+              <div
+                className={`
+                  rounded-3xl overflow-hidden border border-white/10 
+                  transition-opacity duration-600 ease-in-out
+                  w-[calc(100vw-100px)] max-w-[400px] ml-[75px] mr-[25px] relative
+                  md:absolute md:w-2/5 md:max-w-[550px] md:ml-0 md:mr-0 md:transition-all
+                  ${idx % 2 === 0 ? 'md:left-[5%]' : 'md:right-[5%]'}
+                  ${!isMobile && activeSection !== idx ? 'opacity-0' : 'opacity-100'}
+                `}
+                style={{
+                  transform: isMobile ? 'none' : (
+                    activeSection === idx 
+                      ? (idx % 2 === 0 ? 'translateX(0) rotateY(5deg)' : 'translateX(0) rotateY(-5deg)')
+                      : (idx % 2 === 0 ? 'translateX(-40px) rotateY(10deg)' : 'translateX(40px) rotateY(-10deg)')
+                  ),
+                  transitionProperty: isMobile ? 'opacity' : 'opacity, transform, box-shadow',
+                }}
+                onMouseEnter={(e) => {
+                  if (!isMobile && activeSection === idx) {
+                    e.currentTarget.style.transform = 'translateY(-8px) scale(1.03) rotateY(0deg)';
+                    e.currentTarget.style.boxShadow = `0 15px 45px -10px ${fest.color}`;
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isMobile && activeSection === idx) {
+                    e.currentTarget.style.transform = idx % 2 === 0 ? 'translateX(0) rotateY(5deg)' : 'translateX(0) rotateY(-5deg)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }
+                }}
+              >
+                <div className={`flex w-full flex-col md:flex-row ${idx % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+                  {/* Date Column */}
+                  <div
+                    className="flex items-center justify-center p-5 flex-none w-full md:w-20 text-center border-b md:border-b-0 border-white/10"
+                    style={{
+                      writingMode: isMobile ? 'horizontal-tb' : 'vertical-rl',
+                      textOrientation: 'mixed',
+                      fontFamily: 'Orbitron, sans-serif',
+                      fontSize: isMobile ? '1.5rem' : '1.8rem',
+                      letterSpacing: '4px',
+                      color: fest.color,
+                      [idx % 2 === 0 ? 'borderLeft' : 'borderRight']: isMobile ? 'none' : '1px solid rgba(255, 255, 255, 0.1)',
+                    }}
+                  >
+                    {fest.date.split(' ')[0]}
+                    <span className="font-poppins text-lg font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                      {' ' + fest.date.split(' ')[1]}
+                    </span>
+                  </div>
+                  {/* Info Column */}
+                  <div className="flex-1">
+                    <div className="relative h-[220px]">
+                      <img src={fest.image} alt={fest.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="p-7">
+                      <h2 className="text-4xl md:text-5xl mb-3" style={{ fontFamily: 'Orbitron, sans-serif', color: fest.color }}>{fest.name}</h2>
+                      <p className="text-white/80 leading-relaxed mb-5">{fest.description}</p>
+                    </div>
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between px-7 pb-7 gap-4">
+                      <div className="flex gap-2">
+                        {fest.tags.map((tag, tagIdx) => (
+                          <span key={tagIdx} className="text-xs py-1 px-2.5 bg-white/10 rounded-lg">{tag}</span>
+                        ))}
+                      </div>
+                      <a href={`/${fest.id}#events`} className="px-5 py-2.5 rounded-full font-semibold text-sm text-black transition-all duration-300 hover:scale-105" style={{ background: fest.color, boxShadow: `0 0 20px -5px ${fest.color}` }}>
+                        View Events
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </Link>
+            </section>
+          ))}
+        </main>
+      </div>
+    </div>
+  );
 }

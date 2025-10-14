@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiVolume2, FiVolumeX, FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
@@ -41,11 +42,19 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  const pathname = usePathname?.() || "/";
+
+  const baseLinks = [
     { href: "#about", label: "About" },
     { href: "#events", label: "Events" },
     { href: "#gallery", label: "Gallery" },
-    { href: "#timeline", label: "Fest Week" },
+  ];
+
+  const homeOnlyLinks = pathname === "/" ? [{ href: "#timeline", label: "Timeline" }] : [];
+
+  const navLinks = [
+    ...baseLinks,
+    ...homeOnlyLinks,
     { href: "/faq", label: "FAQ" },
     { href: "#contact", label: "Contact" },
   ];
