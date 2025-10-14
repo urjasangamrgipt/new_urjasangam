@@ -59,6 +59,15 @@ export function HeroSection() {
         >
           Connecting Communities for Good
         </motion.p>
+        {/* Explore Events CTA */}
+        <div className="mt-6">
+          <a
+            href="https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"
+            className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm"
+          >
+            Explore Events
+          </a>
+        </div>
       </div>
 
       {/* Scroll Indicator */}
