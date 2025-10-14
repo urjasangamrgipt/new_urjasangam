@@ -225,7 +225,7 @@ export default function UrjaSangam() {
 
       {/* Main Content */}
       <div className="flex flex-col items-center justify-center min-h-screen text-center pt-20 relative z-10">
-        <h1 className="title-text ">URJA SANGAM</h1>
+        <h1 className="title-text " style={{ fontFamily: 'Exo 2, cursive' }}>URJA SANGAM</h1>
 
         {/* Sparkles Container */}
         <div ref={containerRef} className="sparkles-container">
@@ -264,7 +264,7 @@ export default function UrjaSangam() {
           <Link href={"https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"}><span className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm">
             Explore Events
           </span></Link>
-          <a href="#" className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm">
+          <a href="#realms" className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm">
             About Us
           </a>
         </div>

@@ -262,12 +262,10 @@ export default function Gallery() {
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="font-turret text-center mb-12 font-black tracking-wider"
+          className="text-center mb-12 font-black tracking-wider"
           style={{
             fontSize: 'clamp(3rem, 8vw, 6rem)',
-            background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6B6B 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
+            fontFamily: 'Orbitron, sans-serif',
           }}
         >
           Captured Moments

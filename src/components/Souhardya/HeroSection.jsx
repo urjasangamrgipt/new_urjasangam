@@ -16,7 +16,7 @@ export function HeroSection() {
       {/* Video Background - Scaled to hide watermark */}
       <video
         id="hero-video"
-        className="absolute inset-0 w-full h-[120%] opacity-50 object-cover z-0"
+        className="absolute inset-0 w-full h-[120%] opacity-40 object-cover z-0"
         style={{
           objectPosition: "center top",
           bottom: "-10%",
@@ -38,8 +38,11 @@ export function HeroSection() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-5xl md:text-9xl lg:text-[12rem] font-black uppercase tracking-widest"
+          className="font-black uppercase"
           style={{
+            fontFamily: 'Exo 2, cursive',
+            fontSize: 'clamp(2rem, 15vw, 10rem)',
+            letterSpacing: 'clamp(0.2rem, 3vw, 1rem)',
             background:
               "linear-gradient(135deg, #f97316 0%, #ea580c 25%, #fb923c 50%, #fdba74 75%, #f97316 100%)",
             backgroundSize: "200% 100%",

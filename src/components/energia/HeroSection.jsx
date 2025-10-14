@@ -33,8 +33,11 @@ export function HeroSection() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-7xl md:text-9xl lg:text-[12rem] font-black uppercase tracking-widest"
+          className="font-black uppercase"
           style={{
+            fontFamily: 'Exo 2, cursive',
+            fontSize: 'clamp(2rem, 15vw, 10rem)',
+            letterSpacing: 'clamp(0.2rem, 3vw, 1rem)',
             background:
               "linear-gradient(135deg, #c084fc 0%, #a78bfa 25%, #8b5cf6 50%, #a855f7 75%, #c084fc 100%)",
             backgroundSize: "200% 100%",

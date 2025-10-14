@@ -180,10 +180,13 @@ const FestSlider = () => {
     };
 
     return (
-        <section className="min-h-screen relative flex flex-col items-center justify-center py-8 md:py-16 px-4 md:px-8">
+        <section id="realms" className="min-h-screen relative flex flex-col items-center justify-center py-8 md:py-16 px-4 md:px-8">
             <style>{styles}</style>
             
-            {/* Section Title removed per request */}
+            {/* Section Heading */}
+            <h2 className="font-['Exo_2'] text-3xl sm:text-4xl md:text-6xl font-black text-center mb-6 tracking-[2px] md:tracking-[4px] uppercase px-4">
+                Realm
+            </h2>
             
             {/* Slider Wrapper */}
             <div 
