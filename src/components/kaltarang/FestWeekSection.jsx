@@ -9,16 +9,16 @@ export default function FestWeekSection() {
   const festivals = [
     {
       id: 1,
-      name: "Kaltarang",
-      tagline: "Where Art Meets Soul",
+      name: "Urjotsav",
+      tagline: "Where technology Meets Soul",
       description:
-        "Immerse yourself in a kaleidoscope of cultural brilliance. Dance, drama, and artistic expression collide.",
+        "Immerse yourself in a kaleidoscope of technical brilliance ,Robotics , Code and logic  collide.",
       icon: "🎭",
       gradient: "from-[#FF6B6B] to-[#FF8E53]",
-      color: "#FF6B6B",
+      color: "#2934f6ff",
       stats: [
-        { label: "Artists", value: "500+" },
-        { label: "Performances", value: "40+" },
+        { label: "Participant", value: "500+" },
+        { label: "Events", value: "40+" },
         { label: "Days", value: "3" },
       ],
     },
@@ -172,7 +172,7 @@ export default function FestWeekSection() {
             </div>
 
             {/* CTA Button */}
-            <button
+            <a href={`/${fest.name.toLowerCase()}`}
               className={`w-full py-3 rounded-xl border-2 font-semibold text-sm transition-all duration-300 flex justify-center items-center gap-2 ${
                 activeCard === fest.id
                   ? `bg-gradient-to-r ${fest.gradient} text-black`
@@ -180,7 +180,7 @@ export default function FestWeekSection() {
               }`}
             >
               Explore {fest.name} →
-            </button>
+            </a>
           </div>
         ))}
       </div>

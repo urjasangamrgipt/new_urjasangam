@@ -39,7 +39,7 @@ export default function FestWeekSection() {
     },
     {
       id: 3,
-      name: "Sauhardya",
+      name: "Souhardya",
       tagline: "Unity In Diversity",
       description:
         "Building bridges through social initiatives. A celebration of humanity, compassion, and collective growth.",
@@ -172,7 +172,7 @@ export default function FestWeekSection() {
             </div>
 
             {/* CTA Button */}
-            <button
+            <a href={`/${fest.name.toLowerCase()}`}
               className={`w-full py-3 rounded-xl border-2 font-semibold text-sm transition-all duration-300 flex justify-center items-center gap-2 ${
                 activeCard === fest.id
                   ? `bg-gradient-to-r ${fest.gradient} text-black`
@@ -180,7 +180,7 @@ export default function FestWeekSection() {
               }`}
             >
               Explore {fest.name} →
-            </button>
+            </a>
           </div>
         ))}
       </div>

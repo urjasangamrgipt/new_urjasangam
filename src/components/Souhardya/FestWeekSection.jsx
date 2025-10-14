@@ -38,19 +38,19 @@ export default function FestWeekSection() {
       ],
     },
     {
-      id: 3,
-      name: "Sauhardya",
-      tagline: "Unity In Diversity",
+      id: 1,
+      name: "Urjotsav",
+      tagline: "Where technology Meets Soul",
       description:
-        "Building bridges through social initiatives. A celebration of humanity, compassion, and collective growth.",
-      icon: "🤝",
-      gradient: "from-[#A78BFA] to-[#7C3AED]",
-      color: "#A78BFA",
+        "Immerse yourself in a kaleidoscope of technical brilliance ,Robotics , Code and logic  collide.",
+      icon: "🎭",
+      gradient: "from-[#FF6B6B] to-[#FF8E53]",
+      color: "#2934f6ff",
       stats: [
-        { label: "Communities", value: "50+" },
-        { label: "Initiatives", value: "15+" },
-        { label: "Impact", value: "∞" },
-      ],
+        { label: "Participant", value: "500+" },
+        { label: "Events", value: "40+" },
+        { label: "Days", value: "3" },
+      ]
     },
   ];
 
@@ -172,7 +172,7 @@ export default function FestWeekSection() {
             </div>
 
             {/* CTA Button */}
-            <button
+            <a href={`/${fest.name.toLowerCase()}`}
               className={`w-full py-3 rounded-xl border-2 font-semibold text-sm transition-all duration-300 flex justify-center items-center gap-2 ${
                 activeCard === fest.id
                   ? `bg-gradient-to-r ${fest.gradient} text-black`
@@ -180,7 +180,7 @@ export default function FestWeekSection() {
               }`}
             >
               Explore {fest.name} →
-            </button>
+            </a>
           </div>
         ))}
       </div>

@@ -11,7 +11,7 @@ export default function Footer() {
     { href: '#gallery', label: 'Gallery' },
     { href: '#timeline', label: 'Timeline' },
     { href: '#team', label: 'Team' },
-    { href: '#faq', label: 'FAQ' },
+    { href: '/faq', label: 'FAQ' },
     { href: '#contact', label: 'Contact' },
   ]
 
@@ -19,7 +19,7 @@ export default function Footer() {
     { href: '/urjotsav', label: 'Urjotsav - Tech' },
     { href: '/kaltarang', label: 'Kaltarang - Cultural' },
     { href: '/energia', label: 'Energia - Sports' },
-    { href: '/souardhya', label: 'Souardhya - Social' },
+    { href: '/souhardya', label: 'Souhardya - Social' },
   ]
 
   const socialLinks = [
