@@ -16,6 +16,7 @@ export default function HomePage() {
 
   // Update scroll progress
   useEffect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return
     const handleScroll = () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight

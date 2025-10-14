@@ -14,18 +14,23 @@ export default function TimelineComponent() {
   const [timelineVisible, setTimelineVisible] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
   
-  // NEW: State to detect if the view is mobile
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  // NEW: State to detect if the view is mobile (SSR-safe)
+  const [isMobile, setIsMobile] = useState(false);
 
   const scrollerRef = useRef(null);
   const sectionRefs = useRef([]);
   const timelineContainerRef = useRef(null);
 
-  // NEW: Effect to update the isMobile state on window resize
+  // NEW: Effect to set and update isMobile (guarded for SSR)
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    const compute = () => {
+      if (typeof window !== 'undefined') {
+        setIsMobile(window.innerWidth <= 768);
+      }
+    };
+    compute();
+    window.addEventListener('resize', compute);
+    return () => window.removeEventListener('resize', compute);
   }, []);
 
   useEffect(() => {
