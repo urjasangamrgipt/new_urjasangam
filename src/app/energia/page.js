@@ -7,7 +7,7 @@ import { CosmicBackground } from "@/components/shared/Cosmicbackground";
 
 // Import the Energia section components
 import { HeroSection } from "@/components/energia/HeroSection";
-import { AboutSection } from "@/components/energia/AboutSection";
+import AboutSection from "@/components/energia/AboutSection";
 import { StatsSection } from "@/components/energia/StatsSection";
 import { EventsSection } from "@/components/energia/EventsSection";
 import { PastEventsSection } from "@/components/energia/PastEventsSection";
@@ -29,7 +29,7 @@ export default function EnergiaPage() {
         <PastEventsSection />
         
         {/* "Visual Memories" Header for Gallery */}
-        <section className="py-24 text-center bg-transparent font-sans">
+        <section id="gallery" className="py-24 text-center bg-transparent font-sans">
           <div className="container mx-auto px-6">
             <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-violet-400 via-purple-400 to-violet-400 bg-clip-text text-transparent"
                 style={{ filter: 'drop-shadow(0 0 30px rgba(167, 139, 250, 0.5))' }}>

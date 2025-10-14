@@ -1,345 +1,400 @@
-'use client'
+import React, { useEffect, useRef, useState } from 'react';
 
-import { motion, useInView } from 'framer-motion'
-import { useRef, useState, useEffect } from 'react'
+export default function SouharDyaAbout() {
+  const statsBarRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [visitCount, setVisitCount] = useState(0);
 
-export function AboutSection() {
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
-  
-  // Counter animation
-  const CountUp = ({ end, suffix = "" }) => {
-    const [count, setCount] = useState(0)
-    const countRef = useRef(null)
-    const isCountInView = useInView(countRef, { once: true })
+  // Reset animation on component mount
+  useEffect(() => {
+    // Reset all stat values to 0
+    const counters = document.querySelectorAll('.souhardya-stat-value');
+    counters.forEach(counter => {
+      counter.innerText = '0';
+    });
     
-    useEffect(() => {
-      if (isCountInView) {
-        let start = 0
-        const duration = 2000
-        const increment = end / (duration / 16)
-        
-        const timer = setInterval(() => {
-          start += increment
-          if (start >= end) {
-            setCount(end)
-            clearInterval(timer)
+    setVisitCount(prev => prev + 1);
+    setHasAnimated(false); // Reset animation state on each visit
+  }, []);
+
+  useEffect(() => {
+    const counters = document.querySelectorAll('.souhardya-stat-value');
+
+    const startCounter = (counter) => {
+      const target = +counter.getAttribute('data-value');
+      const duration = 2500;
+      const intervalTime = 20;
+      const increment = target / (duration / intervalTime);
+
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          clearInterval(timer);
+          if (target === 10 || target === 400) {
+            counter.innerText = target + '+';
+          } else if (target === 8000) {
+            counter.innerText = '8K+';
           } else {
-            setCount(Math.floor(start))
+            counter.innerText = target;
           }
-        }, 16)
-        
-        return () => clearInterval(timer)
-      }
-    }, [isCountInView, end])
-    
-    return <span ref={countRef}>{count}{suffix}</span>
-  }
+        } else {
+          counter.innerText = Math.ceil(current);
+        }
+      }, intervalTime);
+    };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            // Small delay to ensure DOM is ready
+            setTimeout(() => {
+              counters.forEach((counter) => startCounter(counter));
+            }, 100);
+            setHasAnimated(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsBarRef.current) {
+      observer.observe(statsBarRef.current);
     }
-  }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1]
+    return () => {
+      if (statsBarRef.current) {
+        observer.unobserve(statsBarRef.current);
       }
-    }
-  }
+    };
+  }, [hasAnimated]);
 
-  const statCards = [
-    { value: 8, suffix: "+", label: "Years Running", gradient: "from-orange-500 to-red-600" },
-    { value: 30, suffix: "+", label: "Social Events", gradient: "from-purple-500 to-pink-600" },
-    { value: 5, suffix: "K+", label: "Volunteers", gradient: "from-blue-500 to-cyan-600" }
-  ]
+  // Removed cursor trail effect
+
+  const handleExperienceClick = () => {
+    window.location.href = '/gallery';
+  };
 
   return (
-    <section 
-      id="about" 
-      ref={sectionRef}
-      className="min-h-screen w-full py-20 flex items-center text-white relative overflow-hidden"
-    >
-      {/* Animated Background Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute w-[500px] h-[500px] rounded-full blur-3xl"
-          style={{
-            background: 'radial-gradient(circle, rgba(249, 115, 22, 0.4) 0%, transparent 70%)',
-            top: '-10%',
-            left: '-10%',
-          }}
-        />
-        <motion.div 
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-          className="absolute w-[500px] h-[500px] rounded-full blur-3xl"
-          style={{
-            background: 'radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, transparent 70%)',
-            bottom: '-10%',
-            right: '-10%',
-          }}
-        />
-      </div>
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&display=swap');
 
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
-          className="max-w-6xl mx-auto"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          {/* Header */}
-          <motion.div 
-            className="text-center mb-16"
-            variants={itemVariants}
-          >
-            <motion.h2 
-              className="text-5xl md:text-7xl font-black mb-6 tracking-tight"
-              style={{
-                background: 'linear-gradient(135deg, #f97316 0%, #dc2626 25%, #a855f7 50%, #3b82f6 75%, #06b6d4 100%)',
-                backgroundSize: '200% 100%',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                filter: 'drop-shadow(0 0 40px rgba(249, 115, 22, 0.5))',
-              }}
-              animate={{
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: 'linear',
-              }}
-            >
-              About Us
-            </motion.h2>
-            <motion.div 
-              className="w-24 h-1 bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 mx-auto rounded-full"
-              initial={{ width: 0 }}
-              animate={isInView ? { width: 96 } : { width: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            />
-          </motion.div>
+        .souhardya-about-root {
+          --primary-color: #FF6B35;
+          --secondary-color: #FF5722;
+          --accent-color: #FF8A50;
+          --text-color: #FFFFFF;
+          --font-heading: 'Playfair Display', serif;
+          --font-body: 'Poppins', sans-serif;
+        }
 
-          {/* Main Content Grid */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Text Content */}
-            <motion.div 
-              className="space-y-6"
-              variants={itemVariants}
-            >
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="relative group"
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-500" />
-                <p className="relative text-lg leading-relaxed bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-white/10">
-                  URJASANGAM is a <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 font-bold">phenomenon</span> where Innovation and Technology converge, bringing together tech enthusiasts, developers, and innovators under one sky.
-                </p>
-              </motion.div>
+        .souhardya-about-container {
+          position: relative;
+          z-index: 1;
+          width: 90%;
+          max-width: 1000px;
+          text-align: center;
+          padding: 60px 40px;
+          margin: 0 auto;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-family: var(--font-body);
+          color: var(--text-color);
+        }
 
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="relative group"
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-500" />
-                <p className="relative text-lg leading-relaxed bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-white/10">
-                  Every year, thousands gather to witness a spectacle fueled by passion and the fire of a thousand innovations.
-                </p>
-              </motion.div>
+        .souhardya-content-wrapper {
+          opacity: 0;
+          transform: translateY(30px);
+          animation: fadeInUp 1.2s ease-out 0.3s forwards;
+        }
 
-              {/* Stats Cards */}
-              <motion.div 
-                className="flex flex-wrap gap-4 pt-4"
-                variants={itemVariants}
-              >
-                {statCards.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
-                    transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-                    whileHover={{ 
-                      scale: 1.1, 
-                      y: -5,
-                      transition: { duration: 0.2 }
-                    }}
-                    className="flex-1 min-w-[120px] text-center relative group cursor-pointer"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 rounded-xl border border-white/10 backdrop-blur-xl" />
-                    <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-300`} />
-                    <div className="relative p-4">
-                      <div className={`text-4xl font-black mb-1 bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
-                        <CountUp end={stat.value} suffix={stat.suffix} />
-                      </div>
-                      <div className="text-sm text-gray-400 font-medium">{stat.label}</div>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
 
-            {/* Right Column - Vision & Mission Cards */}
-            <motion.div 
-              className="space-y-6"
-              variants={itemVariants}
-            >
-              {/* Vision Card */}
-              <motion.div
-                initial={{ opacity: 0, x: 50, rotateY: 20 }}
-                animate={isInView ? { opacity: 1, x: 0, rotateY: 0 } : { opacity: 0, x: 50, rotateY: 20 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                whileHover={{ 
-                  scale: 1.03,
-                  rotateY: -5,
-                  transition: { duration: 0.3 }
-                }}
-                className="relative group cursor-pointer"
-                style={{ perspective: 1000 }}
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
-                <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-xl p-8 rounded-2xl border border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <motion.div
-                      animate={{
-                        rotate: [0, 360],
-                      }}
-                      transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear"
-                      }}
-                      className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-2xl"
-                      style={{
-                        boxShadow: '0 0 30px rgba(249, 115, 22, 0.6)'
-                      }}
-                    >
-                      🎯
-                    </motion.div>
-                    <h3 className="text-2xl md:text-3xl font-black bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                      Our Vision
-                    </h3>
-                  </div>
-                  <p className="text-gray-300 leading-relaxed">
-                    To create a platform where technological innovation knows no bounds and creativity meets opportunity.
-                  </p>
-                  
-                  {/* Decorative Corner */}
-                  <div className="absolute top-4 right-4 w-20 h-20 opacity-10">
-                    <div className="absolute inset-0 border-t-2 border-r-2 border-orange-500 rounded-tr-2xl" />
-                  </div>
-                </div>
-              </motion.div>
+        .souhardya-main-heading {
+          font-family: var(--font-heading);
+          font-size: 5em;
+          font-weight: 900;
+          letter-spacing: 2px;
+          color: var(--text-color);
+          margin-bottom: 15px;
+          text-shadow: 
+            0 0 20px rgba(255, 107, 53, 0.8), 
+            0 0 40px rgba(255, 107, 53, 0.6),
+            0 0 60px rgba(255, 107, 53, 0.4);
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
 
-              {/* Mission Card */}
-              <motion.div
-                initial={{ opacity: 0, x: 50, rotateY: 20 }}
-                animate={isInView ? { opacity: 1, x: 0, rotateY: 0 } : { opacity: 0, x: 50, rotateY: 20 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                whileHover={{ 
-                  scale: 1.03,
-                  rotateY: -5,
-                  transition: { duration: 0.3 }
-                }}
-                className="relative group cursor-pointer"
-                style={{ perspective: 1000 }}
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
-                <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-xl p-8 rounded-2xl border border-purple-500/30 group-hover:border-purple-500/60 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.1, 1],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                      className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-2xl"
-                      style={{
-                        boxShadow: '0 0 30px rgba(168, 85, 247, 0.6)'
-                      }}
-                    >
-                      🚀
-                    </motion.div>
-                    <h3 className="text-2xl md:text-3xl font-black bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                      Our Mission
-                    </h3>
-                  </div>
-                  <p className="text-gray-300 leading-relaxed">
-                    To foster a community that celebrates innovation and technological excellence through collaboration and learning.
-                  </p>
-                  
-                  {/* Decorative Corner */}
-                  <div className="absolute bottom-4 left-4 w-20 h-20 opacity-10">
-                    <div className="absolute inset-0 border-b-2 border-l-2 border-purple-500 rounded-bl-2xl" />
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
+        .souhardya-main-heading:hover {
+          animation: glitch 0.3s ease-in-out;
+        }
+
+        @keyframes glitch {
+          0% { transform: translate(0); }
+          20% { transform: translate(-2px, 2px); }
+          40% { transform: translate(-2px, -2px); }
+          60% { transform: translate(2px, 2px); }
+          80% { transform: translate(2px, -2px); }
+          100% { transform: translate(0); }
+        }
+
+        .souhardya-sub-heading {
+          font-size: 1.8em;
+          font-weight: 400;
+          color: var(--accent-color);
+          margin-bottom: 35px;
+          text-shadow: 0 0 15px rgba(255, 138, 80, 0.8);
+          animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.7; }
+        }
+
+        .souhardya-about-paragraph {
+          font-size: 1.3em;
+          font-weight: 300;
+          line-height: 2;
+          max-width: 800px;
+          margin: 0 auto 50px auto;
+          color: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(5px);
+          padding: 20px;
+          border-radius: 10px;
+          background: rgba(255, 255, 255, 0.02);
+        }
+
+        .souhardya-stats-bar {
+          background: rgba(255, 107, 53, 0.08);
+          backdrop-filter: blur(15px);
+          -webkit-backdrop-filter: blur(15px);
+          border-radius: 20px;
+          border: 1px solid rgba(255, 107, 53, 0.25);
+          padding: 35px;
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          gap: 30px;
+          margin-bottom: 50px;
+          position: relative;
+          overflow: hidden;
+          box-shadow: 
+            0 8px 32px 0 rgba(255, 107, 53, 0.2),
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.15),
+            inset 0 -1px 0 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .souhardya-stats-bar::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 138, 80, 0.25),
+            transparent
+          );
+          transition: left 0.7s ease;
+        }
+
+        .souhardya-stats-bar:hover::before {
+          left: 100%;
+        }
+
+        .souhardya-stat-item {
+          text-align: center;
+          transition: transform 0.3s ease;
+          cursor: pointer;
+        }
+
+        .souhardya-stat-item:hover {
+          transform: translateY(-10px) scale(1.05);
+        }
+
+        .souhardya-stat-value {
+          font-family: var(--font-heading);
+          font-size: 3em;
+          font-weight: 700;
+          color: var(--text-color);
+          min-width: 140px;
+          background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          filter: drop-shadow(0 0 20px rgba(255, 152, 0, 0.6));
+        }
+
+        .souhardya-stat-label {
+          font-size: 1em;
+          font-weight: 400;
+          color: rgba(255, 255, 255, 0.8);
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          margin-top: 10px;
+        }
+
+        .souhardya-cta-button {
+          display: inline-block;
+          background: linear-gradient(135deg, var(--secondary-color), var(--primary-color), var(--accent-color));
+          background-size: 200% 200%;
+          color: var(--text-color);
+          padding: 18px 45px;
+          border-radius: 50px;
+          text-decoration: none;
+          font-family: var(--font-heading);
+          font-size: 1.2em;
+          font-weight: 600;
+          border: 2px solid rgba(255, 152, 0, 0.5);
+          cursor: pointer;
+          box-shadow: 
+            0 0 30px rgba(255, 152, 0, 0.5),
+            0 10px 25px rgba(0, 0, 0, 0.3);
+          transition: all 0.4s ease;
+          position: relative;
+          overflow: hidden;
+          animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+
+        .souhardya-cta-button::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.3);
+          transform: translate(-50%, -50%);
+          transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .souhardya-cta-button:hover::before {
+          width: 300px;
+          height: 300px;
+        }
+
+        .souhardya-cta-button:hover {
+          transform: scale(1.08) translateY(-5px);
+          box-shadow: 
+            0 0 50px rgba(255, 152, 0, 0.8),
+            0 15px 35px rgba(0, 0, 0, 0.4);
+          border-color: var(--accent-color);
+        }
+
+        .souhardya-cta-button span {
+          position: relative;
+          z-index: 1;
+        }
+
+        .souhardya-scroll-indicator {
+          position: fixed;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          animation: bounce 2s infinite;
+          opacity: 0.6;
+          z-index: 10;
+        }
+
+        @keyframes bounce {
+          0%, 100% { transform: translateX(-50%) translateY(0); }
+          50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .souhardya-scroll-indicator svg {
+          width: 30px;
+          height: 30px;
+          fill: var(--primary-color);
+          filter: drop-shadow(0 0 10px var(--primary-color));
+        }
+
+        .visit-counter {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background: rgba(255, 152, 0, 0.2);
+          border: 1px solid rgba(255, 152, 0, 0.5);
+          padding: 10px 20px;
+          border-radius: 50px;
+          color: var(--accent-color);
+          font-family: var(--font-body);
+          font-size: 0.9em;
+          backdrop-filter: blur(10px);
+          z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+          .souhardya-main-heading { font-size: 3em; }
+          .souhardya-sub-heading { font-size: 1.4em; }
+          .souhardya-about-paragraph { font-size: 1.1em; padding: 15px; }
+          .souhardya-stats-bar { flex-direction: column; gap: 30px; padding: 25px; }
+          .souhardya-stat-value { font-size: 2.5em; }
+          .souhardya-about-container { padding: 30px 20px; }
+          .souhardya-cta-button { font-size: 1em; padding: 15px 35px; }
+          .visit-counter { top: 10px; right: 10px; font-size: 0.8em; padding: 8px 15px; }
+        }
+      `}</style>
+
+      <div className="souhardya-about-root">
+        <div className="visit-counter">Visit #{visitCount}</div>
+
+        <div className="souhardya-about-container">
+          <div className="souhardya-content-wrapper">
+            <h1 className="souhardya-main-heading">Spirit of Service</h1>
+            <p className="souhardya-sub-heading">Souhardya: Where Hearts United</p>
+            <p className="souhardya-about-paragraph">
+              Souhardya is the inspiring annual social festival of RGIPT, a radiant celebration of compassion, community service, and social responsibility. It's where empathy meets action, individuals unite for a cause, and every contribution creates a meaningful impact on society and those around us.
+            </p>
+
+            <div className="souhardya-stats-bar" ref={statsBarRef}>
+              <div className="souhardya-stat-item">
+                <div className="souhardya-stat-value" data-value="10">0</div>
+                <div className="souhardya-stat-label">Years of Impact</div>
+              </div>
+              <div className="souhardya-stat-item">
+                <div className="souhardya-stat-value" data-value="400">0</div>
+                <div className="souhardya-stat-label">Volunteers & Activists</div>
+              </div>
+              <div className="souhardya-stat-item">
+                <div className="souhardya-stat-value" data-value="8000">0</div>
+                <div className="souhardya-stat-label">Lives Touched</div>
+              </div>
+            </div>
+
+            <button onClick={handleExperienceClick} className="souhardya-cta-button">
+              <span>Experience the Legacy</span>
+            </button>
           </div>
+        </div>
 
-          {/* Floating Particles Effect */}
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 rounded-full"
-              style={{
-                background: `radial-gradient(circle, ${
-                  i % 3 === 0 ? '#f97316' : i % 3 === 1 ? '#a855f7' : '#3b82f6'
-                } 0%, transparent 70%)`,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [-20, 20, -20],
-                x: [-10, 10, -10],
-                opacity: [0.3, 0.7, 0.3],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </motion.div>
+        <div className="souhardya-scroll-indicator">
+          <svg viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+          </svg>
+        </div>
       </div>
-    </section>
-  )
+    </>
+  );
 }

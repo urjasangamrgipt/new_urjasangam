@@ -8,7 +8,7 @@ import { CosmicBackground } from "@/components/shared/Cosmicbackground";
 
 // Import the Souhardya section components
 import { HeroSection } from "@/components/Souhardya/HeroSection";
-import { AboutSection } from "@/components/Souhardya/AboutSection";
+import AboutSection from "@/components/Souhardya/AboutSection";
 import { StatsSection } from "@/components/Souhardya/StatsSection";
 import { EventsSection } from "@/components/Souhardya/EventsSection";
 import { PastEventsSection } from "@/components/Souhardya/PastEventsSection";
@@ -30,7 +30,7 @@ export default function SouhardyaPage() {
         <EventsSection />
         <PastEventsSection />
         
-        <section className="py-16 text-center bg-transparent">
+        <section id="gallery" className="py-16 text-center bg-transparent">
           <div className="container mx-auto px-6">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">Visual Memories</h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">

@@ -42,8 +42,8 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: "#convergence", label: "About" },
-    { href: "#realms", label: "Events" },
+    { href: "#about", label: "About" },
+    { href: "#events", label: "Events" },
     { href: "#gallery", label: "Gallery" },
     { href: "#timeline", label: "Fest Week" },
     { href: "/faq", label: "FAQ" },

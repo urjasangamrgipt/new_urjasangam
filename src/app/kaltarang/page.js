@@ -8,7 +8,7 @@ import { CosmicBackground } from "@/components/shared/Cosmicbackground";
 
 // Import the kaltarang section components
 import { HeroSection } from "@/components/kaltarang/HeroSection";
-import { AboutSection } from "@/components/kaltarang/AboutSection";
+import AboutSection from "@/components/kaltarang/AboutSection";
 import { StatsSection } from "@/components/kaltarang/StatsSection";
 import { EventsSection } from "@/components/kaltarang/EventsSection";
 import { PastEventsSection } from "@/components/kaltarang/PastEventsSection";
@@ -30,7 +30,7 @@ export default function kaltarangPage() {
         <EventsSection />
         <PastEventsSection />
         
-        <section className="py-16 text-center bg-transparent">
+        <section id="gallery" className="py-16 text-center bg-transparent">
           <div className="container mx-auto px-6">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">Visual Memories</h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">

@@ -33,9 +33,15 @@ export default function HomePage() {
   return (
     <>
       <Hero onRegisterClick={() => setIsModalOpen(true)} />
-      <About />
-      <FestSlider />
-      <Gallery />
+      <section id="about">
+        <About />
+      </section>
+      <section id="events">
+        <FestSlider />
+      </section>
+      <section id="gallery">
+        <Gallery />
+      </section>
       <Timeline />
       <Sponsors />
       <Contact />
