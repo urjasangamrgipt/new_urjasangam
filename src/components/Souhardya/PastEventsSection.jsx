@@ -10,67 +10,50 @@ import "swiper/css/effect-coverflow";
 
 const pastEventsData = [
   {
-    image: "/images/event1.jpg",
-    title: "Community Blood Drive",
+    image: "/photos/Souhardya/Past/Blood.png",
+    title: "Blood Donation Camp",
     description: "Successfully organized blood donation camp saving numerous lives.",
     attendees: "500+",
-    year: "2024",
+  },
+
+  {
+    image: "/photos/Souhardya/Past/Gallary5.png",
+    title: "Plantation Drive",
+    description: "Planted trees to promote environmental sustainability and a greener community.",
+    attendees: "500+",
   },
   {
-    image: "/images/event2.jpg",
-    title: "Tree Plantation Campaign",
-    description: "Planted 1000+ trees to create a greener environment.",
+    image: "/photos/Souhardya/Past/Gallary7.jpg",
+    title: "Science Exhibition",
+    description: "Showcased innovative science projects to inspire creativity and learning among students.",
     attendees: "350+",
-    year: "2024",
   },
+  
+  
   {
-    image: "/images/event3.jpg",
-    title: "Education for All",
-    description: "Teaching underprivileged children for a brighter future.",
-    attendees: "400+",
-    year: "2023",
-  },
-  {
-    image: "/images/event4.jpg",
-    title: "Health Awareness Camp",
-    description: "Free medical check-ups and health awareness programs.",
-    attendees: "650+",
-    year: "2023",
-  },
-  {
-    image: "/images/event5.jpg",
-    title: "Food Distribution Drive",
-    description: "Distributed meals to homeless and underprivileged communities.",
-    attendees: "800+",
-    year: "2023",
-  },
-  {
-    image: "/images/event6.jpg",
-    title: "Elderly Care Program",
-    description: "Spent quality time with elderly people at old age homes.",
+    image: "/photos/Souhardya/Past/Ganesji.png",
+    title: "Pooja and Celebration",
+    description: "Organized festive rituals and celebrations to foster community spirit and togetherness.",
     attendees: "300+",
-    year: "2023",
   },
   {
-    image: "/images/event7.jpg",
-    title: "Clean India Initiative",
+    image: "/photos/Souhardya/Past/Swatchata.png",
+    title: "Cleanliness",
     description: "Community clean-up drives making neighborhoods cleaner.",
     attendees: "550+",
-    year: "2022",
-  },
+
+ },
   {
-    image: "/images/event8.jpg",
-    title: "Animal Welfare Drive",
-    description: "Caring for stray animals with food and medical aid.",
+    image: "/photos/Souhardya/Past/Diwali.jpg",
+    title: "Diwali Celebration",
+    description: "Celebrated Diwali with joy and togetherness, spreading light and happiness in the community.",
     attendees: "400+",
-    year: "2022",
   },
   {
-    image: "/images/event9.jpg",
+    image: "/photos/Souhardya/Past/Gallary2 (1).png",
     title: "Skill Development Workshop",
     description: "Empowering individuals with vocational training.",
     attendees: "450+",
-    year: "2022",
   },
 ];
 
@@ -84,18 +67,11 @@ export function PastEventsSection() {
       ref={sectionRef}
       className="relative min-h-screen w-full flex flex-col items-center justify-center py-12 sm:py-20 px-4 sm:px-6 overflow-hidden"
     >
-      {/* Animated Background Orbs - Orange Theme */}
+      {/* Animated Background Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.4, 0.6, 0.4],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.6, 0.4] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full blur-3xl"
           style={{
             background:
@@ -105,10 +81,7 @@ export function PastEventsSection() {
           }}
         />
         <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.4, 0.6, 0.4],
-          }}
+          animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.6, 0.4] }}
           transition={{
             duration: 10,
             repeat: Infinity,
@@ -175,28 +148,21 @@ export function PastEventsSection() {
       <motion.div
         className="w-full max-w-6xl relative z-10"
         initial={{ opacity: 0, scale: 0.9 }}
-        animate={
-          isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
-        }
+        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
         <Swiper
           effect="coverflow"
-          grabCursor={true}
-          centeredSlides={true}
+          grabCursor
+          centeredSlides
           slidesPerView="auto"
-          loop={true}
+          loop
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           pagination={{
             clickable: true,
             dynamicBullets: true,
-            renderBullet: function (index, className) {
-              return (
-                '<span class="' +
-                className +
-                '" style="background: linear-gradient(135deg, #f97316, #ea580c); box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);"></span>'
-              );
-            },
+            renderBullet: (index, className) =>
+              `<span class="${className}" style="background: linear-gradient(135deg, #f97316, #ea580c); box-shadow: 0 0 10px rgba(249,115,22,0.5);"></span>`,
           }}
           coverflowEffect={{
             rotate: 50,
@@ -226,9 +192,14 @@ export function PastEventsSection() {
                 }`}>
                   {/* Image Container */}
                   <div className="relative overflow-hidden rounded-t-2xl">
-                    <div className="w-full h-48 sm:h-56 bg-gradient-to-br from-orange-500/10 to-amber-600/10 flex items-center justify-center border-b border-orange-500/20">
-                      <div className="text-5xl sm:text-6xl opacity-40">🤝</div>
-                    </div>
+                  <div className="w-full h-48 sm:h-56 overflow-hidden border-b border-orange-500/20">
+                  <img
+                   src={event.image}
+                   alt={event.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                   />
+                   </div>
+
 
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-3 sm:pb-4">

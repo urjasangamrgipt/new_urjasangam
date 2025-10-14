@@ -10,42 +10,42 @@ import "swiper/css/effect-coverflow";
 
 const pastEventsData = [
   {
-    image: "/images/sports1.jpg",
+    image: "/photos/energia/Energia 2.png",
     title: "Energia Championship '24",
     description: "The grand finale featuring top athletes in a fierce competition.",
     athletes: "1500+",
     year: "2024",
   },
   {
-    image: "/images/sports2.jpg",
+    image: "/photos/energia/Box Cricket.png",
     title: "Inter-Dept. Cricket Clash",
     description: "A thrilling tournament where departments battled for the ultimate bragging rights.",
     athletes: "200+",
     year: "2024",
   },
   {
-    image: "/images/sports3.jpg",
+    image: "/photos/energia/Gallary 2.JPG",
     title: "Annual Sports Meet '23",
     description: "A celebration of sportsmanship with track, field, and team events.",
     athletes: "1200+",
     year: "2023",
   },
   {
-    image: "/images/sports4.jpg",
+    image: "/photos/energia/Football.png",
     title: "Football League Finals",
     description: "An unforgettable night of passion, skill, and last-minute goals.",
     athletes: "150+",
     year: "2023",
   },
   {
-    image: "/images/sports5.jpg",
+    image: "/photos/energia/League.png",
     title: "Volleyball Victor's Cup",
     description: "Teams spiked their way to glory in this high-energy competition.",
     athletes: "100+",
     year: "2022",
   },
   {
-    image: "/images/sports6.jpg",
+    image: "/photos/energia/Hero 1.png",
     title: "The Badminton Open",
     description: "Showcasing incredible agility, precision, and lightning-fast rallies.",
     athletes: "80+",
@@ -63,18 +63,11 @@ export function PastEventsSection() {
       ref={sectionRef}
       className="relative w-full py-24 px-6 overflow-hidden font-sans"
     >
-      {/* Animated Background Orbs - Energia Purple Theme */}
+      {/* Animated Purple Background Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute w-[600px] h-[600px] rounded-full blur-3xl"
           style={{
             background:
@@ -84,10 +77,7 @@ export function PastEventsSection() {
           }}
         />
         <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
+          animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{
             duration: 10,
             repeat: Infinity,
@@ -104,7 +94,7 @@ export function PastEventsSection() {
         />
       </div>
 
-      {/* Header Section - Energia Branding */}
+      {/* Header */}
       <motion.div
         className="text-center mb-16 relative z-10"
         initial={{ opacity: 0, y: -30 }}
@@ -121,14 +111,8 @@ export function PastEventsSection() {
             WebkitTextFillColor: "transparent",
             filter: "drop-shadow(0 0 40px rgba(168, 85, 247, 0.8))",
           }}
-          animate={{
-            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
         >
           ENERGIA LEGACY
         </motion.h2>
@@ -150,32 +134,25 @@ export function PastEventsSection() {
         </motion.p>
       </motion.div>
 
-      {/* Swiper Section - Energia Purple Accents */}
+      {/* Swiper with Actual Images */}
       <motion.div
         className="w-full max-w-6xl mx-auto relative z-10"
         initial={{ opacity: 0, scale: 0.9 }}
-        animate={
-          isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
-        }
+        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
         <Swiper
           effect="coverflow"
-          grabCursor={true}
-          centeredSlides={true}
+          grabCursor
+          centeredSlides
           slidesPerView="auto"
-          loop={true}
+          loop
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           pagination={{
             clickable: true,
             dynamicBullets: true,
-            renderBullet: function (index, className) {
-              return (
-                '<span class="' +
-                className +
-                '" style="background: linear-gradient(135deg, #9333ea, #a855f7); box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);"></span>'
-              );
-            },
+            renderBullet: (index, className) =>
+              `<span class="${className}" style="background: linear-gradient(135deg, #9333ea, #a855f7); box-shadow: 0 0 15px rgba(168,85,247,0.6);"></span>`,
           }}
           coverflowEffect={{
             rotate: 50,
@@ -194,19 +171,21 @@ export function PastEventsSection() {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                {/* Completely Transparent Card */}
-                <div className={`relative h-full flex flex-col backdrop-blur-0 bg-transparent rounded-3xl overflow-hidden transition-all duration-500 ${
-                  hoveredIndex === index
-                    ? "border-2 border-purple-400/60 shadow-2xl shadow-purple-500/40 backdrop-blur-md bg-white/[0.05]"
-                    : "border border-purple-400/0"
-                }`}>
-                  {/* Image Container */}
-                  <div className="relative overflow-hidden rounded-t-2xl">
-                    <div className="w-full h-56 bg-gradient-to-br from-purple-600/20 to-purple-800/20 flex items-center justify-center border-b border-purple-500/20">
-                      <div className="text-7xl opacity-50 animate-pulse">⚡</div>
-                    </div>
-
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-4">
+                <div
+                  className={`relative h-full flex flex-col rounded-3xl overflow-hidden transition-all duration-500 ${
+                    hoveredIndex === index
+                      ? "border-2 border-purple-400/60 shadow-2xl shadow-purple-500/40 backdrop-blur-md bg-white/[0.05]"
+                      : "border border-purple-400/0"
+                  }`}
+                >
+                  {/* Actual Image */}
+                  <div className="relative overflow-hidden rounded-t-2xl w-full h-56 border-b border-purple-500/20">
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-4">
                       <motion.div
                         initial={{ y: 20, opacity: 0 }}
                         animate={{
@@ -230,54 +209,22 @@ export function PastEventsSection() {
                     </div>
                   </div>
 
+                  {/* Content */}
                   <div className="flex-1 p-5 flex flex-col relative">
-                    <h3 className="relative z-10 text-white text-xl font-bold mb-3 drop-shadow-lg group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-300 group-hover:to-purple-400 transition-all duration-300">
+                    <h3 className="text-white text-xl font-bold mb-3 drop-shadow-lg group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-300 group-hover:to-purple-400 transition-all duration-300">
                       {event.title}
                     </h3>
-                    <p className="relative z-10 text-purple-100/70 text-sm leading-relaxed flex-1 drop-shadow-md">
+                    <p className="text-purple-100/70 text-sm leading-relaxed flex-1 drop-shadow-md">
                       {event.description}
                     </p>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="relative z-10 mt-4 w-full py-3 bg-gradient-to-r from-purple-600 to-purple-500 backdrop-blur-2xl rounded-full text-white font-bold text-sm border border-purple-400/30 opacity-0 group-hover:opacity-100 transition-all duration-300 overflow-hidden shadow-xl shadow-purple-500/30 hover:shadow-purple-400/50"
+                      className="mt-4 w-full py-3 bg-gradient-to-r from-purple-600 to-purple-500 rounded-full text-white font-bold text-sm border border-purple-400/30 opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-xl shadow-purple-500/30 hover:shadow-purple-400/50"
                     >
-                      <span className="relative z-10 drop-shadow-lg flex items-center justify-center gap-2">
-                        View Highlights ⚡
-                      </span>
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-purple-500/20"
-                        initial={{ x: "-100%" }}
-                        whileHover={{ x: "100%" }}
-                        transition={{ duration: 0.6 }}
-                      />
+                      View Highlights ⚡
                     </motion.button>
                   </div>
-
-                  {/* Corner Decorations */}
-                  <div className="absolute top-4 right-4 w-12 h-12 opacity-40">
-                    <div className="absolute inset-0 border-t-2 border-r-2 border-purple-400/60 rounded-tr-xl backdrop-blur-sm" />
-                  </div>
-                  <div className="absolute bottom-4 left-4 w-12 h-12 opacity-40">
-                    <div className="absolute inset-0 border-b-2 border-l-2 border-purple-400/60 rounded-bl-xl backdrop-blur-sm" />
-                  </div>
-
-                  {/* Shimmer Effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/10 to-transparent pointer-events-none"
-                    animate={
-                      hoveredIndex === index
-                        ? {
-                            x: ["-100%", "100%"],
-                          }
-                        : {}
-                    }
-                    transition={{
-                      duration: 1.5,
-                      repeat: hoveredIndex === index ? Infinity : 0,
-                      ease: "linear",
-                    }}
-                  />
                 </div>
               </div>
             </SwiperSlide>
@@ -285,7 +232,7 @@ export function PastEventsSection() {
         </Swiper>
       </motion.div>
 
-      {/* Floating Particles - Purple Theme */}
+      {/* Floating Purple Particles */}
       {[...Array(15)].map((_, i) => (
         <motion.div
           key={i}
@@ -308,18 +255,6 @@ export function PastEventsSection() {
           }}
         />
       ))}
-
-      {/* CSS for shimmer animation */}
-      <style jsx>{`
-        @keyframes shimmer {
-          0% {
-            background-position: -200% 50%;
-          }
-          100% {
-            background-position: 200% 50%;
-          }
-        }
-      `}</style>
     </section>
   );
 }

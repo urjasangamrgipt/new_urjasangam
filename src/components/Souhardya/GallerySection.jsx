@@ -90,13 +90,20 @@ export function GallerySection() {
         </div>
 
         {/* Row 3 */}
-        <div className="row flex flex-nowrap h-[33vh] sm:h-[30vh] md:h-[33vh] animate-moveLeft">
-          <img src="/photos/UrjaSangam/Souhardya/photo11.jpg" alt="Fest photo 11" className="gallery-img" />
-          <img src="/photos/UrjaSangam/Souhardya/photo12.jpg" alt="Fest photo 12" className="gallery-img" />
-          <img src="/photos/UrjaSangam/photo13.webp" alt="Fest photo 13" className="gallery-img" />
-          <img src="/photos/UrjaSangam/Souhardya/photo1.webp" alt="Fest photo 14" className="gallery-img" />
-          <img src="/photos/UrjaSangam/Souhardya/photo2.jpg" alt="Fest photo 15" className="gallery-img" />
-        </div>
+<div className="row flex flex-nowrap h-[33vh] sm:h-[30vh] md:h-[33vh] animate-moveLeft">
+  <img src="/photos/Souhardya/photo11.jpg" alt="Fest photo 11" className="gallery-img" />
+  <img src="/photos/Souhardya/photo12.jpg" alt="Fest photo 12" className="gallery-img" />
+  <img src="/photos/Souhardya/photo13.webp" alt="Fest photo 13" className="gallery-img" />
+  <img src="/photos/Souhardya/photo1.webp" alt="Fest photo 14" className="gallery-img" />
+  <img src="/photos/Souhardya/photo2.jpg" alt="Fest photo 15" className="gallery-img" />
+  {/* Duplicate for smooth scrolling */}
+  <img src="/photos/Souhardya/photo11.jpg" alt="Fest photo 11" className="gallery-img" />
+  <img src="/photos/Souhardya/photo12.jpg" alt="Fest photo 12" className="gallery-img" />
+  <img src="/photos/Souhardya/photo13.webp" alt="Fest photo 13" className="gallery-img" />
+  <img src="/photos/Souhardya/photo1.webp" alt="Fest photo 14" className="gallery-img" />
+  <img src="/photos/Souhardya/photo2.jpg" alt="Fest photo 15" className="gallery-img" />
+</div>
+
       </div>
 
       {/* Video Container */}

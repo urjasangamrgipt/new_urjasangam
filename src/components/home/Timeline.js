@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 // Festival data remains the same
 const festivals = [
-  { id: 'energia', name: 'Energia', date: 'OCT 10-11', description: 'Witness the spirit of sportsmanship and competitive excellence.', image: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069', tags: ['Sports Complex', '2000+'], color: '#9D50FF' },
-  { id: 'urjotsav', name: 'Urjotsav', date: 'OCT 12-13', description: 'A battle of wits and digital craftsmanship, showcasing technological innovation.', image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070', tags: ['Main Auditorium', '30+ Events'], color: '#007BFF' },
-  { id: 'souhardya', name: 'Souhardya', date: 'OCT 13', description: 'An initiative for community engagement and social change.', image: 'https://images.unsplash.com/photo-1531063221974-73656894c794?q=80&w=2070', tags: ['Campus Quad', 'Community'], color: '#FF9933' },
-  { id: 'kaltarang', name: 'Kaltarang', date: 'OCT 14-16', description: 'A vibrant explosion of art, music, and dance that celebrates our culture.', image: 'https://images.unsplash.com/photo-1514525253161-7a4ed0bab8c5?q=80&w=1974', tags: ['Open Air Theatre', '500+ Artists'], color: '#E53935' }
+  { id: 'energia', name: 'Energia', date: '10-11 November', description: 'Witness the spirit of sportsmanship and competitive excellence.', image: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069', tags: ['Sports Complex', '2000+'], color: '#9D50FF' },
+  { id: 'urjotsav', name: 'Urjotsav', date: '12-13 November', description: 'A battle of wits and digital craftsmanship, showcasing technological innovation.', image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070', tags: ['Main Auditorium', '30+ Events'], color: '#007BFF' },
+  { id: 'souhardya', name: 'Souhardya', date: '12-13 November', description: 'An initiative for community engagement and social change.', image: 'https://images.unsplash.com/photo-1531063221974-73656894c794?q=80&w=2070', tags: ['Campus Quad', 'Community'], color: '#FF9933' },
+  { id: 'kaltarang', name: 'Kaltarang', date: '14-16 November', description: 'A vibrant explosion of art, music, and dance that celebrates our culture.', image: 'https://images.unsplash.com/photo-1514525253161-7a4ed0bab8c5?q=80&w=1974', tags: ['Open Air Theatre', '500+ Artists'], color: '#E53935' }
 ];
 
 export default function TimelineComponent() {

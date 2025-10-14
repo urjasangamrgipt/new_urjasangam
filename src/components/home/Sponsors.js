@@ -22,10 +22,8 @@ const PastSponsorsMarquee = () => {
     { id: 15, name: "JIO SAVAN", image: "/photos/UrjaSangam/JIO SAVAN.png" },
     { id: 16, name: "UNSTOP", image: "/photos/UrjaSangam/UNSTOP.png" },
     { id: 17, name: "UNSTOP", image: "/photos/UrjaSangam/UNSTOP.png" },
-    { id: 18, name: "BHARAT PETROLEUM", image: "/photos/UrjaSangam/BHARAT PETROLEUM.png" },
     { id: 19, name: "KWIKPIC", image: "/photos/UrjaSangam/KWIKPIC.png" },
     { id: 20, name: "stockGRO", image: "/photos/UrjaSangam/stockGRO.png" },
-    { id: 21, name: "OYO", image: "/photos/UrjaSangam/OYO.png" },
     { id: 22, name: "UNION", image: "/photos/UrjaSangam/UNION.png" },
     { id: 23, name: "UP tourism", image: "/photos/UrjaSangam/UP tourism.png" },
     { id: 24, name: "ROYAL ENFIELD", image: "/photos/UrjaSangam/ROYAL ENFIELD.png" },
@@ -38,7 +36,7 @@ const PastSponsorsMarquee = () => {
     { id: 31, name: "SBI", image: "/photos/UrjaSangam/SBI.png" },
     { id: 32, name: "ROYAL ENFIELD", image: "/photos/UrjaSangam/ROYAL ENFIELD.png" },
     { id: 33, name: "PNB", image: "/photos/UrjaSangam/PNB.png" },
-    { id: 34, name: "OYO", image: "/photos/UrjaSangam/OYO.png" }
+    
   ];
 
   // Split sponsors into two tracks
