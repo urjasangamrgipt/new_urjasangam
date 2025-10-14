@@ -261,7 +261,7 @@ export default function UrjaSangam() {
 
         {/* CTA Buttons */}
         <div className="cta-buttons flex flex-col md:flex-row gap-6 mt-8 md:mt-16">
-          <Link href={}><span className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm">
+          <Link href={""}><span className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm">
             Explore Events
           </span></Link>
           <a href="#" className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm">
