@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
 
 export default function UrjaSangam() {
@@ -20,7 +21,7 @@ export default function UrjaSangam() {
       this.width = width;
       this.height = height;
     }
-    
+
     update() {
       this.x += this.speedX;
       this.y += this.speedY;
@@ -29,7 +30,7 @@ export default function UrjaSangam() {
       if (this.y < 0) this.y = this.height;
       if (this.y > this.height) this.y = 0;
     }
-    
+
     draw(ctx) {
       ctx.save();
       ctx.globalAlpha = this.alpha;
@@ -45,27 +46,27 @@ export default function UrjaSangam() {
   useEffect(() => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
-    
+
     if (!canvas || !container) return;
-    
+
     const ctx = canvas.getContext('2d');
     let animationId;
-    
+
     function initSparkles() {
       const width = container.clientWidth;
       const height = container.clientHeight;
       canvas.width = width;
       canvas.height = height;
-      
+
       particlesRef.current = [];
       let numberOfParticles = (width * height / 100000) * 1000 / 5;
       if (numberOfParticles > 200) numberOfParticles = 200;
-      
+
       for (let i = 0; i < numberOfParticles; i++) {
         particlesRef.current.push(new Particle(width, height));
       }
     }
-    
+
     function animateSparkles() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particlesRef.current.forEach(p => {
@@ -74,12 +75,12 @@ export default function UrjaSangam() {
       });
       animationId = requestAnimationFrame(animateSparkles);
     }
-    
+
     initSparkles();
     animateSparkles();
-    
+
     window.addEventListener('resize', initSparkles);
-    
+
     return () => {
       window.removeEventListener('resize', initSparkles);
       if (animationId) {
@@ -91,25 +92,25 @@ export default function UrjaSangam() {
   // Marquee animation
   useEffect(() => {
     const marqueeContent = marqueeRef.current;
-    
+
     if (marqueeContent) {
       const speed = 0.5;
       const originalWidth = marqueeContent.scrollWidth / 2;
-      
+
       function scrollMarquee() {
         marqueePositionRef.current += speed;
-        
+
         if (marqueePositionRef.current >= originalWidth) {
           marqueePositionRef.current = 0;
         }
-        
+
         marqueeContent.style.transform = `translateX(-${marqueePositionRef.current}px)`;
-        
+
         animationRef.current = requestAnimationFrame(scrollMarquee);
       }
-      
+
       scrollMarquee();
-      
+
       return () => {
         if (animationRef.current) {
           cancelAnimationFrame(animationRef.current);
@@ -220,12 +221,12 @@ export default function UrjaSangam() {
         }
       `}</style>
 
-      
+
 
       {/* Main Content */}
       <div className="flex flex-col items-center justify-center min-h-screen text-center pt-20 relative z-10">
         <h1 className="title-text ">URJA SANGAM</h1>
-        
+
         {/* Sparkles Container */}
         <div ref={containerRef} className="sparkles-container">
           <div className="sparkle-gradient" style={{ '--color': '#87CEEB', left: '50%', transform: 'translateX(-50%)', height: '3px', width: '60%', filter: 'blur(5px)' }}></div>
@@ -238,10 +239,10 @@ export default function UrjaSangam() {
 
         {/* Marquee Section */}
         <div className="w-full py-4 overflow-hidden -mt-12 z-10"
-             style={{
-               maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
-               WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)'
-             }}>
+          style={{
+            maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)'
+          }}>
           <div ref={marqueeRef} className="flex w-fit">
             {/* Original content */}
             {marqueeItems.map((item, index) => (
@@ -260,9 +261,9 @@ export default function UrjaSangam() {
 
         {/* CTA Buttons */}
         <div className="cta-buttons flex flex-col md:flex-row gap-6 mt-8 md:mt-16">
-          <a href="#" className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm">
+          <Link href={}><span className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm">
             Explore Events
-          </a>
+          </span></Link>
           <a href="#" className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm">
             About Us
           </a>

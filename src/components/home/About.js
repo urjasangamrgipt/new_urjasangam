@@ -212,7 +212,7 @@ const Convergence = () => {
               style={{
                 textShadow: '0 0 25px rgba(0, 191, 255, 0.8), 0 0 40px rgba(135, 206, 235, 0.6)'
               }}
-            >10th to 16th October</span>.
+            >10th to 16th November</span>.
           </div>
         </div>
       </div>

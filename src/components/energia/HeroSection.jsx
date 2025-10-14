@@ -24,7 +24,7 @@ export function HeroSection() {
         src="videos/Energia/energiaback.mp4" 
       />
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="absolute inset-0  z-10" />
 
       {/* Main Content */}
       <div className="relative z-20">
