@@ -85,7 +85,7 @@ export function EventsSection() {
         "High-flying dunks and fast-paced action. Assemble your team and dominate the court.",
       participants: "Teams of 5",
       prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+      link: "https://unstop.com/events/basketball-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1574427",
     },{
       title: "Volleyball",
       icon: "🏐",
@@ -96,7 +96,7 @@ export function EventsSection() {
         "Spike, set, and serve your way to glory in this thrilling team-based competition.",
       participants: "Teams of 6",
       prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+      link: "https://unstop.com/events/volleyball-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1574426",
     },
     {
       title: "Badminton",
@@ -118,18 +118,6 @@ export function EventsSection() {
       venue: "Main Sports Ground",
       description:
         "The beautiful game. Showcase your teamwork, skill, and passion to score the winning goal.",
-      participants: "Teams of 11",
-      prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
-    },
-    {
-      title: "Cricket",
-      icon: "🏏",
-      date: "10-11 November",
-      time: "8:00 AM Onwards",
-      venue: "Cricket Pitch",
-      description:
-        "A battle of bat and ball. Compete in a fast-paced T20 format for the championship title.",
       participants: "Teams of 11",
       prizePool: "Trophy & Medals",
       link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
