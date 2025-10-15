@@ -91,7 +91,7 @@ export function EventsSection() {
       icon: "🏐",
       date: "10-11 November",
       time: "10:00 AM Onwards",
-      venue: "Indoor Sports Complex",
+      venue: "Indoor Sport Complex",
       description:
         "Spike, set, and serve your way to glory in this thrilling team-based competition.",
       participants: "Teams of 6",
