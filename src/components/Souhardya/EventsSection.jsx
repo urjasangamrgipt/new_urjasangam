@@ -12,7 +12,7 @@ export function EventsSection() {
     {
       title: "Science Exhibition",
       icon: "🩸",
-      date: "12-13 November",
+      date: "12 November",
       time: "9:00 AM - 5:00 PM",
       venue: "Auditorium",
       description: "Save lives by donating blood. Every drop counts in making a difference.",
@@ -21,12 +21,12 @@ export function EventsSection() {
       link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
     },
     {
-      title: "Expert Talk",
+      title: "Nirmaan",
       icon: "🌳",
       date: "12-13 November",
       time: "7:00 AM - 11:00 AM",
       venue: "Auditorium",
-      description: "Plant trees and contribute to a greener planet for future generations.",
+      description: "Join a dynamic conclave where NGO's, Engineers and Innovators unite to drive real-world social impact.",
       participants: "Individual & Teams",
       prizePool: "Certificate of Participation",
       link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
@@ -40,7 +40,7 @@ export function EventsSection() {
       date: "14 November",
       time: "6:00 AM - 10:00 AM",
       venue: "Auditorium",
-      description: "Join hands to clean and beautify our local neighborhoods.",
+      description: "This events brings together renowned poets from across India, each weaving stories , emotions and reflection into their verses.",
       participants: "Teams of 5-10",
       prizePool: "Certificate & Recognition",
       link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
@@ -51,18 +51,18 @@ export function EventsSection() {
       date: "12-13 November",
       time: "2:00 PM - 5:00 PM",
       venue: "Auditorium",
-      description: "Teach underprivileged children and share knowledge for their bright future.",
+      description: "A short film making competition. This event invites new passionate students to show their talent in film making",
       participants: "Individual & Teams",
       prizePool: "Certificate of Appreciation",
       link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
     },
     {
-      title: "Nirmaan",
+      title: "Riwaaz",
       icon: "🏥",
-      date: "12-13 November",
+      date: "13 November",
       time: "9:00 AM - 4:00 PM",
-      venue: "Health Center",
-      description: "Free medical check-ups and health awareness for the community.",
+      venue: "Ground",
+      description: " A vibrant exhibition showcasing traditional arts, crafts, and cultural heritage through interactive displays and live demonstrations.",
       participants: "Volunteers",
       prizePool: "Certificate & Recognition",
       link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
@@ -187,7 +187,7 @@ export function EventsSection() {
             animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
           >
-            Social Service Events
+            Social Services Events
           </motion.h2>
           <motion.div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 mx-auto rounded-full mb-4 sm:mb-6"
             initial={{ width: 0 }} animate={isInView ? { width: 96 } : { width: 0 }} transition={{ duration: 1, delay: 0.3 }} />
