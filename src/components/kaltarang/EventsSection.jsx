@@ -19,7 +19,7 @@ export function EventsSection() {
           "An evocative stage for poets to express their deepest emotions in Hindi.",
         participants: "Solo",
         prizePool: "Trophy & Certificates",
-        link: "https://unstop.com/o/uJYCVdb?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Cultural",
+        link: "",
       },
       {
         title: "English Poetry Slam",
@@ -213,7 +213,7 @@ export function EventsSection() {
           "A melodic competition celebrating the soulful voices of Bollywood and semi-classical singing.",
         participants: "Solo/Duet",
         prizePool: "Trophy & Certificates",
-        link: "https://unstop.com/events/voice-of-mridang-soloduo-singing-competition-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-p-1573323",
+        link: "https://unstop.com/events/voice-of-mridang-soloduo-singing-competition-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-p-1573323?lb=logged_out_user%3Futm_medium%3DShare&utm_source=logged_out_user&utm_campaign=Cultural",
       },
       {
         title: "Sur Sangam ",

@@ -15,8 +15,8 @@ export function EventsSection() {
       title: "Table Tennis",
       icon: "🏓",
       date: "10-11 November",
-      time: "9:00 AM Onwards",
-      venue: "Indoor Sports Complex",
+      // time: "9:00 AM Onwards",
+      // venue: "Indoor Sports Complex",
       description:
         "International Table Tennis Federations's rules are followed as boys and girls compete in group stage followed by knockouts.",
       participants: "Singles & Doubles",
@@ -27,8 +27,8 @@ export function EventsSection() {
       title: "Chess",
       icon: "♟️",
       date: "10-11 November",
-      time: "11:00 AM Onwards",
-      venue: "Student Activity Centre",
+      // time: "11:00 AM Onwards",
+      // venue: "Student Activity Centre",
       description:
         "4 to 5 players of each team, with their existing FIDE ratings, compete under the Swiss System Format.",
       participants: "Individual",
@@ -39,7 +39,7 @@ export function EventsSection() {
       title: "Snooker",
       icon: "🎱",
       date: "10-11 November",
-      time: "11:00 AM Onwards",
+      // time: "11:00 AM Onwards",
       // venue: "Student Activity Centre",
       description:
         "Players aim to pot balls in a specific order on a 12x6 feet snooker table.",
@@ -51,8 +51,8 @@ export function EventsSection() {
       title: "Power-Lifting",
       icon: "🏋️",
       date: "10-11 November",
-      time: "11:00 AM Onwards",
-      venue: "Student Activity Centre",
+      // time: "11:00 AM Onwards",
+      // venue: "Student Activity Centre",
       description:
         "Athletes compete in three lifts: squat, bench press, and deadlift. The heaviest successful lift in each category is counted.",
       participants: "Individual",
@@ -63,8 +63,8 @@ export function EventsSection() {
       title: "Carrom",
       icon: "🎯",
       date: "10-11 November",
-      time: "11:00 AM Onwards",
-      venue: "Student Activity Centre",
+      // time: "11:00 AM Onwards",
+      // venue: "Student Activity Centre",
       description:
         "Players compete on a square board, using their fingers to flick wooden discs into corner pockets.",
       participants: "Individual",
@@ -79,8 +79,8 @@ export function EventsSection() {
       title: "Basketball",
       icon: "🏀",
       date: "10-11 November",
-      time: "10:00 AM Onwards",
-      venue: "Indoor Sports Complex",
+      // time: "10:00 AM Onwards",
+      // venue: "Indoor Sports Complex",
       description:
         "High-flying dunks and fast-paced action. Assemble your team and dominate the court.",
       participants: "Teams of 5",
@@ -90,8 +90,8 @@ export function EventsSection() {
       title: "Volleyball",
       icon: "🏐",
       date: "10-11 November",
-      time: "10:00 AM Onwards",
-      venue: "Indoor Sport Complex",
+      // time: "10:00 AM Onwards",
+      // venue: "Indoor Sport Complex",
       description:
         "Spike, set, and serve your way to glory in this thrilling team-based competition.",
       participants: "Teams of 6",
@@ -101,9 +101,9 @@ export function EventsSection() {
     {
       title: "Badminton",
       icon: "🏸",
-      date: "12 November",
-      time: "9:00 AM Onwards",
-      venue: "Badminton Courts",
+      date: "10-11 November",
+      // time: "9:00 AM Onwards",
+      // venue: "Badminton Courts",
       description:
         "A test of agility, precision, and speed. Compete in singles or doubles categories.",
       participants: "Singles & Doubles",
@@ -113,9 +113,9 @@ export function EventsSection() {
     {
       title: "Football",
       icon: "⚽",
-      date: "12-13 November",
-      time: "8:00 AM Onwards",
-      venue: "Main Sports Ground",
+      date: "10-11 November",
+      // time: "8:00 AM Onwards",
+      // venue: "Main Sports Ground",
       description:
         "The beautiful game. Showcase your teamwork, skill, and passion to score the winning goal.",
       participants: "Teams of 11",
@@ -126,8 +126,8 @@ export function EventsSection() {
       title: "Athletics",
       icon: "🏃‍♂️",
       date: "10-11 November",
-      time: "9:00 AM Onwards",
-      venue: "Athletics Track",
+      // time: "9:00 AM Onwards",
+      // venue: "Athletics Track",
       description:
         "Push your limits in track and field events including sprints, relays, and long jump.",
       participants: "Individual & Teams",
@@ -138,8 +138,8 @@ export function EventsSection() {
       title: "Lawn Tennis",
       icon: "🎾",
       date: "10-11 November",
-      time: "10:00 AM Onwards",
-      venue: "Tennis Courts",
+      // time: "10:00 AM Onwards",
+      // venue: "Tennis Courts",
       description:
         "Serve an ace and dominate the court in intense singles and doubles matches.",
       participants: "Singles & Doubles",
@@ -150,8 +150,8 @@ export function EventsSection() {
       title: "Kabaddi",
       icon: "🤸‍♂️",
       date: "10-11 November",
-      time: "4:00 PM Onwards",
-      venue: "Kabaddi Court",
+      // time: "4:00 PM Onwards",
+      // venue: "Kabaddi Court",
       description:
         "A traditional sport of strength, strategy, and breath control. Raid and defend for points.",
       participants: "Teams of 7",
@@ -247,23 +247,23 @@ export function EventsSection() {
 
             <div className="grid grid-cols-2 gap-3">
               <motion.div
-                className="bg-violet-500/10 backdrop-blur-sm p-3 rounded-lg border border-violet-500/20 hover:border-purple-400/40 transition-all"
-                whileHover={{ scale: 1.05 }}
+                // className="bg-violet-500/10 backdrop-blur-sm p-3 rounded-lg border border-violet-500/20 hover:border-purple-400/40 transition-all"
+                // whileHover={{ scale: 1.05 }}
               >
-                <div className="text-purple-400 text-xs font-bold mb-1">
+                {/* <div className="text-purple-400 text-xs font-bold mb-1">
                   ⏰ Time
                 </div>
-                <div className="text-white text-sm">{event.time}</div>
+                <div className="text-white text-sm">{event.time}</div> */}
               </motion.div>
 
               <motion.div
-                className="bg-violet-500/10 backdrop-blur-sm p-3 rounded-lg border border-violet-500/20 hover:border-purple-400/40 transition-all"
-                whileHover={{ scale: 1.05 }}
+                // className="bg-violet-500/10 backdrop-blur-sm p-3 rounded-lg border border-violet-500/20 hover:border-purple-400/40 transition-all"
+                // whileHover={{ scale: 1.05 }}
               >
-                <div className="text-purple-400 text-xs font-bold mb-1">
+                {/* <div className="text-purple-400 text-xs font-bold mb-1">
                   📍 Venue
                 </div>
-                <div className="text-white text-sm">{event.venue}</div>
+                <div className="text-white text-sm">{event.venue}</div> */}
               </motion.div>
 
               <motion.div
