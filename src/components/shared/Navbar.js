@@ -61,7 +61,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 md:w-12 md:h-12">
               <Image
-                src="/photos/UrjaSangam/urjasangam_logo_background.png"
+                src="/hero image/Urjotsav/RGIPT.png"
                 alt="Urja Sangam Logo"
                 width={200}
                 height={200}
