@@ -13,7 +13,7 @@ export default function FestWeekSection() {
       tagline: "Where Art Meets Soul",
       description:
         "Immerse yourself in a kaleidoscope of cultural brilliance. Dance, drama, and artistic expression collide.",
-      icon: "🎭",
+      imageSrc: "/hero image/Urjotsav/kaltarlogo.jpg",
       gradient: "from-[#FF6B6B] to-[#FF8E53]",
       color: "#FF6B6B",
       stats: [
@@ -28,7 +28,7 @@ export default function FestWeekSection() {
       tagline: "Unleash The Champion Within",
       description:
         "Feel the adrenaline surge through athletic prowess. Where legends are born and records shattered.",
-      icon: "⚡",
+      imageSrc: "/hero image/Urjotsav/energialogo.jpg",
       gradient: "from-[#4ECDC4] to-[#44A08D]",
       color: "#4ECDC4",
       stats: [
@@ -38,19 +38,19 @@ export default function FestWeekSection() {
       ],
     },
     {
-      id: 1,
+      id: 3,
       name: "Urjotsav",
       tagline: "Where technology Meets Soul",
       description:
         "Immerse yourself in a kaleidoscope of technical brilliance ,Robotics , Code and logic  collide.",
-      icon: "🎭",
+      imageSrc: "/hero image/Urjotsav/urjotsavalogo.jpg",
       gradient: "from-[#FF6B6B] to-[#FF8E53]",
       color: "#2934f6ff",
       stats: [
         { label: "Participant", value: "500+" },
         { label: "Events", value: "40+" },
         { label: "Days", value: "3" },
-      ]
+      ],
     },
   ];
 
@@ -66,7 +66,7 @@ export default function FestWeekSection() {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-screen  overflow-hidden py-20 px-4 sm:px-8"
+      className="relative min-h-screen overflow-hidden py-20 px-4 sm:px-8"
     >
       {/* Floating particles */}
       {[...Array(20)].map((_, i) => (
@@ -86,9 +86,7 @@ export default function FestWeekSection() {
       {/* Header Section */}
       <div
         className={`text-center transition-all duration-1000 ${
-          isVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-10"
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
         }`}
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
@@ -107,8 +105,8 @@ export default function FestWeekSection() {
         </h1>
 
         <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
-          Three legendary festivals. One unforgettable journey. Dive into a
-          world where culture, sports, and social impact unite.
+          Three legendary festivals. One unforgettable journey. Dive into a world
+          where culture, sports, and social impact unite.
         </p>
       </div>
 
@@ -129,18 +127,18 @@ export default function FestWeekSection() {
               className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${fest.gradient}`}
             />
 
-            {/* Icon */}
-            <div className="relative w-20 h-20 mb-6 flex items-center justify-center text-5xl">
-              <div
-                className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${fest.gradient} opacity-20`}
-              ></div>
-              <span
-                className={`relative transition-transform duration-300 ${
+            {/* Image */}
+            <div className="relative w-20 h-20 mb-6 flex items-center justify-center rounded-2xl overflow-hidden">
+              <img
+                src={fest.imageSrc}
+                alt={fest.name}
+                className={`object-cover w-full h-full transition-transform duration-300 ${
                   activeCard === fest.id ? "scale-110 rotate-6" : ""
                 }`}
-              >
-                {fest.icon}
-              </span>
+              />
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${fest.gradient} opacity-20 rounded-2xl`}
+              />
             </div>
 
             {/* Title & Desc */}
@@ -172,7 +170,8 @@ export default function FestWeekSection() {
             </div>
 
             {/* CTA Button */}
-            <a href={`/${fest.name.toLowerCase()}`}
+            <a
+              href={`/${fest.name.toLowerCase()}`}
               className={`w-full py-3 rounded-xl border-2 font-semibold text-sm transition-all duration-300 flex justify-center items-center gap-2 ${
                 activeCard === fest.id
                   ? `bg-gradient-to-r ${fest.gradient} text-black`
