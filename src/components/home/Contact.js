@@ -73,6 +73,7 @@ export default function Contact() {
           padding: 40px;
         }
 
+        /* FORM SECTION */
         .form-column h2 {
           font-family: 'Orbitron', sans-serif;
           font-size: 1.8rem;
@@ -128,27 +129,80 @@ export default function Contact() {
           box-shadow: 0 0 30px 0px #22d3ee;
         }
 
+        /* INFO SECTION */
         .info-column {
           display: flex;
           flex-direction: column;
           gap: 25px;
         }
 
-        .info-item h3 {
-          font-size: 1rem;
-          font-weight: 600;
-          color: rgba(240, 240, 240, 0.7);
-          margin-bottom: 5px;
+        /* Top header (Contact Us + Email) */
+        .contact-us-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
         }
 
-        .info-item p, .info-item a {
+        .contact-us-header h2 {
+          font-size: 1.5rem;
+          color: #22d3ee;
+          font-family: 'Orbitron', sans-serif;
+        }
+
+        .contact-us-header a {
           font-size: 1.1rem;
           color: #f0f0f0;
           text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        .contact-us-header a:hover {
+          color: #22d3ee;
         }
 
-        .info-item a:hover { color: #22d3ee; }
+        /* Vaibhav - main coordinator */
+        .main-coordinator {
+          text-align: center;
+        }
+        .main-coordinator h3 {
+          color: #22d3ee;
+          font-size: 1.2rem;
+          margin-bottom: 5px;
+        }
+        .main-coordinator a, .main-coordinator p {
+          color: #f0f0f0;
+          font-size: 1rem;
+        }
 
+        /* Co-fest coordinators grid */
+        .coordinators-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 25px;
+        }
+        .coordinator-card {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 12px;
+          padding: 15px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          text-align: center;
+          transition: all 0.3s ease;
+        }
+        .coordinator-card:hover {
+          transform: scale(1.02);
+          box-shadow: 0 0 15px -3px #22d3ee;
+        }
+        .coordinator-card h3 {
+          color: #22d3ee;
+          font-size: 1.1rem;
+          margin-bottom: 5px;
+        }
+        .coordinator-card a, .coordinator-card p {
+          color: #f0f0f0;
+          font-size: 0.95rem;
+        }
+
+        /* Map */
         .map-container {
           width: 100%;
           height: 300px;
@@ -158,6 +212,7 @@ export default function Contact() {
           box-shadow: 0 0 20px -5px #22d3ee;
         }
 
+        /* Responsive */
         @media (max-width: 900px) {
           .contact-container {
             grid-template-columns: 1fr;
@@ -167,6 +222,12 @@ export default function Contact() {
         @media (max-width: 768px) {
           .contact-wrapper { padding: 40px 15px; }
           .contact-section h1 { font-size: 2.2rem; }
+          .coordinators-grid { grid-template-columns: 1fr; }
+          .contact-us-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+          }
         }
       `}</style>
 
@@ -235,34 +296,38 @@ export default function Contact() {
 
             {/* INFO SECTION */}
             <div className="info-column">
-              <div className="info-item">
+              <div className="contact-us-header">
+                <h2>Contact Us:</h2>
+                <a href="mailto:urjasangam@rgipt.ac.in">urjasangam@rgipt.ac.in</a>
+              </div>
+
+              <div className="main-coordinator">
                 <h3>Vaibhav (Fest Coordinator)</h3>
-                <a href="mailto:23ev3040@rgipt.ac.in">23ev3040@rgipt.ac.in</a>
-                <p>+91 9958932xyz</p>
+                <a href="mailto:23ev3030@rgipt.ac.in">23ev3030@rgipt.ac.in</a>
+                <p>+91 9956316310</p>
               </div>
 
-              <div className="info-item">
-                <h3>Gaurav Lal (Co-Fest Coordinator)</h3>
-                <a href="mailto:23ev3040@rgipt.ac.in">23ev3040@rgipt.ac.in</a>
-                <p>+91 9958932xyz</p>
-              </div>
-
-              <div className="info-item">
-                <h3>Apurv (Co-Fest Coordinator)</h3>
-                <a href="mailto:23ev3040@rgipt.ac.in">23ev3040@rgipt.ac.in</a>
-                <p>+91 9958932xyz</p>
-              </div>
-
-              <div className="info-item">
-                <h3>Arpit (Co-Fest Coordinator)</h3>
-                <a href="mailto:23ev3040@rgipt.ac.in">23ev3040@rgipt.ac.in</a>
-                <p>+91 9958932xyz</p>
-              </div>
-
-              <div className="info-item">
-                <h3>Harshit (Co-Fest Coordinator)</h3>
-                <a href="mailto:23ev3040@rgipt.ac.in">23ev3040@rgipt.ac.in</a>
-                <p>+91 9958932xyz</p>
+              <div className="coordinators-grid">
+                <div className="coordinator-card">
+                  <h3>Gaurav Lal</h3>
+                  <a href="mailto:23it3020@rgipt.ac.in">23it3020@rgipt.ac.in</a>
+                  <p>+91 8354946276</p>
+                </div>
+                <div className="coordinator-card">
+                  <h3>Apurv</h3>
+                  <a href="mailto:23mc3012@rgipt.ac.in">23mc3012@rgipt.ac.in</a>
+                  <p>+91 8840050280</p>
+                </div>
+                <div className="coordinator-card">
+                  <h3>Arpit</h3>
+                  <a href="mailto:23mc3013@rgipt.ac.in">23mc3013@rgipt.ac.in</a>
+                  <p>+91 7290914630</p>
+                </div>
+                <div className="coordinator-card">
+                  <h3>Harshit</h3>
+                  <a href="mailto:23ce3015@rgipt.ac.in">23ce3015@rgipt.ac.in</a>
+                  <p>+91 6394563235</p>
+                </div>
               </div>
 
               <div className="map-container">
