@@ -1,5 +1,4 @@
 import './globals.css'
-import Navbar from '@/components/shared/Navbar'
 import Footer from '@/components/shared/Footer'
 import Preloader from '@/components/shared/Preloader'
 import KaltarangBackground from '@/components/shared/KaltarangBackground'
@@ -43,7 +42,7 @@ export default function RootLayout({ children }) {
         {/* Interactive Starfield Background */}
         <canvas id="bg-canvas" className="fixed inset-0 w-full h-full -z-10"></canvas>
         <KaltarangBackground />
-        <Navbar />
+      
         <main className="relative z-10">
           {children}
         </main>

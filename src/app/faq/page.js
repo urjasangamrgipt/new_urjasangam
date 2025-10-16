@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Navbar from '@/components/shared/Navbar'
+import NavbarHome from '@/components/shared/Navbar'
 import Footer from '@/components/shared/Footer'
 
 const festivalData = {
@@ -183,7 +183,7 @@ export default function FAQPage() {
 
   return (
     <div className="min-h-screen text-white">
-      <Navbar />
+      <NavbarHome />
       
       <main className="pt-20">
         {/* Header */}

@@ -1,5 +1,5 @@
 "use client"
-import  Navbar  from "@/components/shared/Navbar";
+import NavbarEnergia from "@/components/shared/NavbarEnergia";
 import Footer from "@/components/shared/Footer";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
@@ -18,7 +18,7 @@ export default function EnergiaPage() {
   return (
     <div className="relative min-h-screen">
 
-      <Navbar />
+      <NavbarEnergia />
 
       {/* Main content - removed flex-grow */}
       <main className="relative z-10 text-white">

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
-import Navbar from '../shared/Navbar';
+import NavbarHome from './NavbarHome';
 
 export default function UrjaSangam() {
   const canvasRef = useRef(null);
@@ -130,7 +130,7 @@ export default function UrjaSangam() {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden text-white">
-      <Navbar />
+      <NavbarHome />
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap');

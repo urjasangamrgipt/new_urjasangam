@@ -1,5 +1,5 @@
 "use client"
-import Navbar from "@/components/shared/Navbar";
+import NavbarSouhardya from "@/components/shared/NavbarSouhardya";
 import Footer from "@/components/shared/Footer";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
@@ -21,7 +21,7 @@ export default function SouhardyaPage() {
     <div className="relative min-h-screen">
 
       {/* Navbar - Replace with your Navbar component */}
-      <Navbar />
+      <NavbarSouhardya />
 
       <main className="relative z-10 text-white">
         <HeroSection />

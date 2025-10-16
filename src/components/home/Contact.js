@@ -236,26 +236,35 @@ export default function Contact() {
             {/* INFO SECTION */}
             <div className="info-column">
               <div className="info-item">
-                <h3>VAIBHAV</h3>
-                <a href="mailto:contact@urjasangam.rgipt.ac.in">23EV3030@RGIPT.AC.IN</a>
-                <p>+91 9956316310</p>
+                <h3>Vaibhav (Fest Coordinator)</h3>
+                <a href="mailto:23ev3040@rgipt.ac.in">23ev3040@rgipt.ac.in</a>
+                <p>+91 9958932xyz</p>
               </div>
+
               <div className="info-item">
-                <h3>ANSHUMAAN</h3>
-                <a href="mailto:contact@urjasangam.rgipt.ac.in">23CD3009@RGIPT.AC.IN</a>
-                <p>+91 9792000803</p>
+                <h3>Gaurav Lal (Co-Fest Coordinator)</h3>
+                <a href="mailto:23ev3040@rgipt.ac.in">23ev3040@rgipt.ac.in</a>
+                <p>+91 9958932xyz</p>
               </div>
 
-              {/* <div className="info-item">
-                <h3>COLLEGE ADDRESS</h3>
-                <p>
-                  Rajiv Gandhi Institute of Petroleum Technology,<br />
-                  Mubarakpur Mukhetia More, Post Harbanshganj,<br />
-                  Jais, Amethi, Uttar Pradesh 229304
-                </p>
-              </div> */}
+              <div className="info-item">
+                <h3>Apurv (Co-Fest Coordinator)</h3>
+                <a href="mailto:23ev3040@rgipt.ac.in">23ev3040@rgipt.ac.in</a>
+                <p>+91 9958932xyz</p>
+              </div>
 
-              {/* GOOGLE MAP EMBED */}
+              <div className="info-item">
+                <h3>Arpit (Co-Fest Coordinator)</h3>
+                <a href="mailto:23ev3040@rgipt.ac.in">23ev3040@rgipt.ac.in</a>
+                <p>+91 9958932xyz</p>
+              </div>
+
+              <div className="info-item">
+                <h3>Harshit (Co-Fest Coordinator)</h3>
+                <a href="mailto:23ev3040@rgipt.ac.in">23ev3040@rgipt.ac.in</a>
+                <p>+91 9958932xyz</p>
+              </div>
+
               <div className="map-container">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.885943798218!2d81.50712891503133!3d26.265364883410747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399ba1580bf13c33%3A0x32df0c8e914ab52e!2sRajiv%20Gandhi%20Institute%20of%20Petroleum%20Technology!5e0!3m2!1sen!2sin!4v1577687589293!5m2!1sen!2sin"
@@ -266,7 +275,6 @@ export default function Contact() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
-
               </div>
             </div>
           </div>
