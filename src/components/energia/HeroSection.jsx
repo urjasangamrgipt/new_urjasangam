@@ -21,10 +21,10 @@ export function HeroSection() {
         muted
         loop
         playsInline
-        src="videos/Energia/energiaback.mp4" 
+        src="videos/Energia/energiaback.mp4"
       />
       {/* Dark Overlay */}
-      <div className="absolute inset-0  z-10" />
+      <div className="absolute inset-0 z-10" />
 
       {/* Main Content */}
       <div className="relative z-20">
@@ -36,8 +36,10 @@ export function HeroSection() {
           className="font-black uppercase"
           style={{
             fontFamily: 'Exo 2, cursive',
-            fontSize: 'clamp(2rem, 15vw, 10rem)',
-            letterSpacing: 'clamp(0.2rem, 3vw, 1rem)',
+            // --- MODIFIED LINES ---
+            fontSize: 'clamp(2rem, 12vw, 10rem)',
+            letterSpacing: 'clamp(0.2rem, 2vw, 1rem)',
+            // --------------------
             background:
               "linear-gradient(135deg, #c084fc 0%, #a78bfa 25%, #8b5cf6 50%, #a855f7 75%, #c084fc 100%)",
             backgroundSize: "200% 100%",
@@ -101,4 +103,3 @@ export function HeroSection() {
     </section>
   );
 }
-

@@ -29,7 +29,7 @@ export function HeroSection() {
         src="videos/Kaltarang/kaltarangback.mp4"
       />
       {/* Dark Overlay */}
-      <div className="absolute inset-0  z-10" />
+      <div className="absolute inset-0 z-10" />
 
       {/* Main Content */}
       <div className="relative z-20">
@@ -41,8 +41,10 @@ export function HeroSection() {
           className="font-black uppercase"
           style={{
             fontFamily: 'Exo 2, cursive',
-            fontSize: 'clamp(2rem, 15vw, 10rem)',
-            letterSpacing: 'clamp(0.2rem, 3vw, 1rem)',
+            // --- MODIFIED LINES ---
+            fontSize: 'clamp(2rem, 12vw, 10rem)',
+            letterSpacing: 'clamp(0.2rem, 2vw, 1rem)',
+            // --------------------
             background:
               "linear-gradient(135deg, #ef4444 0%, #dc2626 25%, #f87171 50%, #fb923c 75%, #ef4444 100%)",
             backgroundSize: "200% 100%",
