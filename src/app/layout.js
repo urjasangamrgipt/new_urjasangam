@@ -4,9 +4,7 @@ import Preloader from '@/components/shared/Preloader'
 import KaltarangBackground from '@/components/shared/KaltarangBackground'
 
 export const metadata = {
-  // ✅ Add this line
-  metadataBase: new URL('https://new-urjasangam.vercel.app'), // replace with your actual deployed domain if different
-  metadataBase: new URL('https://new-urjasangam.vercel.app'), // replace with your actual deployed domain if different
+  metadataBase: new URL('https://new-urjasangam.vercel.app/'), 
 
   title: 'Urja Sangam 2025 | The Ultimate Convergence',
   description:
