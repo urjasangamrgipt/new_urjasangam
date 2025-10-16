@@ -314,19 +314,19 @@ export default function Contact() {
                   <p>+91 8354946276</p>
                 </div>
                 <div className="coordinator-card">
-                  <h3>Apurv</h3>
+                  <h3>Apurv Gupta</h3>
                   <a href="mailto:23mc3012@rgipt.ac.in">23mc3012@rgipt.ac.in</a>
                   <p>+91 8840050280</p>
                 </div>
                 <div className="coordinator-card">
-                  <h3>Arpit</h3>
+                  <h3>Arpit Sinha</h3>
                   <a href="mailto:23mc3013@rgipt.ac.in">23mc3013@rgipt.ac.in</a>
                   <p>+91 7290914630</p>
                 </div>
                 <div className="coordinator-card">
-                  <h3>Harshit</h3>
-                  <a href="mailto:23ce3015@rgipt.ac.in">23ce3015@rgipt.ac.in</a>
-                  <p>+91 6394563235</p>
+                  <h3>Kaushal Sharma</h3>
+                  <a href="mailto:23ce3015@rgipt.ac.in">23mc3029@rgipt.ac.in</a>
+                  <p>+91 9336725625</p>
                 </div>
               </div>
 
