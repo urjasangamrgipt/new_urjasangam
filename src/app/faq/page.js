@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import NavbarHome from '@/components/shared/Navbar'
+import NavbarHome from '@/components/home/NavbarHome'
 import Footer from '@/components/shared/Footer'
 
 const festivalData = {
