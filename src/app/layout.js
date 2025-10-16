@@ -4,25 +4,13 @@ import Preloader from '@/components/shared/Preloader'
 import KaltarangBackground from '@/components/shared/KaltarangBackground'
 
 export const metadata = {
-  metadataBase: new URL('https://urjasangam.rgipt.edu'), 
-
   title: 'Urja Sangam 2025 | The Ultimate Convergence',
-  description:
-    'Urja Sangam 2025 - The ultimate convergence of Urjotsav, Kaltarang, Energia, and Souardhya. Join us for an extraordinary week of tech, culture, sports, and social impact.',
-  keywords: [
-    'Urja Sangam',
-    'RGIPT',
-    'Festival',
-    'Tech',
-    'Cultural',
-    'Sports',
-    'Social Impact',
-  ],
+  description: 'Urja Sangam 2025 - The ultimate convergence of Urjotsav, Kaltarang, Energia, and Souardhya. Join us for an extraordinary week of tech, culture, sports, and social impact.',
+  keywords: ['Urja Sangam', 'RGIPT', 'Festival', 'Tech', 'Cultural', 'Sports', 'Social Impact'],
   authors: [{ name: 'RGIPT' }],
   openGraph: {
     title: 'Urja Sangam 2025 | The Ultimate Convergence',
-    description:
-      'Join us for an extraordinary week of tech, culture, sports, and social impact',
+    description: 'Join us for an extraordinary week of tech, culture, sports, and social impact',
     url: 'https://urjasangam.rgipt.edu',
     siteName: 'Urja Sangam',
     images: [
@@ -50,16 +38,18 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="font-dm bg-bg-dark text-text-light antialiased">
-        {/* <Preloader /> */}
+        {/*<Preloader />*/}
         {/* Interactive Starfield Background */}
         <canvas id="bg-canvas" className="fixed inset-0 w-full h-full -z-10"></canvas>
         <KaltarangBackground />
-
-        <main className="relative z-10">{children}</main>
-
+        <main className="relative z-10">
+          {children}
+        </main>
+       
+        
         {/* Scroll Progress Bar */}
-        <div
-          id="scroll-progress"
+        <div 
+          id="scroll-progress" 
           className="fixed top-0 left-0 h-1 bg-gradient-to-r from-energia via-urjotsav via-souardhya to-kaltarang z-[10001] transition-all duration-100"
           style={{ width: '0%' }}
         />
