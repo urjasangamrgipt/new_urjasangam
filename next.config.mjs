@@ -7,7 +7,7 @@ const __dirname = dirname(__filename);
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['images.unsplash.com'],
+    // ✅ Use only remotePatterns — remove the deprecated "domains"
     remotePatterns: [
       {
         protocol: 'https',
@@ -24,4 +24,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-
