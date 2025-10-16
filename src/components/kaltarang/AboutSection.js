@@ -58,9 +58,7 @@ export default function KaltarangAbout() {
 
   // Removed cursor trail effect
 
-  const handleExperienceClick = () => {
-    window.location.href = '/gallery';
-  };
+
 
   return (
     <>
@@ -348,10 +346,6 @@ export default function KaltarangAbout() {
                 <div className="kaltarang-stat-label">Cultural Enthusiasts</div>
               </div>
             </div>
-
-            <button onClick={handleExperienceClick} className="kaltarang-cta-button">
-              <span>Explore The Culture</span>
-            </button>
           </div>
         </div>
 

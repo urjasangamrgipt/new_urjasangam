@@ -13,10 +13,41 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const pathname = usePathname();
 
+  // Normalize pathname to avoid trailing slash issues
+  const normalizedPath =
+    pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
+
+  // Check if on home page
+  const isHomePage = normalizedPath === "/";
+
+  // Nav links change href depending on whether we're on home page or not
+  const navLinks = [
+    {
+      href: isHomePage ? "#about" : "/#about",
+      label: "About",
+    },
+    {
+      href: isHomePage ? "#events" : "/#events",
+      label: "Events",
+    },
+    {
+      href: isHomePage ? "#gallery" : "/#gallery",
+      label: "Gallery",
+    },
+    {
+      href: "/faq",
+      label: "FAQ",
+    },
+    {
+      href: isHomePage ? "#contact" : "/#contact",
+      label: "Contact",
+    },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      const sections = ["home", "about", "events", "gallery"];
+      const sections = ["home", "about", "events", "gallery", "contact"];
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
@@ -30,19 +61,13 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    // Trigger initially to detect active section on page load
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-
-  // ✅ Works on both "/" and "/souhardya"
-  const navLinks = [
-    { href: pathname === "/souhardya" ? "#about" : "/souhardya#about", label: "About" },
-    { href: pathname === "/souhardya" ? "#events" : "/souhardya#events", label: "Events" },
-    { href: pathname === "/souhardya" ? "#gallery" : "/souhardya#gallery", label: "Gallery" },
-    { href: "/faq", label: "FAQ" },
-    { href: "#contact", label: "Contact" },
-  ];
 
   return (
     <>
@@ -61,7 +86,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 md:w-12 md:h-12">
               <Image
-                src="/hero image/Urjotsav/RGIPT.png"
+                src="/photos/UrjaSangam/urjasangam_logo_background.png"
                 alt="Urja Sangam Logo"
                 width={200}
                 height={200}
@@ -72,16 +97,17 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex gap-3 items-center">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.href.replace("#", "");
+              // Extract anchor from href for active check, fallback to ''
+              const anchor = link.href.split("#")[1] || "";
+              const isActive = activeSection === anchor;
+
               return (
                 <motion.li key={link.href} whileHover={{ scale: 1.05 }}>
-                  {link.href.startsWith("#") ? (
+                  {link.href.startsWith("#") || link.href.startsWith("/#") ? (
                     <a
                       href={link.href}
                       className={`relative px-5 py-2 font-medium text-sm uppercase tracking-wider transition-all duration-300 ${
-                        isActive
-                          ? "text-white"
-                          : "text-gray-400 hover:text-white"
+                        isActive ? "text-white" : "text-gray-400 hover:text-white"
                       }`}
                     >
                       {link.label}
@@ -96,9 +122,7 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       className={`relative px-5 py-2 font-medium text-sm uppercase tracking-wider transition-all duration-300 ${
-                        isActive
-                          ? "text-white"
-                          : "text-gray-400 hover:text-white"
+                        isActive ? "text-white" : "text-gray-400 hover:text-white"
                       }`}
                     >
                       {link.label}
@@ -121,6 +145,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.9 }}
             onClick={toggleMobileMenu}
             className="lg:hidden w-10 h-10 rounded-full backdrop-blur-xl bg-white/5 border border-white/10 flex items-center justify-center text-white"
+            aria-label="Toggle mobile menu"
           >
             <AnimatePresence mode="wait">
               {isMobileMenuOpen ? (
@@ -175,6 +200,7 @@ export default function Navbar() {
                     whileTap={{ scale: 0.9 }}
                     onClick={toggleMobileMenu}
                     className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white"
+                    aria-label="Close mobile menu"
                   >
                     <FiX className="text-xl" />
                   </motion.button>

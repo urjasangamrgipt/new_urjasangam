@@ -74,10 +74,6 @@ export default function EnergiaAbout() {
 
   // Removed cursor trail effect
 
-  const handleExperienceClick = () => {
-    window.location.href = '/gallery';
-  };
-
   return (
     <>
       <style>{`
@@ -382,10 +378,6 @@ export default function EnergiaAbout() {
                 <div className="energia-stat-label">Sports Enthusiasts</div>
               </div>
             </div>
-
-            <button onClick={handleExperienceClick} className="energia-cta-button">
-              <span>Join The Action</span>
-            </button>
           </div>
         </div>
 

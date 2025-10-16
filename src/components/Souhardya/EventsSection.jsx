@@ -9,64 +9,62 @@ export function EventsSection() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const eventsData = [
-    {
-      title: "Science Exhibition",
-      icon: "🩸",
-      date: "12 November",
-      time: "9:00 AM - 5:00 PM",
-      venue: "Auditorium",
-      description: "Save lives by donating blood. Every drop counts in making a difference.",
-      participants: "Individual",
-      prizePool: "Certificate & Refreshments",
-      link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
-    },
-    {
-      title: "Nirmaan",
-      icon: "🌳",
-      date: "12-13 November",
-      time: "7:00 AM - 11:00 AM",
-      venue: "Auditorium",
-      description: "Join a dynamic conclave where NGO's, Engineers and Innovators unite to drive real-world social impact.",
-      participants: "Individual & Teams",
-      prizePool: "Certificate of Participation",
-      link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
+  {
+    title: "Science Exhibition",
+    icon: "🧪", // test tube – fits science & experiments
+    date: "12 November",
+    time: "10:00 AM - 5:00 PM",
+    venue: "Auditorium",
+    description: "Explore the wonders of science through engaging experiments, innovative models, and creative student projects across various disciplines.",
+    participants: "Individual",
+    prizePool: "Certificate & Refreshments",
+    link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
+  },
+  {
+    title: "Nirmaan",
+    icon: "🏗️", // building construction – fits NGO + engineering + innovation
+    date: "12-13 November",
+    time: "7:00 AM - 11:00 AM",
+    venue: "Auditorium",
+    description: "Join a dynamic conclave where NGOs, engineers, and innovators collaborate to design sustainable solutions for real-world social challenges.",
+    participants: "Individual & Teams",
+    prizePool: "Certificate of Participation",
+    link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
+  },
+  {
+    title: "Kavi Sammelan",
+    icon: "🎤", // mic – perfect for poetry performance
+    date: "14 November",
+    time: "7:30 PM - 11:00 PM",
+    venue: "Auditorium",
+    description: "A poetic gathering featuring renowned and budding poets who express emotions, stories, and social themes through powerful verses.",
+    participants: "Audience",
+    prizePool: "Certificate & Recognition",
+    link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
+  },
+  {
+    title: "Pratbimb",
+    icon: "🎬", // clapperboard – perfect for film-making
+    date: "12-13 November",
+    time: "2:00 PM - 5:00 PM",
+    venue: "Auditorium",
+    description: "A short film-making competition for passionate storytellers. Showcase your creativity through impactful visual narratives.",
+    participants: "Individual & Teams",
+    prizePool: "Certificate of Appreciation",
+    link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
+  },
+  {
+    title: "Riwaaz",
+    icon: "🧵", // thread & needle – symbol of tradition/culture
+    date: "13 November",
+    time: "4:00 PM - 10:00 PM",
+    venue: "Ground",
+    description: "A vibrant cultural exhibition showcasing traditional arts, crafts, music, and heritage through interactive displays and live demos.",
+    participants: "Volunteers",
+    prizePool: "Certificate & Recognition",
+    link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
+  },
 
-
-
-    },
-    {
-      title: "Kavi Sammelan",
-      icon: "♻️",
-      date: "14 November",
-      time: "6:00 AM - 10:00 AM",
-      venue: "Auditorium",
-      description: "This events brings together renowned poets from across India, each weaving stories , emotions and reflection into their verses.",
-      participants: "Teams of 5-10",
-      prizePool: "Certificate & Recognition",
-      link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
-    },
-    {
-      title: "Pratbimb",
-      icon: "📚",
-      date: "12-13 November",
-      time: "2:00 PM - 5:00 PM",
-      venue: "Auditorium",
-      description: "A short film making competition. This event invites new passionate students to show their talent in film making",
-      participants: "Individual & Teams",
-      prizePool: "Certificate of Appreciation",
-      link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
-    },
-    {
-      title: "Riwaaz",
-      icon: "🏥",
-      date: "13 November",
-      time: "9:00 AM - 4:00 PM",
-      venue: "Ground",
-      description: " A vibrant exhibition showcasing traditional arts, crafts, and cultural heritage through interactive displays and live demonstrations.",
-      participants: "Volunteers",
-      prizePool: "Certificate & Recognition",
-      link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
-    },
   ];
 
   const containerVariants = {

@@ -74,10 +74,6 @@ export default function SouharDyaAbout() {
 
   // Removed cursor trail effect
 
-  const handleExperienceClick = () => {
-    window.location.href = '/gallery';
-  };
-
   return (
     <>
       <style>{`
@@ -440,10 +436,6 @@ export default function SouharDyaAbout() {
                 <div className="souhardya-stat-label">Lives Touched</div>
               </div>
             </div>
-
-            <button onClick={handleExperienceClick} className="souhardya-cta-button">
-              <span>Experience the Legacy</span>
-            </button>
           </div>
         </div>
 

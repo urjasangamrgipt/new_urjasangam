@@ -58,9 +58,7 @@ export default function UrjotsavAbout() {
 
   // Removed cursor trail effect
 
-  const handleExperienceClick = () => {
-    window.location.href = '/gallery';
-  };
+ 
 
   return (
     <>
@@ -348,10 +346,6 @@ export default function UrjotsavAbout() {
                 <div className="urjotsav-stat-label">Annual Footfall</div>
               </div>
             </div>
-
-            <button href="#gallery" onClick={handleExperienceClick} className="urjotsav-cta-button">
-              <span>Experience The Legacy</span>
-            </button>
           </div>
         </div>
 
