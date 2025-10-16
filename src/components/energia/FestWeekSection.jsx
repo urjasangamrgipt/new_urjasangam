@@ -26,14 +26,14 @@ export default function FestWeekSection() {
     {
       id: 2,
       name: "Urjotsav",
-      tagline: "Where technology Meets Soul",
+      tagline: "Where Technology Meets Soul",
       description:
-        "Immerse yourself in a kaleidoscope of technical brilliance ,Robotics , Code and logic  collide.",
+        "Immerse yourself in a kaleidoscope of technical brilliance — robotics, code, and logic collide.",
       imagesrc: "/hero image/Urjotsav/urjotsavalogo.jpg",
-      gradient: "from-[#FF6B6B] to-[#FF8E53]",
+      gradient: "from-[#2934f6] to-[#6b7bff]",
       color: "#2934f6ff",
       stats: [
-        { label: "Participant", value: "500+" },
+        { label: "Participants", value: "500+" },
         { label: "Events", value: "40+" },
         { label: "Days", value: "3" },
       ],
@@ -62,9 +62,7 @@ export default function FestWeekSection() {
     );
     if (containerRef.current) observer.observe(containerRef.current);
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
+      if (containerRef.current) observer.unobserve(containerRef.current);
     };
   }, []);
 
@@ -132,7 +130,7 @@ export default function FestWeekSection() {
               className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${fest.gradient}`}
             />
 
-            {/* Image instead of Icon */}
+            {/* Image */}
             <div className="relative w-20 h-20 mb-6 flex items-center justify-center">
               <img
                 src={fest.imagesrc}
@@ -202,10 +200,18 @@ export default function FestWeekSection() {
           <p className="text-white/60 mb-8">
             Register now and be part of something extraordinary.
           </p>
-          <button className="relative px-10 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#FF6B6B] via-violet-500 to-[#A78BFA] text-black shadow-lg hover:scale-105 transition-transform overflow-hidden">
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shine_3s_ease-in-out_infinite]" />
-            Register for Fest Week
-          </button>
+
+          {/* ✅ Correctly placed Register Button */}
+          <a
+            href="https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="relative px-10 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#FF6B6B] via-violet-500 to-[#A78BFA] text-black shadow-lg hover:scale-105 transition-transform overflow-hidden">
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shine_3s_ease-in-out_infinite]" />
+              Register for Fest Week
+            </button>
+          </a>
         </div>
       </div>
 

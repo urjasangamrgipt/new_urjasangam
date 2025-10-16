@@ -39,7 +39,7 @@ export default function FestWeekSection() {
     },
     {
       id: 3,
-      name: "Sauhardya",
+      name: "Souhardya",
       tagline: "Unity In Diversity",
       description:
         "Building bridges through social initiatives. A celebration of humanity, compassion, and collective growth.",

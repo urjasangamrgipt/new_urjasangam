@@ -27,12 +27,7 @@ const pastEventsData = [
     description: "A mock pitching competition where startups showcased their ideas to investors. An exciting platform to experience the thrill of entrepreneurship and pitching.",
     year: "2024",
   },
-  {
-    image: "/images/gallery/E-summit 1.jpg",
-    title: "E-Summit – IIT Bombay",
-    description: "We participated in the E-Summit, organized by E-Cell, IIT Bombay, where our team took part in several events and reached the finals.",
-    year: "2025",
-  },
+  
   {
     image: "/images/gallery/Math-a-thon.png",
     title: "Math-A-Thon",

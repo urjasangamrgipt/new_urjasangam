@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
+import Navbar from '../shared/Navbar';
 
 export default function UrjaSangam() {
   const canvasRef = useRef(null);
@@ -104,7 +105,7 @@ export default function UrjaSangam() {
           marqueePositionRef.current = 0;
         }
 
-        marqueeContent.style.transform = `translateX(-${marqueePositionRef.current}px)`;
+        marqueeContent.style.transform = `translateX(-${marqueePositionRef.current}px)`; // ✅ fixed
 
         animationRef.current = requestAnimationFrame(scrollMarquee);
       }
@@ -128,23 +129,15 @@ export default function UrjaSangam() {
   ];
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden  text-white">
+    <div className="relative min-h-screen overflow-x-hidden text-white">
+      <Navbar />
+
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap');
-        
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-        
-        html {
-          scroll-behavior: smooth;
-        }
-        
-        body {
-          font-family: 'Montserrat', sans-serif;
-        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; }
 
         .title-text {
           font-family: 'Exo 2', cursive;
@@ -156,7 +149,7 @@ export default function UrjaSangam() {
           text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
           animation: fadeInScale 1.5s ease-out forwards;
         }
-        
+
         @keyframes fadeInScale {
           from { opacity: 0; transform: scale(0.9); }
           to { opacity: 1; transform: scale(1); }
@@ -168,7 +161,7 @@ export default function UrjaSangam() {
           position: relative;
           margin: -7rem auto 0 auto;
         }
-        
+
         .sparkle-gradient {
           position: absolute;
           top: 50%;
@@ -176,7 +169,7 @@ export default function UrjaSangam() {
           transform: translate(-50%, -50%);
           background-image: linear-gradient(to right, transparent, var(--color), transparent);
         }
-        
+
         .sparkles-canvas {
           position: absolute;
           top: 0;
@@ -184,7 +177,7 @@ export default function UrjaSangam() {
           width: 100%;
           height: 100%;
         }
-        
+
         .sparkles-mask {
           position: absolute;
           inset: 0;
@@ -199,7 +192,7 @@ export default function UrjaSangam() {
           animation: fadeInUp 1.5s ease-out 0.8s forwards;
           opacity: 0;
         }
-        
+
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
@@ -221,11 +214,9 @@ export default function UrjaSangam() {
         }
       `}</style>
 
-
-
       {/* Main Content */}
       <div className="flex flex-col items-center justify-center min-h-screen text-center pt-20 relative z-10">
-        <h1 className="title-text " style={{ fontFamily: 'Exo 2, cursive' }}>URJA SANGAM</h1>
+        <h1 className="title-text" style={{ fontFamily: 'Exo 2, cursive' }}>URJA SANGAM</h1>
 
         {/* Sparkles Container */}
         <div ref={containerRef} className="sparkles-container">
@@ -238,11 +229,13 @@ export default function UrjaSangam() {
         </div>
 
         {/* Marquee Section */}
-        <div className="w-full py-4 overflow-hidden -mt-12 z-10"
+        <div
+          className="w-full py-4 overflow-hidden -mt-12 z-10"
           style={{
             maskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)'
-          }}>
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+          }}
+        >
           <div ref={marqueeRef} className="flex w-fit">
             {/* Original content */}
             {marqueeItems.map((item, index) => (
@@ -260,11 +253,19 @@ export default function UrjaSangam() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="cta-buttons flex flex-col md:flex-row gap-6 mt-8 md:mt-16">
-          <Link href={"https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"}><span className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm">
+        <div className="cta-buttons flex flex-row gap-6 mt-8 md:mt-16 flex-wrap justify-center max-w-screen-sm mx-auto">
+          <Link
+            href="https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"
+            className="min-w-max whitespace-nowrap px-6 md:px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Explore Events
-          </span></Link>
-          <a href="#realms" className="px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm">
+          </Link>
+          <a
+            href="#realms"
+            className="min-w-max whitespace-nowrap px-6 md:px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm"
+          >
             About Us
           </a>
         </div>

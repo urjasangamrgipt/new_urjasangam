@@ -96,10 +96,10 @@ export default function Gallery() {
       initial={{ opacity: 0, x: reverse ? -100 : 100 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.8, delay: startIndex * 0.1 }}
-      className="relative overflow-hidden mb-8"
+      className="relative overflow-hidden mb-3 md:mb-4"
     >
       <motion.div
-        className="flex gap-6 hover:[animation-play-state:paused]"
+        className="flex gap-3 md:gap-6 hover:[animation-play-state:paused]"
         animate={{
           x: reverse ? ['-50%', '0%'] : ['0%', '-50%']
         }}
@@ -113,7 +113,8 @@ export default function Gallery() {
         {[...galleryImages.slice(startIndex), ...galleryImages.slice(startIndex), ...galleryImages.slice(startIndex)].map((img, idx) => (
           <motion.div
             key={`${startIndex}-${idx}`}
-            className="flex-shrink-0 w-[400px] h-[300px] rounded-3xl overflow-hidden relative group cursor-pointer"
+            // ⭐ RESPONSIVE IMAGE SIZE - Mobile: 200x130, Tablet: 280x180, Desktop: 380x220
+            className="flex-shrink-0 w-[200px] h-[130px] sm:w-[280px] sm:h-[180px] md:w-[380px] md:h-[220px] rounded-2xl md:rounded-3xl overflow-hidden relative group cursor-pointer"
             whileHover={{ 
               scale: 1.05,
               zIndex: 10,
@@ -145,7 +146,7 @@ export default function Gallery() {
 
             {/* Animated Border */}
             <motion.div
-              className="absolute inset-0 border-4 border-transparent group-hover:border-white/50 rounded-3xl transition-all duration-500"
+              className="absolute inset-0 border-2 md:border-4 border-transparent group-hover:border-white/50 rounded-2xl md:rounded-3xl transition-all duration-500"
               animate={hoveredIndex === `${startIndex}-${idx}` ? {
                 borderColor: ['rgba(255,255,255,0.5)', 'rgba(255,255,255,1)', 'rgba(255,255,255,0.5)']
               } : {}}
@@ -160,37 +161,37 @@ export default function Gallery() {
 
             {/* Category Badge */}
             <motion.div
-              className="absolute top-4 left-4 px-4 py-2 rounded-full backdrop-blur-md bg-black/50 border border-white/30"
+              className="absolute top-2 left-2 md:top-4 md:left-4 px-2 py-1 md:px-4 md:py-2 rounded-full backdrop-blur-md bg-black/50 border border-white/30"
               initial={{ y: -20, opacity: 0 }}
               whileHover={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <span className="text-white text-sm font-bold">{img.category}</span>
+              <span className="text-white text-xs md:text-sm font-bold">{img.category}</span>
             </motion.div>
 
             {/* Zoom Icon */}
             <motion.div
-              className="absolute top-4 right-4 w-12 h-12 rounded-full backdrop-blur-md bg-black/50 border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute top-2 right-2 md:top-4 md:right-4 w-8 h-8 md:w-12 md:h-12 rounded-full backdrop-blur-md bg-black/50 border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
               whileHover={{ scale: 1.1, rotate: 90 }}
               transition={{ duration: 0.3 }}
             >
-              <FiZoomIn className="text-white text-xl" />
+              <FiZoomIn className="text-white text-sm md:text-xl" />
             </motion.div>
 
             {/* Title and Description */}
             <motion.div
-              className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/70 to-transparent"
+              className="absolute bottom-0 left-0 right-0 p-3 md:p-6 bg-gradient-to-t from-black/90 via-black/70 to-transparent"
               initial={{ y: 100, opacity: 0 }}
               whileHover={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.4 }}
             >
-              <h3 className="text-white text-2xl font-bold mb-2">{img.title}</h3>
-              <p className="text-white/80 text-sm">Click to view full image</p>
+              <h3 className="text-white text-sm md:text-2xl font-bold mb-1 md:mb-2">{img.title}</h3>
+              <p className="text-white/80 text-xs md:text-sm hidden sm:block">Click to view full image</p>
             </motion.div>
 
-            {/* Particle Effect on Hover */}
+            {/* Particle Effect on Hover - Desktop Only */}
             {hoveredIndex === `${startIndex}-${idx}` && (
-              <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute inset-0 pointer-events-none hidden md:block">
                 {[...Array(10)].map((_, i) => (
                   <motion.div
                     key={i}
@@ -262,9 +263,9 @@ export default function Gallery() {
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-12 font-black tracking-wider"
+          className="text-center mb-6 md:mb-12 font-black tracking-wider px-4"
           style={{
-            fontSize: 'clamp(3rem, 8vw, 6rem)',
+            fontSize: 'clamp(2rem, 8vw, 6rem)',
             fontFamily: 'Orbitron, sans-serif',
           }}
         >
@@ -275,15 +276,15 @@ export default function Gallery() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2 }}
-          className="text-center text-white/90 max-w-3xl mx-auto mb-16 text-xl"
+          className="text-center text-white/90 max-w-3xl mx-auto mb-8 md:mb-16 text-base md:text-xl px-4"
         >
           Relive the magic through our lens - hover to bring memories to life
         </motion.p>
 
-        {/* Gallery Rows */}
-        {createRow(0, false, 50)}
-        {createRow(4, true, 45)}
-        {createRow(8, false, 55)}
+        {/* Gallery Rows - ⭐ FASTER SPEED: 20, 18, 22 seconds */}
+        {createRow(0, false, 20)}
+        {createRow(4, true, 18)}
+        {createRow(8, false, 22)}
       </div>
 
       {/* Lightbox Modal */}
@@ -293,7 +294,7 @@ export default function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4"
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-2 md:p-4"
             onClick={() => setSelectedImage(null)}
           >
             {/* Close Button */}
@@ -303,9 +304,9 @@ export default function Gallery() {
               exit={{ scale: 0, rotate: 180 }}
               whileHover={{ scale: 1.1, rotate: 90 }}
               onClick={() => setSelectedImage(null)}
-              className="absolute top-6 right-6 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center transition-all z-10 border border-white/20"
+              className="absolute top-3 right-3 md:top-6 md:right-6 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center transition-all z-10 border border-white/20"
             >
-              <FiX className="text-3xl text-white" />
+              <FiX className="text-xl md:text-3xl text-white" />
             </motion.button>
 
             {/* Navigation Buttons */}
@@ -317,9 +318,9 @@ export default function Gallery() {
                 e.stopPropagation()
                 handlePrev()
               }}
-              className="absolute left-6 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center transition-all z-10 border border-white/20"
+              className="absolute left-2 md:left-6 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center transition-all z-10 border border-white/20"
             >
-              <FiChevronLeft className="text-3xl text-white" />
+              <FiChevronLeft className="text-xl md:text-3xl text-white" />
             </motion.button>
 
             <motion.button
@@ -330,9 +331,9 @@ export default function Gallery() {
                 e.stopPropagation()
                 handleNext()
               }}
-              className="absolute right-6 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center transition-all z-10 border border-white/20"
+              className="absolute right-2 md:right-6 w-10 h-10 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center transition-all z-10 border border-white/20"
             >
-              <FiChevronRight className="text-3xl text-white" />
+              <FiChevronRight className="text-xl md:text-3xl text-white" />
             </motion.button>
 
             {/* Image Container */}
@@ -341,13 +342,13 @@ export default function Gallery() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-6xl max-h-[90vh] w-full"
+              className="relative max-w-6xl max-h-[85vh] md:max-h-[90vh] w-full"
             >
               <motion.img
                 key={selectedImage.url}
                 src={selectedImage.url}
                 alt={selectedImage.title}
-                className="w-full h-full object-contain rounded-3xl"
+                className="w-full h-full object-contain rounded-2xl md:rounded-3xl"
                 initial={{ rotateY: 90, opacity: 0 }}
                 animate={{ rotateY: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -358,15 +359,15 @@ export default function Gallery() {
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
-                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-8 rounded-b-3xl"
+                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-4 md:p-8 rounded-b-2xl md:rounded-b-3xl"
               >
-                <div className="flex items-center gap-4 mb-3">
-                  <span className={`px-4 py-2 rounded-full bg-gradient-to-r ${categoryColors[selectedImage.category]} text-white font-bold text-sm`}>
+                <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
+                  <span className={`px-2 py-1 md:px-4 md:py-2 rounded-full bg-gradient-to-r ${categoryColors[selectedImage.category]} text-white font-bold text-xs md:text-sm`}>
                     {selectedImage.category}
                   </span>
                 </div>
-                <h3 className="text-4xl font-bold text-white mb-2">{selectedImage.title}</h3>
-                <p className="text-white/70">Urjasangam 2024 - A moment to remember</p>
+                <h3 className="text-xl md:text-4xl font-bold text-white mb-1 md:mb-2">{selectedImage.title}</h3>
+                <p className="text-white/70 text-xs md:text-base">Urjasangam 2024 - A moment to remember</p>
               </motion.div>
             </motion.div>
 
@@ -374,7 +375,7 @@ export default function Gallery() {
             <motion.div
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              className="absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md text-white font-semibold border border-white/20"
+              className="absolute bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 px-3 py-1.5 md:px-6 md:py-3 rounded-full bg-white/10 backdrop-blur-md text-white font-semibold text-xs md:text-base border border-white/20"
             >
               {(galleryImages.findIndex(img => img.url === selectedImage.url) + 1)} / {galleryImages.length}
             </motion.div>
