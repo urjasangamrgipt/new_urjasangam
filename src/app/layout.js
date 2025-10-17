@@ -4,7 +4,7 @@ import Preloader from '@/components/shared/Preloader'
 import KaltarangBackground from '@/components/shared/KaltarangBackground'
 
 export const metadata = {
-  title: 'Urja Sangam 2025 | The Ultimate Convergence',
+  title: 'UrjaSangam - The Annual Fest Of RGIPT  | The Ultimate Convergence',
   description: 'Urja Sangam 2025 - The ultimate convergence of Urjotsav, Kaltarang, Energia, and Souardhya. Join us for an extraordinary week of tech, culture, sports, and social impact.',
   keywords: ['Urja Sangam', 'RGIPT', 'Festival', 'Tech', 'Cultural', 'Sports', 'Social Impact'],
   authors: [{ name: 'RGIPT' }],

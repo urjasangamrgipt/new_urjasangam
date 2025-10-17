@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -15,8 +16,8 @@ export default function FestWeekSection() {
       description:
         "Immerse yourself in a kaleidoscope of cultural brilliance. Dance, drama, and artistic expression collide.",
       imagesrc: "/hero image/Urjotsav/kaltarlogo.jpg",
-      gradient: "from-[#FF6B6B] to-[#FF8E53]",
-      color: "#FF6B6B",
+      gradient: "from-[#E53935] to-[#E53935]",
+      color: "#E53935",
       stats: [
         { label: "Artists", value: "500+" },
         { label: "Performances", value: "40+" },
@@ -30,8 +31,8 @@ export default function FestWeekSection() {
       description:
         "Immerse yourself in a kaleidoscope of technical brilliance — robotics, code, and logic collide.",
       imagesrc: "/hero image/Urjotsav/urjotsavalogo.jpg",
-      gradient: "from-[#2934f6] to-[#6b7bff]",
-      color: "#2934f6ff",
+      gradient: "from-[#007BFF] to-[#007BFF]",
+      color: "#007BFF",
       stats: [
         { label: "Participants", value: "500+" },
         { label: "Events", value: "40+" },
@@ -44,9 +45,9 @@ export default function FestWeekSection() {
       tagline: "Unity In Diversity",
       description:
         "Building bridges through social initiatives. A celebration of humanity, compassion, and collective growth.",
-      imagesrc: "/hero image/Urjotsav/souhardyalogo.jpg",
-      gradient: "from-[#A78BFA] to-[#7C3AED]",
-      color: "#A78BFA",
+      imagesrc: "/photos/Souhardya/soudharya.png",
+      gradient: "from-[#FF9933] to-[#FF9933]",
+      color: "#FF9933",
       stats: [
         { label: "Communities", value: "50+" },
         { label: "Initiatives", value: "15+" },
@@ -202,16 +203,18 @@ export default function FestWeekSection() {
           </p>
 
           {/* ✅ Correctly placed Register Button */}
-          <a
-            href="https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"
-            target="_blank"
-            rel="noopener noreferrer"
+
+          <Link
+            href={
+              "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"
+            }
           >
-            <button className="relative px-10 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#FF6B6B] via-violet-500 to-[#A78BFA] text-black shadow-lg hover:scale-105 transition-transform overflow-hidden">
+            {" "}
+            <button className="relative px-10 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#A78BFA] text-black shadow-lg hover:scale-105 transition-transform overflow-hidden">
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shine_3s_ease-in-out_infinite]" />
               Register for Fest Week
             </button>
-          </a>
+          </Link>
         </div>
       </div>
 

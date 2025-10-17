@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 
 export default function FestWeekSection() {
@@ -14,8 +15,8 @@ export default function FestWeekSection() {
       description:
         "Immerse yourself in a kaleidoscope of cultural brilliance. Dance, drama, and artistic expression collide.",
       imageSrc: "/hero image/Urjotsav/kaltarlogo.jpg",
-      gradient: "from-[#FF6B6B] to-[#FF8E53]",
-      color: "#FF6B6B",
+      gradient: "from-[#E53935] to-[#E53935]",
+      color: "#E53935",
       stats: [
         { label: "Artists", value: "500+" },
         { label: "Performances", value: "40+" },
@@ -29,8 +30,8 @@ export default function FestWeekSection() {
       description:
         "Feel the adrenaline surge through athletic prowess. Where legends are born and records shattered.",
       imageSrc: "/hero image/Urjotsav/energialogo.jpg",
-      gradient: "from-[#4ECDC4] to-[#44A08D]",
-      color: "#4ECDC4",
+      gradient: "from-[#9D50FF] to-[#9D50FF]",
+      color: "#9D50FF",
       stats: [
         { label: "Athletes", value: "2000+" },
         { label: "Sports", value: "25+" },
@@ -44,8 +45,8 @@ export default function FestWeekSection() {
       description:
         "Immerse yourself in a kaleidoscope of technical brilliance ,Robotics , Code and logic  collide.",
       imageSrc: "/hero image/Urjotsav/urjotsavalogo.jpg",
-      gradient: "from-[#FF6B6B] to-[#FF8E53]",
-      color: "#2934f6ff",
+      gradient: "from-[#007BFF] to-[#007BFF]",
+      color: "#007BFF",
       stats: [
         { label: "Participant", value: "500+" },
         { label: "Events", value: "40+" },
@@ -105,8 +106,8 @@ export default function FestWeekSection() {
         </h1>
 
         <p className="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
-          Three legendary festivals. One unforgettable journey. Dive into a world
-          where culture, sports, and social impact unite.
+          Three legendary festivals. One unforgettable journey. Dive into a
+          world where culture, sports, and social impact unite.
         </p>
       </div>
 
@@ -197,10 +198,17 @@ export default function FestWeekSection() {
           <p className="text-white/60 mb-8">
             Register now and be part of something extraordinary
           </p>
-          <button className="relative px-10 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#A78BFA] text-black shadow-lg hover:scale-105 transition-transform overflow-hidden">
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shine_3s_ease-in-out_infinite]" />
-            Register for Fest Week
-          </button>
+          <Link
+            href={
+              "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"
+            }
+          >
+            {" "}
+            <button className="relative px-10 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#A78BFA] text-black shadow-lg hover:scale-105 transition-transform overflow-hidden">
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shine_3s_ease-in-out_infinite]" />
+              Register for Fest Week
+            </button>
+          </Link>
         </div>
       </div>
 

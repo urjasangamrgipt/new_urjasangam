@@ -18,7 +18,7 @@ export function EventsSection() {
     description: "Explore the wonders of science through engaging experiments, innovative models, and creative student projects across various disciplines.",
     participants: "Individual",
     prizePool: "Certificate & Refreshments",
-    link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
+    link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
   },
   {
     title: "Nirmaan",
@@ -29,7 +29,7 @@ export function EventsSection() {
     description: "Join a dynamic conclave where NGOs, engineers, and innovators collaborate to design sustainable solutions for real-world social challenges.",
     participants: "Individual & Teams",
     prizePool: "Certificate of Participation",
-    link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
+    link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
   },
   {
     title: "Kavi Sammelan",
@@ -40,7 +40,7 @@ export function EventsSection() {
     description: "A poetic gathering featuring renowned and budding poets who express emotions, stories, and social themes through powerful verses.",
     participants: "Audience",
     prizePool: "Certificate & Recognition",
-    link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
+    link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
   },
   {
     title: "Pratbimb",
@@ -51,7 +51,7 @@ export function EventsSection() {
     description: "A short film-making competition for passionate storytellers. Showcase your creativity through impactful visual narratives.",
     participants: "Individual & Teams",
     prizePool: "Certificate of Appreciation",
-    link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
+    link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
   },
   {
     title: "Riwaaz",
@@ -62,7 +62,7 @@ export function EventsSection() {
     description: "A vibrant cultural exhibition showcasing traditional arts, crafts, music, and heritage through interactive displays and live demos.",
     participants: "Volunteers",
     prizePool: "Certificate & Recognition",
-    link: "https://unstop.com/o/MdFBuED?lb=logged_out_user?utm_medium=Share&utm_source=logged_out_user&utm_campaign=Online_coding_challenge",
+    link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
   },
 
   ];
