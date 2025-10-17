@@ -10,20 +10,7 @@ export default function NavbarHome() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [hoveredItem, setHoveredItem] = useState(null);
-
   const festLinks = [
-    {
-      href: "/urjotsav",
-      label: "URJOTSAV",
-      subtitle: "Technology & Innovation",
-      color: "#007BFF",
-    },
-    {
-      href: "/kaltarang",
-      label: "KALTARANG",
-      subtitle: "Culture & Arts",
-      color: "#E53935",
-    },
     {
       href: "/energia",
       label: "ENERGIA",
@@ -31,11 +18,24 @@ export default function NavbarHome() {
       color: "#9D50FF",
     },
     {
+      href: "/urjotsav",
+      label: "URJOTSAV",
+      subtitle: "Technology & Innovation",
+      color: "#007BFF",
+    },
+    {
       href: "/souhardya",
       label: "SOUHARDYA",
       subtitle: "Social & Community",
       color: "#FF9933",
     },
+    {
+      href: "/kaltarang",
+      label: "KALTARANG",
+      subtitle: "Culture & Arts",
+      color: "#E53935",
+    },
+
   ];
 
   useEffect(() => {

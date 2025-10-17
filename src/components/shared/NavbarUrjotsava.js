@@ -13,22 +13,16 @@ export default function NavbarHome() {
 
   const festLinks = [
     {
-      href: "/urjotsav",
-      label: "URJOTSAV",
-      subtitle: "Technology & Innovation",
-      color: "#007BFF",
-    },
-    {
-      href: "/kaltarang",
-      label: "KALTARANG",
-      subtitle: "Culture & Arts",
-      color: "#E53935",
-    },
-    {
       href: "/energia",
       label: "ENERGIA",
       subtitle: "Sports & Athletics",
       color: "#9D50FF",
+    },
+    {
+      href: "/urjotsav",
+      label: "URJOTSAV",
+      subtitle: "Technology & Innovation",
+      color: "#007BFF",
     },
     {
       href: "/souhardya",
@@ -36,6 +30,13 @@ export default function NavbarHome() {
       subtitle: "Social & Community",
       color: "#FF9933",
     },
+    {
+      href: "/kaltarang",
+      label: "KALTARANG",
+      subtitle: "Culture & Arts",
+      color: "#E53935",
+    },
+
   ];
 
   useEffect(() => {
