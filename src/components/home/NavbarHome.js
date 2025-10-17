@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function NavbarHome() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -41,11 +43,24 @@ export default function NavbarHome() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      // Show navbar when scrolling up or at the top
+      if (currentScrollY < lastScrollY || currentScrollY < 10) {
+        setIsVisible(true);
+      } 
+      // Hide navbar when scrolling down
+      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+      setIsScrolled(currentScrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const handleSmoothScroll = (e, href) => {
     if (href.startsWith('#')) {
@@ -122,23 +137,17 @@ export default function NavbarHome() {
 
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'py-2' : 'py-3'
-        }`}
+        animate={{ 
+          y: isVisible ? 0 : -100, 
+          opacity: isVisible ? 1 : 0 
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3`}
         style={{
-          background: isScrolled
-            ? 'linear-gradient(180deg, rgba(13, 13, 30, 0.4) 0%, rgba(13, 13, 30, 0.4) 100%)'
-            : 'linear-gradient(180deg, rgba(13, 13, 30, 0.4) 0%, transparent 100%)',
-          backdropFilter: 'blur(12px) saturate(150%)',
-          WebkitBackdropFilter: 'blur(12px) saturate(150%)',
+          background: 'transparent',
         }}
       >
         <div className="relative">
-          {/* Cosmic shimmer effect */}
-          <div className="absolute inset-0 cosmic-glow opacity-30" />
-          
           <div className="max-w-[90%] mx-auto flex justify-between items-center px-4 relative z-10">
             
             {/* Logos Container - Clickable to Homepage */}
