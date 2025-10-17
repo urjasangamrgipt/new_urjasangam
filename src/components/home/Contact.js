@@ -37,8 +37,6 @@ export default function Contact() {
 
         .contact-wrapper {
           font-family: 'Poppins', sans-serif;
-          background-color: #05020a;
-          background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
           color: #f0f0f0;
           display: flex;
           justify-content: center;

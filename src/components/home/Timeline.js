@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const festivals = [
@@ -49,15 +49,23 @@ const festivals = [
 export default function Timeline() {
   const [active, setActive] = useState(0);
 
+  // Auto-advance timeline every 4 seconds
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActive((prev) => (prev + 1) % festivals.length);
+    }, 4000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white font-poppins">
+    <div id="timeline" className="min-h-screen flex flex-col items-center justify-center bg-transparent text-white font-poppins">
       <h2 className="text-5xl md:text-6xl font-extrabold mb-16 text-center font-orbitron">
         Timeline
       </h2>
 
       {/* Timeline Bar */}
       <div className="relative w-full max-w-6xl px-4">
-        <div className="absolute top-1/2 left-0 w-full h-[3px] bg-white/20 -translate-y-1/2" />
+        <div className="absolute top-1/2 left-0 w-full h-[3px] bg-white/10 -translate-y-1/2" />
 
         <div className="flex justify-between relative z-10">
           {festivals.map((fest, index) => (
@@ -86,6 +94,22 @@ export default function Timeline() {
         </div>
       </div>
 
+      {/* Controls */}
+      <div className="mt-6 flex gap-4">
+        <button
+          onClick={() => setActive((active - 1 + festivals.length) % festivals.length)}
+          className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full border border-white/20 text-sm"
+        >
+          Prev
+        </button>
+        <button
+          onClick={() => setActive((active + 1) % festivals.length)}
+          className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full border border-white/20 text-sm"
+        >
+          Next
+        </button>
+      </div>
+
       {/* Active Card */}
       <motion.div
         key={festivals[active].id}
@@ -95,10 +119,8 @@ export default function Timeline() {
         className="mt-20 max-w-3xl w-full px-4"
       >
         <div
-          className="rounded-3xl overflow-hidden border border-white/20 shadow-lg backdrop-blur-md"
-          style={{
-            background: `linear-gradient(135deg, ${festivals[active].color}20, #111)`,
-          }}
+          className="rounded-3xl overflow-hidden border border-white/10 shadow-lg"
+          style={{ background: "transparent" }}
         >
           <img
             src={festivals[active].image}

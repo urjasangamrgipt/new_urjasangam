@@ -108,8 +108,8 @@ export default function NavbarHome() {
         }`}
         style={{
           background: isScrolled
-            ? 'linear-gradient(180deg, rgba(13, 13, 30, 0.95) 0%, rgba(13, 13, 30, 0.85) 100%)'
-            : 'linear-gradient(180deg, rgba(13, 13, 30, 0.7) 0%, transparent 100%)',
+            ? 'linear-gradient(180deg, rgba(13, 13, 30, 0.4) 0%, rgba(13, 13, 30, 0.4) 100%)'
+            : 'linear-gradient(180deg, rgba(13, 13, 30, 0.4) 0%, transparent 100%)',
           backdropFilter: 'blur(12px) saturate(150%)',
           WebkitBackdropFilter: 'blur(12px) saturate(150%)',
         }}
