@@ -181,16 +181,7 @@ export function EventsSection() {
         prizePool: "Trophy & Certificates",
         link: "",
       },
-      {
-        title: "Memetic",
-        icon: "😂",
-        date: "14–16 November",
-        venue: "Online",
-        description: "A competition to create the funniest and most viral memes on the given themes.",
-        participants: "Solo/Team",
-        prizePool: "Trophy & Certificates",
-        link: "https://unstop.com/hackathons/memetic-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-ut-1573127",
-      },
+
     ],
     music: [
       {

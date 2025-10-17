@@ -30,7 +30,7 @@ export default function EnergiaPage() {
         <section id="events">
           <EventsSection />
         </section>
-        <PastEventsSection />
+
 
         {/* "Visual Memories" Header for Gallery */}
         <section
