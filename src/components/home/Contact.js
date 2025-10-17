@@ -65,8 +65,8 @@ export default function Contact() {
           gap: 40px;
           border-radius: 24px;
           overflow: hidden;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.025);
           backdrop-filter: blur(12px);
           padding: 40px;
         }

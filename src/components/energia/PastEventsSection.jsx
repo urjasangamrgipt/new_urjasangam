@@ -63,36 +63,6 @@ export function PastEventsSection() {
       ref={sectionRef}
       className="relative w-full py-24 px-6 overflow-hidden font-sans"
     >
-      {/* Animated Purple Background Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute w-[600px] h-[600px] rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, transparent 70%)",
-            top: "10%",
-            left: "-10%",
-          }}
-        />
-        <motion.div
-          animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="absolute w-[600px] h-[600px] rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(147, 51, 234, 0.4) 0%, transparent 70%)",
-            bottom: "10%",
-            right: "-10%",
-          }}
-        />
-      </div>
 
       {/* Header */}
       <motion.div

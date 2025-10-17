@@ -319,46 +319,6 @@ export function EventsSection() {
       ref={sectionRef}
       className="py-20 relative overflow-hidden font-sans"
     >
-      {/* Animated Background Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute w-[600px] h-[600px] rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%)",
-            top: "0%",
-            left: "-15%",
-          }}
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="absolute w-[600px] h-[600px] rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(167, 139, 250, 0.4) 0%, transparent 70%)",
-            bottom: "0%",
-            right: "-15%",
-          }}
-        />
-      </div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
         {/* Header */}

@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react';
 export default function SouharDyaAbout() {
   const statsBarRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [visitCount, setVisitCount] = useState(0);
 
   // Reset animation on component mount
   useEffect(() => {
@@ -13,7 +12,6 @@ export default function SouharDyaAbout() {
       counter.innerText = '0';
     });
     
-    setVisitCount(prev => prev + 1);
     setHasAnimated(false); // Reset animation state on each visit
   }, []);
 
@@ -298,12 +296,6 @@ export default function SouharDyaAbout() {
     padding: 12px 30px;
   }
 
-  .visit-counter {
-    top: 10px;
-    right: 10px;
-    font-size: 0.75em;
-    padding: 6px 12px;
-  }
 
   .souhardya-scroll-indicator svg {
     width: 22px;
@@ -371,12 +363,6 @@ export default function SouharDyaAbout() {
     padding: 12px 30px;
   }
 
-  .visit-counter {
-    top: 10px;
-    right: 10px;
-    font-size: 0.75em;
-    padding: 6px 12px;
-  }
 
   .souhardya-scroll-indicator svg {
     width: 22px;
@@ -412,7 +398,6 @@ export default function SouharDyaAbout() {
 
 
       <div className="souhardya-about-root">
-        <div className="visit-counter">Visit #{visitCount}</div>
 
         <div className="souhardya-about-container">
           <div className="souhardya-content-wrapper">

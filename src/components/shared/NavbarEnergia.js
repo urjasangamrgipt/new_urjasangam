@@ -153,7 +153,7 @@ export default function NavbarHome() {
 
           <div className="max-w-[90%] mx-auto flex justify-between items-center px-4 relative z-10">
             {/* Logos Container - Clickable to Homepage */}
-            <Link href="#" className="flex items-center gap-3 group">
+            <Link href="/" className="flex items-center gap-3 group">
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 360 }}
                 transition={{ duration: 0.5 }}

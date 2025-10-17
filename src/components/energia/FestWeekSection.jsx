@@ -117,74 +117,146 @@ export default function FestWeekSection() {
       {/* Cards Grid */}
       <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {festivals.map((fest, i) => (
-          <div
-            key={fest.id}
-            onMouseEnter={() => setActiveCard(fest.id)}
-            onMouseLeave={() => setActiveCard(null)}
-            className={`relative rounded-3xl p-8 border border-white/10 backdrop-blur-xl bg-white/[0.05] hover:-translate-y-3 transition-all duration-500 overflow-hidden shadow-xl ${
-              isVisible ? "animate-[slideIn_0.8s_ease-out_forwards]" : ""
-            }`}
-            style={{ animationDelay: `${i * 0.2}s` }}
-          >
-            {/* Accent bar */}
-            <div
-              className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${fest.gradient}`}
-            />
-
-            {/* Image */}
-            <div className="relative w-20 h-20 mb-6 flex items-center justify-center">
-              <img
-                src={fest.imagesrc}
-                alt={`${fest.name} logo`}
-                className={`rounded-2xl object-contain transition-transform duration-300 ${
-                  activeCard === fest.id ? "scale-110 rotate-6" : ""
-                }`}
-              />
+          fest.name === "Souhardya" ? (
+            <Link key={fest.id} href="/souhardya">
               <div
-                className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${fest.gradient} opacity-20 pointer-events-none`}
-              ></div>
-            </div>
+                onMouseEnter={() => setActiveCard(fest.id)}
+                onMouseLeave={() => setActiveCard(null)}
+                className={`relative rounded-3xl p-8 border border-white/10 backdrop-blur-xl bg-white/[0.05] hover:-translate-y-3 transition-all duration-500 overflow-hidden shadow-xl ${
+                  isVisible ? "animate-[slideIn_0.8s_ease-out_forwards]" : ""
+                }`}
+                style={{ animationDelay: `${i * 0.2}s` }}
+              >
+                {/* Accent bar */}
+                <div
+                  className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${fest.gradient}`}
+                />
 
-            {/* Title & Desc */}
-            <h3
-              className={`text-3xl font-black mb-2 bg-gradient-to-r ${fest.gradient} bg-clip-text text-transparent`}
-            >
-              {fest.name}
-            </h3>
-            <p className="text-white/70 font-semibold mb-2">{fest.tagline}</p>
-            <p className="text-white/60 text-sm leading-relaxed mb-6">
-              {fest.description}
-            </p>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 border-y border-white/10 py-4 mb-6">
-              {fest.stats.map((stat, idx) => (
-                <div key={idx} className="text-center group cursor-default">
+                {/* Image */}
+                <div className="relative w-20 h-20 mb-6 flex items-center justify-center">
+                  <img
+                    src={fest.imagesrc}
+                    alt={`${fest.name} logo`}
+                    className={`rounded-2xl object-contain transition-transform duration-300 ${
+                      activeCard === fest.id ? "scale-110 rotate-6" : ""
+                    }`}
+                  />
                   <div
-                    className="text-xl font-extrabold"
-                    style={{ color: fest.color }}
-                  >
-                    {stat.value}
-                  </div>
-                  <div className="text-xs text-white/60 uppercase tracking-wider">
-                    {stat.label}
-                  </div>
+                    className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${fest.gradient} opacity-20 pointer-events-none`}
+                  ></div>
                 </div>
-              ))}
-            </div>
 
-            {/* CTA Button */}
-            <a
-              href={`/${fest.name.toLowerCase()}`}
-              className={`w-full py-3 rounded-xl border-2 font-semibold text-sm transition-all duration-300 flex justify-center items-center gap-2 ${
-                activeCard === fest.id
-                  ? `bg-gradient-to-r ${fest.gradient} text-black`
-                  : "border-white/30 text-white hover:bg-white/10"
+                {/* Title & Desc */}
+                <h3
+                  className={`text-3xl font-black mb-2 bg-gradient-to-r ${fest.gradient} bg-clip-text text-transparent`}
+                >
+                  {fest.name}
+                </h3>
+                <p className="text-white/70 font-semibold mb-2">{fest.tagline}</p>
+                <p className="text-white/60 text-sm leading-relaxed mb-6">
+                  {fest.description}
+                </p>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 border-y border-white/10 py-4 mb-6">
+                  {fest.stats.map((stat, idx) => (
+                    <div key={idx} className="text-center group cursor-default">
+                      <div
+                        className="text-xl font-extrabold"
+                        style={{ color: fest.color }}
+                      >
+                        {stat.value}
+                      </div>
+                      <div className="text-xs text-white/60 uppercase tracking-wider">
+                        {stat.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA Button */}
+                <a
+                  href={`/${fest.name.toLowerCase()}`}
+                  className={`w-full py-3 rounded-xl border-2 font-semibold text-sm transition-all duration-300 flex justify-center items-center gap-2 ${
+                    activeCard === fest.id
+                      ? `bg-gradient-to-r ${fest.gradient} text-black`
+                      : "border-white/30 text-white hover:bg-white/10"
+                  }`}
+                >
+                  Explore {fest.name} →
+                </a>
+              </div>
+            </Link>
+          ) : (
+            <div
+              key={fest.id}
+              onMouseEnter={() => setActiveCard(fest.id)}
+              onMouseLeave={() => setActiveCard(null)}
+              className={`relative rounded-3xl p-8 border border-white/10 backdrop-blur-xl bg-white/[0.05] hover:-translate-y-3 transition-all duration-500 overflow-hidden shadow-xl ${
+                isVisible ? "animate-[slideIn_0.8s_ease-out_forwards]" : ""
               }`}
+              style={{ animationDelay: `${i * 0.2}s` }}
             >
-              Explore {fest.name} →
-            </a>
-          </div>
+              {/* Accent bar */}
+              <div
+                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${fest.gradient}`}
+              />
+
+              {/* Image */}
+              <div className="relative w-20 h-20 mb-6 flex items-center justify-center">
+                <img
+                  src={fest.imagesrc}
+                  alt={`${fest.name} logo`}
+                  className={`rounded-2xl object-contain transition-transform duration-300 ${
+                    activeCard === fest.id ? "scale-110 rotate-6" : ""
+                  }`}
+                />
+                <div
+                  className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${fest.gradient} opacity-20 pointer-events-none`}
+                ></div>
+              </div>
+
+              {/* Title & Desc */}
+              <h3
+                className={`text-3xl font-black mb-2 bg-gradient-to-r ${fest.gradient} bg-clip-text text-transparent`}
+              >
+                {fest.name}
+              </h3>
+              <p className="text-white/70 font-semibold mb-2">{fest.tagline}</p>
+              <p className="text-white/60 text-sm leading-relaxed mb-6">
+                {fest.description}
+              </p>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 border-y border-white/10 py-4 mb-6">
+                {fest.stats.map((stat, idx) => (
+                  <div key={idx} className="text-center group cursor-default">
+                    <div
+                      className="text-xl font-extrabold"
+                      style={{ color: fest.color }}
+                    >
+                      {stat.value}
+                    </div>
+                    <div className="text-xs text-white/60 uppercase tracking-wider">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Button */}
+              <a
+                href={`/${fest.name.toLowerCase()}`}
+                className={`w-full py-3 rounded-xl border-2 font-semibold text-sm transition-all duration-300 flex justify-center items-center gap-2 ${
+                  activeCard === fest.id
+                    ? `bg-gradient-to-r ${fest.gradient} text-black`
+                    : "border-white/30 text-white hover:bg-white/10"
+                }`}
+              >
+                Explore {fest.name} →
+              </a>
+            </div>
+          )
         ))}
       </div>
 

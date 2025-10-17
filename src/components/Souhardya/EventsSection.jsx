@@ -165,18 +165,6 @@ export function EventsSection() {
 
   return (
     <section id="timeline" ref={sectionRef} className="py-12 sm:py-20 relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full blur-3xl"
-          style={{ background: 'radial-gradient(circle, rgba(249, 115, 22, 0.4) 0%, transparent 70%)', top: '0%', left: '-15%' }}
-        />
-        <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full blur-3xl"
-          style={{ background: 'radial-gradient(circle, rgba(251, 146, 60, 0.4) 0%, transparent 70%)', bottom: '0%', right: '-15%' }}
-        />
-      </div>
 
       <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
         <motion.div initial={{ opacity: 0, y: -30 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }} transition={{ duration: 0.8 }}>
