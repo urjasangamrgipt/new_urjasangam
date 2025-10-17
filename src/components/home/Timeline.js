@@ -20,7 +20,7 @@ const festivals = [
     date: "12-13 November",
     description:
       "A battle of wits and digital craftsmanship, showcasing technological innovation.",
-    image: "/photos/hero/Urjotsava1.jpg",
+    image: "/photos/UrjaSangam/1urjots.jpg",
     tags: ["Main Auditorium", "30+ Events"],
     color: "#007BFF",
   },
