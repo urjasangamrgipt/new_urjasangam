@@ -30,7 +30,7 @@ const festivals = [
     date: "12-13 November",
     description:
       "An initiative for community engagement and social change.",
-    image: "/photos/hero/Souhardahya1.jpg",
+    image: "/photos/Kaltarang/ST.jpg",
     tags: ["Campus Quad", "Community"],
     color: "#FF9933",
   },
@@ -40,7 +40,7 @@ const festivals = [
     date: "14-16 November",
     description:
       "A vibrant explosion of art, music, and dance that celebrates our culture.",
-    image: "/photos/energia/Kaltarang1.jpg",
+    image: "/photos/Kaltarang/Kaltrang Timeline.jpg",
     tags: ["Open Air Theatre", "500+ Artists"],
     color: "#E53935",
   },

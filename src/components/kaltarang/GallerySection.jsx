@@ -103,7 +103,7 @@ export function GallerySection() {
       <div className="video-container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[85%] md:w-[70%] lg:w-[60%] max-w-[750px] aspect-video z-10 rounded-xl overflow-hidden border border-white/20 bg-black shadow-[0_10px_30px_rgba(0,0,0,0.7)]">
         <video
           id="aftermovie-video"
-          src="/gallery_video/KALTARANG 2024 - Aftermovie _ RGIPT Cultural Fest.mp4"
+          src="/gallery_video/Kaltrang gallary.mp4"
           muted
           loop
           playsInline
