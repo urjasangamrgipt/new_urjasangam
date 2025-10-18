@@ -1,11 +1,25 @@
 "use client"
-import { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export function GallerySection() {
-    useEffect(() => {
+  const galleryImages = [
+    "/photos/energia/Box Cricket.png",
+    "/photos/energia/Gallary 3.jpg",
+    "/photos/energia/Gallary 4.jpg",
+    "/photos/energia/League.png",
+    "/photos/energia/Mini Marathon.jpg",
+    "/photos/energia/Hero 3.jpg",
+    "/photos/energia/NSD.png",
+    "/photos/energia/Football.png",
+    "/photos/energia/Energia 2.png",
+  ];
+
+  useEffect(() => {
     const rows = document.querySelectorAll('.row');
     rows.forEach((row) => {
+      // Prevents adding duplicates on hot-reload in development
+      if (row.children.length > 10) return;
+
       const images = Array.from(row.querySelectorAll('img'));
       images.forEach((img) => {
         const clone = img.cloneNode(true);
@@ -45,7 +59,7 @@ export function GallerySection() {
       if (!video) return;
       video.play();
       if (!soundLocked) {
-        video.muted = true;
+        video.muted = false;
         updateIcons(false);
       }
     };
@@ -75,29 +89,29 @@ export function GallerySection() {
       <div className="background-gallery absolute inset-0 flex flex-col gap-[1vh] z-[1]">
         {/* Row 1 */}
         <div className="row flex flex-nowrap h-[33vh] sm:h-[30vh] md:h-[33vh] animate-moveLeft">
-          <img src="/photos/energia/Box Cricket.png" alt="Fest photo 1" className="gallery-img" />
-          <img src="/photos/energia/Gallary 3.jpg" alt="Fest photo 2" className="gallery-img" />
-          <img src="/photos/energia/Gallary 4.jpg" alt="Fest photo 3" className="gallery-img" />
-          <img src="/photos/energia/League.png" alt="Fest photo 4" className="gallery-img" />
-          <img src="/photos/energia/Mini Marathon.jpg" alt="Fest photo 5" className="gallery-img" />
+          <img src={galleryImages[0]} alt="Gallery photo 1" className="gallery-img" />
+          <img src={galleryImages[1]} alt="Gallery photo 2" className="gallery-img" />
+          <img src={galleryImages[2]} alt="Gallery photo 3" className="gallery-img" />
+          <img src={galleryImages[3]} alt="Gallery photo 4" className="gallery-img" />
+          <img src={galleryImages[4]} alt="Gallery photo 5" className="gallery-img" />
         </div>
 
         {/* Row 2 */}
         <div className="row flex flex-nowrap h-[33vh] sm:h-[30vh] md:h-[33vh] animate-moveRight">
-          <img src="/photos/energia/Hero 3.jpg" alt="Fest photo 6" className="gallery-img" />
-          <img src="/photos/energia/NSD.png" alt="Fest photo 7" className="gallery-img" />
-          <img src="/photos/energia/Football.png" alt="Fest photo 8" className="gallery-img" />
-          <img src="/photos/energia/Energia 2.png" alt="Fest photo 9" className="gallery-img" />
-          <img src="/photos/energia/Gallary 8.png" alt="Fest photo 10" className="gallery-img" />
+          <img src={galleryImages[5]} alt="Gallery photo 6" className="gallery-img" />
+          <img src={galleryImages[6]} alt="Gallery photo 7" className="gallery-img" />
+          <img src={galleryImages[7]} alt="Gallery photo 8" className="gallery-img" />
+          <img src={galleryImages[8]} alt="Gallery photo 9" className="gallery-img" />
+          <img src={galleryImages[0]} alt="Gallery photo 10" className="gallery-img" />
         </div>
 
         {/* Row 3 */}
         <div className="row flex flex-nowrap h-[33vh] sm:h-[30vh] md:h-[33vh] animate-moveLeft">
-          <img src="/photos/energia/Gallary 8.png" alt="Fest photo 11" className="gallery-img" />
-          <img src="/photos/energia/Football.png" alt="Fest photo 12" className="gallery-img" />
-          <img src="/photos/energia/Gallary 5.png" alt="Fest photo 13" className="gallery-img" />
-          <img src="/photos/energia/Box Cricket.png" alt="Fest photo 14" className="gallery-img" />
-          <img src="/photos/energia/Gallary 2.JPG" alt="Fest photo 15" className="gallery-img" />
+          <img src={galleryImages[1]} alt="Gallery photo 11" className="gallery-img" />
+          <img src={galleryImages[2]} alt="Gallery photo 12" className="gallery-img" />
+          <img src={galleryImages[3]} alt="Gallery photo 13" className="gallery-img" />
+          <img src={galleryImages[4]} alt="Gallery photo 14" className="gallery-img" />
+          <img src={galleryImages[5]} alt="Gallery photo 15" className="gallery-img" />
         </div>
       </div>
 
@@ -109,7 +123,7 @@ export function GallerySection() {
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           className="w-full h-full object-cover"
         />
 
@@ -162,11 +176,11 @@ export function GallerySection() {
           0% { transform: translateX(-50%); }
           100% { transform: translateX(0); }
         }
-        .animate-moveLeft { animation: moveLeft 20s linear infinite; }
-        .animate-moveRight { animation: moveRight 20s linear infinite; }
-        .gallery-img { width: auto; height: 100%; object-fit: cover; flex-shrink: 0; }
+        .animate-moveLeft { animation: moveLeft 40s linear infinite; }
+        .animate-moveRight { animation: moveRight 40s linear infinite; }
+        .gallery-img { width: auto; height: 100%; object-fit: cover; flex-shrink: 0; margin: 0 0.5vh; border-radius: 8px;}
+        .aspect-video { aspect-ratio: 16 / 9; }
       `}</style>
     </div>
   );
 }
-
