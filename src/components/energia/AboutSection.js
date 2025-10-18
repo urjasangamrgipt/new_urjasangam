@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react';
 export default function EnergiaAbout() {
   const statsBarRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [visitCount, setVisitCount] = useState(0);
 
   // Reset animation on component mount
   useEffect(() => {
@@ -13,7 +12,6 @@ export default function EnergiaAbout() {
       counter.innerText = '0';
     });
     
-    setVisitCount(prev => prev + 1);
     setHasAnimated(false); // Reset animation state on each visit
   }, []);
 
@@ -349,12 +347,10 @@ export default function EnergiaAbout() {
           .energia-stat-value { font-size: 2.5em; }
           .energia-about-container { padding: 30px 20px; }
           .energia-cta-button { font-size: 1em; padding: 15px 35px; }
-          .visit-counter { top: 10px; right: 10px; font-size: 0.8em; padding: 8px 15px; }
         }
       `}</style>
 
       <div className="energia-about-root">
-        <div className="visit-counter">Visit #{visitCount}</div>
 
         <div className="energia-about-container">
           <div className="energia-content-wrapper">

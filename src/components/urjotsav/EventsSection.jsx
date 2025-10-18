@@ -12,7 +12,7 @@ export function EventsSection() {
 
   const eventsData = {
     coding: [
-      { title: "WebXplore", icon: "💻", date: "12-13 November 2025", time: "3 hours", venue: "Lecture Room", description: "A 3-hour web development challenge where teams build a full-stack website from scratch using any tech stack.", participants: "Teams", link: 'https://unstop.com/hackathons/webxplore-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1573289' },
+      { title: "HackInfinity Hackathon", icon: "💻", date: "Round 1 : 1-7 November, Round 2 : 12-13 November", time: "12 hours", venue: "Lecture Room", description: "HackInfinity is a two-round hackathon — an online ML challenge (1–7 Nov) followed by a 12-hour on-site finale (12–13 Nov) to crown the ultimate champions.", participants: "Teams", link: 'https://unstop.com/hackathons/webxplore-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1573289' },
       { title: "Code Climb", icon: "🧗", date: "12-13 November 2025", time: "3 hours", venue: "Lecture Room", description: "A 3-hour online coding hackathon where participants solve algorithmic problems on platforms like Codeforces or HackerEarth.", participants: "Individual", link: 'https://unstop.com/hackathons/codeclimb-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1573292' },
       { title: "RCPC", icon: "🏆", date: "12-13 November 2025", time: "3 hours", venue: "Lecture Room", description: "A team-based ICPC-style coding contest held offline at RGIPT, featuring 8 problems in 3 hours and a live leaderboard.", participants: "Teams", link: 'https://unstop.com/hackathons/rcpc-rgipt-collegiate-programming-contest-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of--1573313' },
       { title: "UI Express", icon: "🎨", date: "12-13 November 2025", time: "3 hours", venue: "Lecture Room", description: "A design challenge where teams create UI/UX solutions based on a surprise theme using tools like Figma or Canva.", participants: "Teams", link: 'https://unstop.com/hackathons/ui-xpress-design-that-speaks-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-tec-1573291' },
@@ -181,43 +181,6 @@ export function EventsSection() {
       ref={sectionRef}
       className="py-20 relative overflow-hidden"
     >
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute w-[600px] h-[600px] rounded-full blur-3xl"
-          style={{
-            background: 'radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%)',
-            top: '0%',
-            left: '-15%',
-          }}
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-          className="absolute w-[600px] h-[600px] rounded-full blur-3xl"
-          style={{
-            background: 'radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, transparent 70%)',
-            bottom: '0%',
-            right: '-15%',
-          }}
-        />
-      </div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div

@@ -181,16 +181,7 @@ export function EventsSection() {
         prizePool: "Trophy & Certificates",
         link: "",
       },
-      {
-        title: "Memetic",
-        icon: "😂",
-        date: "14–16 November",
-        venue: "Online",
-        description: "A competition to create the funniest and most viral memes on the given themes.",
-        participants: "Solo/Team",
-        prizePool: "Trophy & Certificates",
-        link: "https://unstop.com/hackathons/memetic-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-ut-1573127",
-      },
+
     ],
     music: [
       {
@@ -473,46 +464,6 @@ export function EventsSection() {
       ref={sectionRef}
       className="py-12 sm:py-20 relative overflow-hidden"
     >
-      {/* Animated Background Orbs - Red Theme */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(239, 68, 68, 0.4) 0%, transparent 70%)",
-            top: "0%",
-            left: "-15%",
-          }}
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="absolute w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(251, 146, 60, 0.4) 0%, transparent 70%)",
-            bottom: "0%",
-            right: "-15%",
-          }}
-        />
-      </div>
 
       <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
         {/* Header */}

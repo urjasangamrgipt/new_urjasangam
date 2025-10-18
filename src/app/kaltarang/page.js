@@ -33,7 +33,7 @@ export default function kaltarangPage() {
           <EventsSection />
         </section>
 
-        <PastEventsSection />
+       
 
         <section id="gallery" className="py-16 text-center bg-transparent">
           <div className="container mx-auto px-6">

@@ -5,14 +5,10 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react
 
 export default function Footer() {
   const quickLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#fests', label: 'Fests' },
-    { href: '#gallery', label: 'Gallery' },
-    { href: '#timeline', label: 'Timeline' },
-    { href: '#team', label: 'Team' },
+    { href: 'https://rgipt.ac.in/', label: 'Rgipt Website' },
+
     { href: '/faq', label: 'FAQ' },
-    { href: '#contact', label: 'Contact' },
+
   ]
 
   const festLinks = [
@@ -23,12 +19,11 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    { Icon: FaFacebook, href: '#', label: 'Facebook' },
-    { Icon: FaTwitter, href: '#', label: 'Twitter' },
-    { Icon: FaInstagram, href: '#', label: 'Instagram' },
-    { Icon: FaLinkedin, href: '#', label: 'LinkedIn' },
-    { Icon: FaYoutube, href: '#', label: 'YouTube' },
+    { Icon: FaInstagram, href: 'https://www.instagram.com/urjasangam.rgipt/', label: 'Instagram' },
+    { Icon: FaLinkedin, href: 'https://www.linkedin.com/company/urja-sangam/posts/?feedView=all', label: 'LinkedIn' },
+    { Icon: FaYoutube, href: 'https://www.youtube.com/@UrjaSangam', label: 'YouTube' },
   ]
+  
 
   return (
     <footer className="relative bg-gradient-to-br from-bg-dark/28 to-bg-card/98 backdrop-blur-[30px] border-t-2 border-energia/30">
@@ -87,20 +82,8 @@ export default function Footer() {
             <h3 className="font-exo text-2xl mb-6 gradient-text font-bold">
               Stay Updated
             </h3>
-            <p className="text-text-dim mb-6">Subscribe for updates</p>
-            <form className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-4 py-3 bg-bg-dark/70 border-2 border-energia/30 rounded-xl text-white focus:outline-none focus:border-energia"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-gradient-to-r from-energia to-urjotsav rounded-xl font-semibold hover:shadow-lg transition-all"
-              >
-                →
-              </button>
-            </form>
+            <p className="text-text-dim mb-6">Follow us on our social media platforms for updates</p>
+
 
             {/* Social Links */}
             <div className="flex gap-4 mt-8">
@@ -120,7 +103,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-energia/30 text-center">
           <p className="text-text-dim">
-            &copy; 2025 Urja Sangam, RGIPT. All rights reserved. Crafted with 💜
+            &copy; 2025 Urja Sangam, RGIPT. All rights reserved.
           </p>
         </div>
       </div>

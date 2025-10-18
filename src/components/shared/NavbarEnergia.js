@@ -10,20 +10,7 @@ export default function NavbarHome() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [hoveredItem, setHoveredItem] = useState(null);
-
   const festLinks = [
-    {
-      href: "/urjotsav",
-      label: "URJOTSAV",
-      subtitle: "Technology & Innovation",
-      color: "#007BFF",
-    },
-    {
-      href: "/kaltarang",
-      label: "KALTARANG",
-      subtitle: "Culture & Arts",
-      color: "#E53935",
-    },
     {
       href: "/energia",
       label: "ENERGIA",
@@ -31,11 +18,24 @@ export default function NavbarHome() {
       color: "#9D50FF",
     },
     {
+      href: "/urjotsav",
+      label: "URJOTSAV",
+      subtitle: "Technology & Innovation",
+      color: "#007BFF",
+    },
+    {
       href: "/souhardya",
       label: "SOUHARDYA",
       subtitle: "Social & Community",
       color: "#FF9933",
     },
+    {
+      href: "/kaltarang",
+      label: "KALTARANG",
+      subtitle: "Culture & Arts",
+      color: "#E53935",
+    },
+
   ];
 
   useEffect(() => {
@@ -141,8 +141,8 @@ export default function NavbarHome() {
         }`}
         style={{
           background: isScrolled
-            ? "linear-gradient(180deg, rgba(13, 13, 30, 0.95) 0%, rgba(13, 13, 30, 0.85) 100%)"
-            : "linear-gradient(180deg, rgba(13, 13, 30, 0.7) 0%, transparent 100%)",
+            ? "linear-gradient(180deg, rgba(13, 13, 30, 0.4) 0%, rgba(13, 13, 30, 0.4) 100%)"
+            : "linear-gradient(180deg, rgba(13, 13, 30, 0.4) 0%, transparent 100%)",
           backdropFilter: "blur(12px) saturate(150%)",
           WebkitBackdropFilter: "blur(12px) saturate(150%)",
         }}
@@ -153,7 +153,7 @@ export default function NavbarHome() {
 
           <div className="max-w-[90%] mx-auto flex justify-between items-center px-4 relative z-10">
             {/* Logos Container - Clickable to Homepage */}
-            <Link href="#" className="flex items-center gap-3 group">
+            <Link href="/" className="flex items-center gap-3 group">
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 360 }}
                 transition={{ duration: 0.5 }}

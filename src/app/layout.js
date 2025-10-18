@@ -9,9 +9,9 @@ export const metadata = {
   keywords: ['Urja Sangam', 'RGIPT', 'Festival', 'Tech', 'Cultural', 'Sports', 'Social Impact'],
   authors: [{ name: 'RGIPT' }],
   openGraph: {
-    title: 'Urja Sangam 2025 | The Ultimate Convergence',
+    title: 'Urja Sangam 2025 - The Annual Fest of RGIPT | The Ultimate Convergence',
     description: 'Join us for an extraordinary week of tech, culture, sports, and social impact',
-    url: 'https://urjasangam.rgipt.edu',
+    url: 'https://urjasangam.com',
     siteName: 'Urja Sangam',
     images: [
       {

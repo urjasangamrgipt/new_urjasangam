@@ -247,7 +247,7 @@ export function HeroSection() {
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-red-200 tracking-widest font-bold -mt-4 mb-8" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
-          INNOVATION & TECHNOLOGY CONVERGE
+           Celebrate Tradition with Energy
         </p>
 
         {/* CTA Button */}
