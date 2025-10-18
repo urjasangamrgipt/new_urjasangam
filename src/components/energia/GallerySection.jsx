@@ -14,6 +14,7 @@ export function GallerySection() {
     "/photos/energia/Energia 2.png",
   ];
 
+  // This effect for the background gallery animation remains the same.
   useEffect(() => {
     const rows = document.querySelectorAll('.row');
     rows.forEach((row) => {
@@ -26,62 +27,6 @@ export function GallerySection() {
         row.appendChild(clone);
       });
     });
-
-    const video = document.getElementById('aftermovie-video');
-    const soundToggle = document.getElementById('sound-toggle');
-    const iconMuted = document.getElementById('icon-muted');
-    const iconUnmuted = document.getElementById('icon-unmuted');
-    const videoContainer = document.querySelector('.video-container');
-
-    let soundLocked = false;
-
-    const updateIcons = (isMuted) => {
-      if (iconMuted && iconUnmuted) {
-        if (isMuted) {
-          iconMuted.classList.remove('hidden');
-          iconUnmuted.classList.add('hidden');
-        } else {
-          iconMuted.classList.add('hidden');
-          iconUnmuted.classList.remove('hidden');
-        }
-      }
-    };
-
-    const handleClick = () => {
-      if (!video) return;
-      const isMuted = video.muted;
-      video.muted = !isMuted;
-      soundLocked = true;
-      updateIcons(video.muted);
-    };
-
-    const handleEnter = () => {
-      if (!video) return;
-      video.play();
-      if (!soundLocked) {
-        video.muted = false;
-        updateIcons(false);
-      }
-    };
-
-    const handleLeave = () => {
-      if (!video) return;
-      video.pause();
-      if (!soundLocked) {
-        video.muted = true;
-        updateIcons(true);
-      }
-    };
-
-    soundToggle?.addEventListener('click', handleClick);
-    videoContainer?.addEventListener('mouseenter', handleEnter);
-    videoContainer?.addEventListener('mouseleave', handleLeave);
-
-    return () => {
-      soundToggle?.removeEventListener('click', handleClick);
-      videoContainer?.removeEventListener('mouseenter', handleEnter);
-      videoContainer?.removeEventListener('mouseleave', handleLeave);
-    };
   }, []);
 
   return (
@@ -115,56 +60,15 @@ export function GallerySection() {
         </div>
       </div>
 
-      {/* Video Container */}
+      {/* Video Container now uses the simple iframe */}
       <div className="video-container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[85%] md:w-[70%] lg:w-[60%] max-w-[750px] aspect-video z-10 rounded-xl overflow-hidden border border-white/20 bg-black shadow-[0_10px_30px_rgba(0,0,0,0.7)]">
-        <video
-          id="aftermovie-video"
-          src="/gallery_video/Video_3.mp4"
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="w-full h-full object-cover"
-        />
-
-        {/* Sound Toggle */}
-        <button
-          id="sound-toggle"
-          aria-label="Toggle sound"
-          className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-black/50 border border-white/30 rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-white transition-colors duration-200 hover:bg-black/70 z-20"
-        >
-          <svg
-            id="icon-muted"
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-            <line x1="23" y1="9" x2="17" y2="15"></line>
-            <line x1="17" y1="9" x2="23" y2="15"></line>
-          </svg>
-
-          <svg
-            id="icon-unmuted"
-            className="hidden"
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-          </svg>
-        </button>
+        <iframe
+          className="w-full h-full"
+          src="https://player.cloudinary.com/embed/?cloud_name=dlbf30ya5&public_id=ENERGY_ppnaky&player[fluid]=true&player[controls]=true&player[autoplay]=true&player[muted]=true&player[loop]=true"
+          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+          allowFullScreen
+          frameBorder="0"
+        ></iframe>
       </div>
 
       <style>{`

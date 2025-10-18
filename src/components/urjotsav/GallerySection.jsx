@@ -1,5 +1,5 @@
 "use client"
-import { useEffect } from 'react'; // useRef is no longer needed
+import { useEffect } from 'react';
 
 export function GallerySection() {
   const galleryImages = [
@@ -28,8 +28,6 @@ export function GallerySection() {
       });
     });
   }, []);
-
-  // The useEffect hook for initializing the video player has been removed.
 
   return (
     <div className="relative w-screen min-h-screen overflow-hidden font-inter bg-[#0a0a0a]">
@@ -62,10 +60,10 @@ export function GallerySection() {
         </div>
       </div>
 
-      {/* Video Container now uses the iframe */}
+      {/* Video Container now uses the simple iframe */}
       <div className="video-container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[85%] md:w-[70%] lg:w-[60%] max-w-[750px] aspect-video z-10 rounded-xl overflow-hidden border border-white/20 bg-black shadow-[0_10px_30px_rgba(0,0,0,0.7)]">
         <iframe
-          className="w-full h-full" // Added for responsiveness
+          className="w-full h-full"
           src="https://player.cloudinary.com/embed/?cloud_name=dlbf30ya5&public_id=urjotsav_s2nwwi&player[fluid]=true&player[controls]=true&player[autoplay]=true&player[muted]=true&player[loop]=true"
           allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
           allowFullScreen
