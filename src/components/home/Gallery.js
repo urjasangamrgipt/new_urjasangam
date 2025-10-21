@@ -94,10 +94,10 @@ export default function Gallery() {
       initial={{ opacity: 0, x: reverse ? -100 : 100 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.8, delay: startIndex * 0.1 }}
-      className="relative overflow-hidden mb-8"
+      className="relative overflow-hidden mb-4"
     >
       <motion.div
-        className="flex gap-6 hover:[animation-play-state:paused]"
+        className="flex gap-4 hover:[animation-play-state:paused]"
         animate={{
           x: reverse ? ['-50%', '0%'] : ['0%', '-50%']
         }}
@@ -111,7 +111,7 @@ export default function Gallery() {
         {[...galleryImages.slice(startIndex), ...galleryImages.slice(startIndex), ...galleryImages.slice(startIndex)].map((img, idx) => (
           <motion.div
             key={`${startIndex}-${idx}`}
-            className="flex-shrink-0 w-[400px] h-[300px] rounded-3xl overflow-hidden relative group cursor-pointer"
+            className="flex-shrink-0 w-[300px] h-[225px] rounded-3xl overflow-hidden relative group cursor-pointer"
             whileHover={{ 
               scale: 1.05,
               zIndex: 10,
@@ -237,7 +237,7 @@ export default function Gallery() {
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-12 font-black tracking-wider"
+          className="text-center mb-8 font-black tracking-wider"
           style={{
             fontSize: 'clamp(3rem, 8vw, 6rem)',
             fontFamily: 'Orbitron, sans-serif',
@@ -250,15 +250,15 @@ export default function Gallery() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2 }}
-          className="text-center text-white/90 max-w-3xl mx-auto mb-16 text-xl"
+          className="text-center text-white/90 max-w-3xl mx-auto mb-8 text-xl"
         >
           Relive the magic through our lens - hover to bring memories to life
         </motion.p>
 
         {/* Gallery Rows */}
-        {createRow(0, false, 50)}
-        {createRow(4, true, 45)}
-        {createRow(8, false, 55)}
+        {createRow(0, false, 20)}
+        {createRow(4, true, 15)}
+        {createRow(8, false, 20)}
       </div>
 
       {/* Lightbox Modal */}

@@ -166,9 +166,9 @@ const FestSlider = () => {
         if (position === 'active') {
             transform = 'translateX(0) translateZ(0) scale(1.1) rotateY(0)';
         } else if (position === 'prev') {
-            transform = 'translateX(-380px) translateZ(-300px) scale(0.75) rotateY(40deg)';
+            transform = 'translateX(-280px) translateZ(-200px) scale(0.8) rotateY(25deg)';
         } else if (position === 'next') {
-            transform = 'translateX(380px) translateZ(-300px) scale(0.75) rotateY(-40deg)';
+            transform = 'translateX(280px) translateZ(-200px) scale(0.8) rotateY(-25deg)';
         }
 
         return {
@@ -186,7 +186,7 @@ const FestSlider = () => {
             </h2>
 
             <div
-                className="relative h-[500px] sm:h-[550px] md:h-[600px] flex items-center justify-center mt-4 md:mt-16 w-full max-w-7xl"
+                className="relative h-[500px] sm:h-[550px] md:h-[600px] flex items-center justify-center mt-4 md:mt-16 w-full max-w-8xl"
                 onMouseEnter={stopAutoplay}
                 onMouseLeave={startAutoplay}
                 onTouchStart={onTouchStart}
@@ -218,7 +218,7 @@ const FestSlider = () => {
                                     sm:w-[380px]
                                     md:w-[420px]
                                     ${isActive ? 'opacity-100 z-10 cursor-pointer border-white/30 fest-card-active fest-card-progress md:scale-110' : ''}
-                                    ${isPrevNext ? 'hidden md:block opacity-50 z-[5] grayscale-[60%] brightness-75 blur-[1px] cursor-pointer border-white/10 hover:opacity-80 hover:grayscale-[30%] hover:brightness-90 hover:blur-[0.5px] hover:scale-[0.85]' : ''}
+                                    ${isPrevNext ? 'hidden md:block opacity-60 z-[5] grayscale-[40%] brightness-85 blur-[0.5px] cursor-pointer border-white/15 hover:opacity-90 hover:grayscale-[20%] hover:brightness-95 hover:blur-[0px] hover:scale-[0.9]' : ''}
                                     ${position === 'hidden' ? 'opacity-0 pointer-events-none' : ''}
                                 `}
                                 style={getCardStyle(index, fest)}
