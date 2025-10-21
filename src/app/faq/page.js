@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import NavbarHome from '@/components/home/NavbarHome'
+import NavbarFAQ from '@/components/shared/NavbarFAQ'
 import Footer from '@/components/shared/Footer'
 
 const festivalData = {
@@ -11,7 +11,7 @@ const festivalData = {
     color: 'from-orange-500 to-red-500',
     bgColor: 'bg-gradient-to-br from-orange-500/10 to-red-500/10',
     borderColor: 'border-orange-500/30',
-    icon: '🔥',
+    image: '/photos/UrjaSangam/urjasangam_logo_background.png',
     faqs: [
       {
         question: 'What is Urja Sangam?',
@@ -44,7 +44,7 @@ const festivalData = {
     color: 'from-green-500 to-emerald-500',
     bgColor: 'bg-gradient-to-br from-green-500/10 to-emerald-500/10',
     borderColor: 'border-green-500/30',
-    icon: '⚡',
+    image: '/hero image/Urjotsav/urjotsavalogo.jpg',
     faqs: [
       {
         question: 'What is Urjotsav?',
@@ -77,7 +77,7 @@ const festivalData = {
     color: 'from-red-500 to-pink-500',
     bgColor: 'bg-gradient-to-br from-red-500/10 to-pink-500/10',
     borderColor: 'border-red-500/30',
-    icon: '🎭',
+    image: '/hero image/Urjotsav/kaltarlogo.jpg',
     faqs: [
       {
         question: 'What is Kaltarang?',
@@ -110,7 +110,7 @@ const festivalData = {
     color: 'from-purple-500 to-violet-500',
     bgColor: 'bg-gradient-to-br from-purple-500/10 to-violet-500/10',
     borderColor: 'border-purple-500/30',
-    icon: '💪',
+    image: '/hero image/Urjotsav/energialogo.jpg',
     faqs: [
       {
         question: 'What is Energia?',
@@ -143,7 +143,7 @@ const festivalData = {
     color: 'from-yellow-500 to-orange-500',
     bgColor: 'bg-gradient-to-br from-yellow-500/10 to-orange-500/10',
     borderColor: 'border-yellow-500/30',
-    icon: '🤝',
+    image: '/photos/Souhardya/soudharya.png',
     faqs: [
       {
         question: 'What is Souhardya?',
@@ -183,7 +183,7 @@ export default function FAQPage() {
 
   return (
     <div className="min-h-screen text-white">
-      <NavbarHome />
+      <NavbarFAQ />
       
       <main className="pt-20">
         {/* Header */}
@@ -225,7 +225,11 @@ export default function FAQPage() {
                   }`}
                 >
                   <div className="text-center">
-                    <div className="text-4xl mb-4">{festival.icon}</div>
+                    <img
+                      src={festival.image}
+                      alt={`${festival.name} logo`}
+                      className="w-16 h-16 object-contain mx-auto mb-4 rounded-md"
+                    />
                     <h3 className={`text-lg font-bold ${
                       activeFestival === key 
                         ? `bg-gradient-to-r ${festival.color} bg-clip-text text-transparent`
@@ -301,35 +305,7 @@ export default function FAQPage() {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 text-center">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-r from-orange-500/10 via-red-500/10 to-purple-500/10 border border-orange-500/30 rounded-2xl p-8 max-w-2xl mx-auto backdrop-blur-sm"
-            >
-              <h3 className="text-2xl font-bold mb-4">Still have questions?</h3>
-              <p className="text-gray-400 mb-6">
-                Can't find the answer you're looking for? Contact our team and we'll get back to you as soon as possible.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="mailto:urjasangam@rgipt.ac.in"
-                  className="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-300"
-                >
-                  Email Us
-                </a>
-                <a
-                  href="#contact"
-                  className="px-6 py-3 border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300"
-                >
-                  Contact Form
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        
       </main>
 
       <Footer />
