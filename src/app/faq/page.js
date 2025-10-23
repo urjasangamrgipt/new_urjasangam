@@ -56,7 +56,7 @@ const festivalData = {
       },
       {
         question: 'Do I need to be a tech student to participate?',
-        answer: 'Not necessarily! While Urjotsav is tech-focused, we welcome participants from all backgrounds. Many events are designed to be accessible to beginners.
+        answer: 'Not necessarily! While Urjotsav is tech-focused, we welcome participants from all backgrounds. Many events are designed to be accessible to beginners.'
       },
       {
         question: 'What prizes and recognition are available?',
