@@ -48,19 +48,19 @@ const festivalData = {
     faqs: [
       {
         question: 'What is Urjotsav?',
-        answer: 'Urjotsav is the technical festival of RGIPT, focusing on innovation, technology, and engineering excellence. It features hackathons, tech competitions, workshops, and exhibitions showcasing cutting-edge technology.'
+        answer: 'Urjotsav is the technical fest of RGIPT, focusing on innovation, technology, and engineering excellence. It features hackathons, robotics events, tech competitions, workshops, and exhibitions showcasing cutting-edge technology.'
       },
       {
         question: 'What technical events are included in Urjotsav?',
-        answer: 'Urjotsav includes hackathons, coding competitions, robotics contests, AI/ML workshops, tech talks by industry experts, project exhibitions, and innovation challenges across various engineering domains.'
+        answer: 'Urjotsav includes hackathons, coding competitions, robotics contests,  tech talks by industry experts, project exhibitions, and innovation challenges across various engineering domains.'
       },
       {
         question: 'Do I need to be a tech student to participate?',
-        answer: 'Not necessarily! While Urjotsav is tech-focused, we welcome participants from all backgrounds. Many events are designed to be accessible to beginners, and we provide learning resources and mentorship.'
+        answer: 'Not necessarily! While Urjotsav is tech-focused, we welcome participants from all backgrounds. Many events are designed to be accessible to beginners.
       },
       {
         question: 'What prizes and recognition are available?',
-        answer: 'Winners receive cash prizes, certificates, internship opportunities, and recognition from industry partners. The total prize pool typically exceeds ₹5 lakhs across all events.'
+        answer: 'Winners receive cash prizes, certificates, internship opportunities, and recognition from industry partners. The total prize pool typically exceeds ₹4 lakhs across all events.'
       },
       {
         question: 'Are there any prerequisites for tech events?',
@@ -81,7 +81,7 @@ const festivalData = {
     faqs: [
       {
         question: 'What is Kaltarang?',
-        answer: 'Kaltarang is the cultural festival of RGIPT, celebrating art, music, dance, drama, and creative expression. It\'s where reality and soul converge through various cultural performances and competitions.'
+        answer: 'Kaltarang is the cultural fest of RGIPT, celebrating art, music, dance, drama, and creative expression. It\'s where reality and soul converge through various cultural performances and competitions.'
       },
       {
         question: 'What cultural events are featured in Kaltarang?',
@@ -97,12 +97,9 @@ const festivalData = {
       },
       {
         question: 'Do I need to bring my own instruments/equipment?',
-        answer: 'We provide basic sound equipment and some instruments. For specialized instruments or equipment, participants are advised to bring their own. Detailed equipment lists are provided before events.'
+        answer: 'We provide basic sound equipment and some instruments. For specialized instruments or equipment, participants are advised to bring their own. '
       },
-      {
-        question: 'How are cultural events judged?',
-        answer: 'Events are judged by renowned artists, cultural experts, and industry professionals. Criteria include technical skill, creativity, presentation, and audience engagement. Detailed judging criteria are shared before competitions.'
-      }
+
     ]
   },
   energia: {
@@ -114,11 +111,11 @@ const festivalData = {
     faqs: [
       {
         question: 'What is Energia?',
-        answer: 'Energia is the sports festival of RGIPT, celebrating athleticism, teamwork, and competitive spirit. It features various sports competitions, tournaments, and fitness challenges.'
+        answer: 'Energia is the RGIPT annual Sports Fest, celebrating athleticism, teamwork, and competitive spirit. It features various sports competitions, tournaments, and fitness challenges.'
       },
       {
         question: 'What sports are included in Energia?',
-        answer: 'Energia includes cricket, football, basketball, volleyball, badminton, table tennis, athletics, swimming, chess, and many more. We also have fun sports and team-building activities.'
+        answer: 'Energia includes basketball, volleyball, badminton, table tennis, athletics, chess, kho kho and many more. We also have fun sports and team-building activities.'
       },
       {
         question: 'Do I need to be a professional athlete to participate?',
@@ -130,7 +127,7 @@ const festivalData = {
       },
       {
         question: 'Are there individual and team events?',
-        answer: 'Yes! Energia features both individual sports (athletics, swimming, chess) and team sports (cricket, football, basketball). You can participate in multiple events based on your interests.'
+        answer: 'Yes! Energia features both individual sports (athletics, chess) and team sports (Kabbadi, volleyball, basketball). You can participate in multiple events based on your interests.'
       },
       {
         question: 'What safety measures are in place?',
@@ -147,11 +144,11 @@ const festivalData = {
     faqs: [
       {
         question: 'What is Souhardya?',
-        answer: 'Souhardya is the social impact festival of RGIPT, focusing on community service, social awareness, and making a positive difference in society through various social initiatives and activities.'
+        answer: 'Souhardya is the social fest of RGIPT, focusing on community service, social awareness, and making a positive difference in society through various social initiatives and activities.'
       },
       {
         question: 'What social activities are included in Souhardya?',
-        answer: 'Souhardya includes blood donation drives, environmental conservation projects, educational outreach programs, community service initiatives, social awareness campaigns, and volunteer activities.'
+        answer: 'Souhardya includes environmental conservation programs, educational outreach programs, community service initiatives, social awareness campaigns, and volunteer activities.'
       },
       {
         question: 'How can I contribute to Souhardya?',
