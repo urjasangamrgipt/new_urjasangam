@@ -12,8 +12,8 @@ export function EventsSection() {
 
   const eventsData = {
     coding: [
-      { title: "HackInfinity Hackathon", icon: "💻", date: "Round 1 : 1-7 November, Round 2 : 12-13 November", time: "12 hours", venue: "Lecture Room", description: "HackInfinity is a two-round hackathon — an online ML challenge (1–7 Nov) followed by a 12-hour on-site finale (12–13 Nov) to crown the ultimate champions.", participants: "Teams", link: 'https://unstop.com/hackathons/webxplore-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1573289' },
-      { title: "Code Climb", icon: "🧗", date: "12-13 November 2025", time: "3 hours", venue: "Lecture Room", description: "A 3-hour online coding hackathon where participants solve algorithmic problems on platforms like Codeforces or HackerEarth.", participants: "Individual", link: 'https://unstop.com/hackathons/codeclimb-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1573292' },
+      { title: "Hack RGIPT Hackathon", icon: "💻", date: "Round 1 : 1-7 November, Round 2 : 12-13 November", time: "12 hours", venue: "Lecture Room", description: "Hack RGIPT is a two-round hackathon where teams first clear an online screening and then build and present a complete tech solution in a 12-hour offline finale.", participants: "Teams", link: 'https://unstop.com/hackathons/webxplore-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1573289' },
+      { title: "Code Climb", icon: "👨‍💻", date: "12-13 November 2025", time: "3 hours", venue: "Lecture Room", description: "A 3-hour online coding hackathon where participants solve algorithmic problems on platforms like Codeforces or HackerEarth.", participants: "Individual", link: 'https://unstop.com/hackathons/codeclimb-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1573292' },
       { title: "RCPC", icon: "🏆", date: "12-13 November 2025", time: "3 hours", venue: "Lecture Room", description: "A team-based ICPC-style coding contest held offline at RGIPT, featuring 8 problems in 3 hours and a live leaderboard.", participants: "Teams", link: 'https://unstop.com/hackathons/rcpc-rgipt-collegiate-programming-contest-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of--1573313' },
       { title: "UI Express", icon: "🎨", date: "12-13 November 2025", time: "3 hours", venue: "Lecture Room", description: "A design challenge where teams create UI/UX solutions based on a surprise theme using tools like Figma or Canva.", participants: "Teams", link: 'https://unstop.com/hackathons/ui-xpress-design-that-speaks-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-tec-1573291' },
       { title: "Code Decipher", icon: "🔍", date: "12-13 November 2025", time: "Two rounds", venue: "Lecture Room", description: "A two-round debugging competition where participants fix errors in given code after an aptitude test.", participants: "Individual", link: 'https://unstop.com/hackathons/code-decipher-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-j-1572902' }
@@ -233,8 +233,8 @@ export function EventsSection() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`relative px-4 sm:px-8 py-3 rounded-full font-bold transition-all duration-300 ${activeTab === tab.id
-                    ? 'text-white'
-                    : 'text-blue-300/70 hover:text-white'
+                  ? 'text-white'
+                  : 'text-blue-300/70 hover:text-white'
                   }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

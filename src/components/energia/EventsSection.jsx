@@ -10,68 +10,56 @@ export function EventsSection() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const indoorEventsData = [
-    
     {
       title: "Table Tennis",
       icon: "🏓",
       date: "10-11 November",
-      // time: "9:00 AM Onwards",
-      // venue: "Indoor Sports Complex",
       description:
-        "International Table Tennis Federations's rules are followed as boys and girls compete in group stage followed by knockouts.",
+        "International Table Tennis Federation's rules are followed as boys and girls compete in group stage followed by knockouts.",
       participants: "Singles & Doubles",
       prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+      link: "https://unstop.com/events/table-tennis-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1576152",
     },
     {
       title: "Chess",
       icon: "♟️",
       date: "10-11 November",
-      // time: "11:00 AM Onwards",
-      // venue: "Student Activity Centre",
       description:
         "4 to 5 players of each team, with their existing FIDE ratings, compete under the Swiss System Format.",
       participants: "Individual",
       prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+      link: "https://unstop.com/events/chess-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-p-1576021",
     },
     {
       title: "Snooker",
       icon: "🎱",
       date: "10-11 November",
-      // time: "11:00 AM Onwards",
-      // venue: "Student Activity Centre",
       description:
         "Players aim to pot balls in a specific order on a 12x6 feet snooker table.",
       participants: "Individual",
       prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+      link: "https://unstop.com/events/snooker-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-1576194",
     },
     {
       title: "Power-Lifting",
       icon: "🏋️",
       date: "10-11 November",
-      // time: "11:00 AM Onwards",
-      // venue: "Student Activity Centre",
       description:
         "Athletes compete in three lifts: squat, bench press, and deadlift. The heaviest successful lift in each category is counted.",
       participants: "Individual",
       prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+      link: "https://unstop.com/events/powerlifting-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1576026",
     },
     {
       title: "Carrom",
       icon: "🎯",
       date: "10-11 November",
-      // time: "11:00 AM Onwards",
-      // venue: "Student Activity Centre",
       description:
         "Players compete on a square board, using their fingers to flick wooden discs into corner pockets.",
       participants: "Individual",
       prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+      link: "https://unstop.com/events/carrom-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar--1574430",
     },
-    
   ];
 
   const outdoorEventsData = [
@@ -79,19 +67,16 @@ export function EventsSection() {
       title: "Basketball",
       icon: "🏀",
       date: "10-11 November",
-      // time: "10:00 AM Onwards",
-      // venue: "Indoor Sports Complex",
       description:
         "High-flying dunks and fast-paced action. Assemble your team and dominate the court.",
       participants: "Teams of 5",
       prizePool: "Trophy & Medals",
       link: "https://unstop.com/events/basketball-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1574427",
-    },{
+    },
+    {
       title: "Volleyball",
       icon: "🏐",
       date: "10-11 November",
-      // time: "10:00 AM Onwards",
-      // venue: "Indoor Sport Complex",
       description:
         "Spike, set, and serve your way to glory in this thrilling team-based competition.",
       participants: "Teams of 6",
@@ -102,61 +87,62 @@ export function EventsSection() {
       title: "Badminton",
       icon: "🏸",
       date: "10-11 November",
-      // time: "9:00 AM Onwards",
-      // venue: "Badminton Courts",
       description:
         "A test of agility, precision, and speed. Compete in singles or doubles categories.",
       participants: "Singles & Doubles",
       prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+      link: "https://unstop.com/events/badminton-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1574425",
     },
     {
-      title: "Football",
-      icon: "⚽",
-      date: "10-11 November",
-      // time: "8:00 AM Onwards",
-      // venue: "Main Sports Ground",
-      description:
-        "The beautiful game. Showcase your teamwork, skill, and passion to score the winning goal.",
-      participants: "Teams of 11",
-      prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
-    },
-    {
-      title: "Athletics",
+      title: "Athletics-Male",
       icon: "🏃‍♂️",
       date: "10-11 November",
-      // time: "9:00 AM Onwards",
-      // venue: "Athletics Track",
       description:
         "Push your limits in track and field events including sprints, relays, and long jump.",
       participants: "Individual & Teams",
       prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+      link: "https://unstop.com/events/athletics-male-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jai-1576154",
+    },
+    {
+      title: "Athletics-Female",
+      icon: "🏃🏻‍♀",
+      date: "10-11 November",
+      description:
+        "Push your limits in track and field events including sprints, relays, and long jump.",
+      participants: "Individual & Teams",
+      prizePool: "Trophy & Medals",
+      link: "https://unstop.com/events/athletics-female-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-j-1576168",
     },
     {
       title: "Lawn Tennis",
       icon: "🎾",
       date: "10-11 November",
-      // time: "10:00 AM Onwards",
-      // venue: "Tennis Courts",
       description:
         "Serve an ace and dominate the court in intense singles and doubles matches.",
       participants: "Singles & Doubles",
       prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+      link: "https://unstop.com/events/lawn-tennis-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-u-1574428",
     },
+    {
+  title: "Kho-Kho",
+  icon: "🏃‍♂️💨",
+  date: "10-11 November",
+  description:
+    "A traditional Indian sport that combines elements of tag and wrestling. Quick reflexes and strategy are key!",
+  participants: "Teams of 8",
+  prizePool: "Trophy & Medals",
+  link: "https://unstop.com/events/kho-kho-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-1576180",
+},
+
     {
       title: "Kabaddi",
       icon: "🤸‍♂️",
       date: "10-11 November",
-      // time: "4:00 PM Onwards",
-      // venue: "Kabaddi Court",
       description:
         "A traditional sport of strength, strategy, and breath control. Raid and defend for points.",
       participants: "Teams of 7",
       prizePool: "Trophy & Medals",
-      link: "https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+      link: "https://unstop.com/events/kabaddi-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-1576185",
     },
   ];
 
@@ -167,9 +153,7 @@ export function EventsSection() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -178,53 +162,32 @@ export function EventsSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
-      },
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
-  const renderEventCard = (event, index) => (
+  const renderEventCard = (event) => (
     <motion.div
       key={event.title}
       variants={itemVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      whileHover={{
-        scale: 1.03,
-        y: -8,
-        transition: { duration: 0.3 },
-      }}
+      whileHover={{ scale: 1.03, y: -8, transition: { duration: 0.3 } }}
       className="relative group cursor-pointer font-sans"
     >
-      {/* Glow Effect */}
       <div className="absolute -inset-1 bg-gradient-to-r from-violet-500 via-purple-500 to-violet-500 rounded-2xl blur opacity-0 group-hover:opacity-60 transition duration-500" />
 
-      {/* Card Content */}
       <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-xl p-6 rounded-2xl border border-violet-500/30 group-hover:border-purple-400/60 transition-all duration-300 overflow-hidden">
-        {/* Icon Background Glow */}
         <motion.div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-violet-500/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         />
 
         <div className="text-center relative z-10">
           <motion.div
             className="text-6xl mb-5 inline-block"
-            whileHover={{
-              scale: 1.2,
-              rotate: 360,
-              transition: { duration: 0.6 },
-            }}
+            whileHover={{ scale: 1.2, rotate: 360, transition: { duration: 0.6 } }}
           >
             <div className="relative">
               <div className="absolute inset-0 blur-xl bg-purple-400/40 rounded-full" />
@@ -238,7 +201,6 @@ export function EventsSection() {
           <p className="text-purple-300/80 mt-2 font-medium">{event.date}</p>
         </div>
 
-        {/* Expandable Details */}
         <div className="overflow-hidden max-h-0 opacity-0 group-hover:max-h-[500px] group-hover:opacity-100 group-hover:mt-6 transition-all duration-500 ease-in-out">
           <div className="border-t border-violet-500/30 pt-4">
             <p className="text-purple-100/90 leading-relaxed text-sm mb-4">
@@ -246,26 +208,6 @@ export function EventsSection() {
             </p>
 
             <div className="grid grid-cols-2 gap-3">
-              <motion.div
-                // className="bg-violet-500/10 backdrop-blur-sm p-3 rounded-lg border border-violet-500/20 hover:border-purple-400/40 transition-all"
-                // whileHover={{ scale: 1.05 }}
-              >
-                {/* <div className="text-purple-400 text-xs font-bold mb-1">
-                  ⏰ Time
-                </div>
-                <div className="text-white text-sm">{event.time}</div> */}
-              </motion.div>
-
-              <motion.div
-                // className="bg-violet-500/10 backdrop-blur-sm p-3 rounded-lg border border-violet-500/20 hover:border-purple-400/40 transition-all"
-                // whileHover={{ scale: 1.05 }}
-              >
-                {/* <div className="text-purple-400 text-xs font-bold mb-1">
-                  📍 Venue
-                </div>
-                <div className="text-white text-sm">{event.venue}</div> */}
-              </motion.div>
-
               <motion.div
                 className="bg-violet-500/10 backdrop-blur-sm p-3 rounded-lg border border-violet-500/20 hover:border-purple-400/40 transition-all"
                 whileHover={{ scale: 1.05 }}
@@ -287,13 +229,18 @@ export function EventsSection() {
               </motion.div>
             </div>
 
+            {/* ✅ Fixed Button (Opens in new tab) */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="mt-6 w-full px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 border border-violet-400/50 rounded-full font-bold hover:from-violet-500 hover:to-purple-500 transition-all duration-300 text-white shadow-lg shadow-violet-500/30 relative overflow-hidden group/btn"
             >
-              <Link href={event.link}>
-                <span className="relative z-10"> Register Now</span>
+              <Link
+                href={event.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="relative z-10">Register Now</span>
               </Link>
               <motion.div
                 className="absolute inset-0 bg-white/20"
@@ -303,11 +250,6 @@ export function EventsSection() {
               />
             </motion.button>
           </div>
-        </div>
-
-        {/* Decorative Corner */}
-        <div className="absolute top-4 right-4 w-16 h-16 opacity-10">
-          <div className="absolute inset-0 border-t-2 border-r-2 border-purple-400 rounded-tr-2xl" />
         </div>
       </div>
     </motion.div>
@@ -319,7 +261,6 @@ export function EventsSection() {
       ref={sectionRef}
       className="py-20 relative overflow-hidden font-sans"
     >
-
       <div className="container mx-auto px-6 text-center relative z-10">
         {/* Header */}
         <motion.div
@@ -328,33 +269,12 @@ export function EventsSection() {
           transition={{ duration: 0.8 }}
         >
           <motion.h2
-            className="text-5xl md:text-7xl font-black mb-6 tracking-tight"
-            style={{
-              background:
-                "linear-gradient(135deg, #a78bfa 0%, #8b5cf6 25%, #7c3aed 50%, #c4b5fd 75%, #a78bfa 100%)",
-              backgroundSize: "200% 100%",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              filter: "drop-shadow(0 0 40px rgba(139, 92, 246, 0.5))",
-            }}
-            animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "linear",
-            }}
+            className="text-5xl md:text-7xl font-black mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-400"
+            animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
           >
             Energia Competitions
           </motion.h2>
-
-          <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-violet-500 via-purple-500 to-violet-500 mx-auto rounded-full mb-6"
-            initial={{ width: 0 }}
-            animate={isInView ? { width: 96 } : { width: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          />
 
           <p className="text-xl text-purple-300/80 mb-12 max-w-3xl mx-auto">
             From the track to the court, find your arena of glory.
@@ -383,7 +303,6 @@ export function EventsSection() {
                 <motion.div
                   layoutId="activeTab"
                   className="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600 rounded-full"
-                  style={{ boxShadow: "0 0 30px rgba(139, 92, 246, 0.6)" }}
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -404,7 +323,6 @@ export function EventsSection() {
                 <motion.div
                   layoutId="activeTab"
                   className="absolute inset-0 bg-gradient-to-r from-violet-600 to-purple-600 rounded-full"
-                  style={{ boxShadow: "0 0 30px rgba(139, 92, 246, 0.6)" }}
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -420,31 +338,8 @@ export function EventsSection() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {eventsToShow.map((event, index) => renderEventCard(event, index))}
+          {eventsToShow.map(renderEventCard)}
         </motion.div>
-
-        {/* Floating Particles */}
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-purple-400/40"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [-20, 20, -20],
-              x: [-10, 10, -10],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
       </div>
     </section>
   );
