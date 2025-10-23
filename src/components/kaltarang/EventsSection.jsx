@@ -19,7 +19,7 @@ export function EventsSection() {
           "An evocative stage for poets to express their deepest emotions in Hindi.",
         participants: "Solo",
         prizePool: "Trophy & Certificates",
-        link: "",
+        link: "https://unstop.com/events/abhivyakti-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-ut-1573118",
       },
       {
         title: "English Poetry Slam",
@@ -41,7 +41,7 @@ export function EventsSection() {
           "A battle of intellect and oratory in a formal Hindi debate competition.",
         participants: "Teams of 2",
         prizePool: "Trophy & Certificates",
-        link: "",
+        link: "https://unstop.com/events/vichar-vivaad-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-1578298",
       },
       {
         title: "JAM – Just A Minute",
@@ -63,7 +63,7 @@ export function EventsSection() {
           "An enchanting evening dedicated to the soulful and poetic art of Ghazals.",
         participants: "Solo/Duet",
         prizePool: "Trophy & Certificates",
-        link: "",
+        link: "https://unstop.com/events/urdu-ghazal-competition-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology--1578299",
       },
       {
         title: "Tale Tangle – Storytelling Challenge",
@@ -98,7 +98,7 @@ export function EventsSection() {
           "A theatrical journey where compelling stories come to life on stage.",
         participants: "Teams of 10–15",
         prizePool: "Trophy & Certificates",
-        link: "",
+        link: "https://unstop.com/events/kalpana-kaarvan-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jai-1573317",
       },
       {
         title: "Aksherang - Monoact",
@@ -109,7 +109,7 @@ export function EventsSection() {
           "A powerful solo performance where one actor commands the entire stage.",
         participants: "Solo",
         prizePool: "Trophy & Certificates",
-        link: "",
+        link: "https://unstop.com/events/aksherang-monoact-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-j-1573318",
       },
       {
         title: "Abhinay Vistaar - Improv Challenge",
@@ -120,7 +120,7 @@ export function EventsSection() {
           "A spontaneous acting challenge where creativity is tested on the spot.",
         participants: "Group/Individual",
         prizePool: "Trophy & Certificates",
-        link: "",
+        link: "https://unstop.com/events/abhinay-vistaar-improv-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-tec-1573319",
       },
     ],
     fmc: [
@@ -157,7 +157,7 @@ export function EventsSection() {
           "Give a cinematic classic a modern premiere by redesigning its iconic poster with your unique vision.",
         participants: "Solo",
         prizePool: "Trophy & Certificates",
-        link: "",
+        link: "https://unstop.com/competitions/re-release-movie-poster-redesign-contest-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-1573100",
       },
       {
         title: "Cover Replay (Cover Art Redesign)",
@@ -168,7 +168,7 @@ export function EventsSection() {
           "Hit replay on your favorite album's visuals by redesigning its iconic cover art with a fresh, creative spin.",
         participants: "Solo",
         prizePool: "Trophy & Certificates",
-        link: "",
+        link: "https://unstop.com/competitions/cover-replay-album-cover-design-contest-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of--1573105",
       },
       {
         title: "Comic Conquest (Storytelling through Digital Comics)",
@@ -179,7 +179,7 @@ export function EventsSection() {
           "Conquer the digital canvas by forging an original comic with a compelling story to claim victory.",
         participants: "Solo/Team",
         prizePool: "Trophy & Certificates",
-        link: "",
+        link: "https://unstop.com/competitions/comic-conquest-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgip-1573110",
       },
 
     ],
@@ -215,7 +215,7 @@ export function EventsSection() {
           "A prestigious platform showcasing the discipline and artistry of classical vocalists.",
         participants: "Solo",
         prizePool: "Trophy & Certificates",
-        link: "",
+        link: "https://unstop.com/events/sur-sangam-classical-singing-event-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-t-1573079",
       },
       {
         title: "Instrumental Impulse ",
@@ -226,7 +226,7 @@ export function EventsSection() {
           "A captivating showcase where instrumentalists let their music speak for itself.",
         participants: "Solo/Duet",
         prizePool: "Trophy & Certificates",
-        link: "",
+        link: "https://unstop.com/events/instrumental-impulse-music-instrumental-event-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of--1573092",
       },
       {
         title: "Rap Mania ",
@@ -240,7 +240,7 @@ export function EventsSection() {
         link: "https://unstop.com/events/rap-mania-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utta-1573324",
       },
       {
-        title: "Western Solo Singing Event",
+        title: "Crescendo - Western Solo Singing",
         icon: "🎶",
         date: "14–16 November",
         venue: "Vivekanand Sabhaghar",
@@ -252,40 +252,77 @@ export function EventsSection() {
       },
     ],
     dance: [
-      {
-        title: "Eka Kalaa - Solo Dance",
-        icon: "💃",
-        date: "14–16 November",
-        venue: "Vivekanand Sabhaghar",
-        description:
-          "A dynamic solo competition for dancers to showcase their Western-style moves.",
-        participants: "Solo",
-        prizePool: "Trophy & Certificates",
-        link: "",
-      },
-      {
-        title: "Groove Fusion - Street Style Faceoff",
-        icon: "🕺",
-        date: "14–16 November",
-        venue: "RG Plaza",
-        description:
-          "An intense dance battle where street styles clash in an epic faceoff.",
-        participants: "Solo/Group",
-        prizePool: "Trophy & Certificates",
-        link: "",
-      },
-      {
-        title: "Sync & Soar - Group Dance",
-        icon: "👯‍♀️",
-        date: "14–16 November",
-        venue: "On Stage",
-        description:
-          "Group Dance is a lively performance where dancers unite to showcase coordination, energy, and creativity.",
-        participants: "Groups of 6–12",
-        prizePool: "Trophy & Certificates",
-        link: "",
-      },
-    ],
+  {
+    title: "Eka Kalaa - Solo Dance",
+    icon: "💃",
+    date: "14–16 November",
+    venue: "Vivekanand Sabhaghar",
+    description:
+      "A dynamic solo competition for dancers to showcase their Western-style moves.",
+    participants: "Solo",
+    prizePool: "Trophy & Certificates",
+    link: "https://unstop.com/events/eka-kalaa-solo-dance-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgi-1577062",
+  },
+  {
+    title: "Groove Fusion - Street Style Faceoff",
+    icon: "🕺",
+    date: "14–16 November",
+    venue: "RG Plaza",
+    description:
+      "An intense dance battle where street styles clash in an epic faceoff.",
+    participants: "Solo/Group",
+    prizePool: "Trophy & Certificates",
+    link: "https://unstop.com/events/groove-fusion-street-style-faceoff-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum--1577060",
+  },
+  {
+    title: "Sync & Soar - Group Dance",
+    icon: "👯‍♀️",
+    date: "14–16 November",
+    venue: "On Stage",
+    description:
+      "Group Dance is a lively performance where dancers unite to showcase coordination, energy, and creativity.",
+    participants: "Groups of 6–12",
+    prizePool: "Trophy & Certificates",
+    link: "https://unstop.com/events/sync-soar-group-dance-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rg-1577059",
+  },
+  {
+    title: "Nritya Rasa - Classical Dance Challenge",
+    icon: "🩰",
+    date: "14–16 November",
+    venue: "N/A",
+    description:
+      "A solo classical dance performance highlighting expressive storytelling, traditional choreography, and graceful movements. ",
+    participants: "Solo",
+    prizePool: "Trophy & Certificates",
+    link: "https://unstop.com/events/nritya-rasa-classical-dance-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleu-1573320",
+  },
+],
+
+fashion: [
+  {
+    title: "Mr & Ms Kaltarang",
+    icon: "👑",
+    date: "14–16 November",
+    venue: "On Stage",
+    description:
+      "A glamorous pageant celebrating charisma, confidence, and style.",
+    participants: "Solo",
+    prizePool: "Trophy & Certificates",
+    link: "https://unstop.com/events/mr-ms-kaltarang-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jai-1573321",
+  },
+  {
+    title: "Fashion walk - Volt Vogue",
+    icon: "🚶‍♀️",
+    date: "14–16 November",
+    venue: "On Stage",
+    description:
+      "A dazzling runway event showcasing cutting-edge style and confident strides.",
+    participants: "Team event",
+    prizePool: "Trophy & Certificates",
+    link: "https://unstop.com/events/fashion-walk-volt-vogue-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology--1577451",
+  },
+
+],
   };
 
   const tabs = [
@@ -295,6 +332,7 @@ export function EventsSection() {
     { id: "drama", label: "Damru", icon: "🎭" },
     { id: "art", label: "Pen&Pixel", icon: "🎨" },
     { id: "dance", label: "Tarang", icon: "💃" },
+    { id: "fashion", label: "fashion", icon: "👑" },
   ];
 
   const eventsToShow = eventsData[activeTab];
@@ -345,7 +383,7 @@ export function EventsSection() {
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
           }}
-          transition={{
+            transition={{
             duration: 3,
             repeat: Infinity,
             ease: "easeInOut",
