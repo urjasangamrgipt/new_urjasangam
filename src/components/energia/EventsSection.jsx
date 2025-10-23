@@ -69,7 +69,7 @@ export function EventsSection() {
       date: "10-11 November",
       description:
         "High-flying dunks and fast-paced action. Assemble your team and dominate the court.",
-      participants: "Teams of 5",
+      participants: "Team Event",
       prizePool: "Trophy & Medals",
       link: "https://unstop.com/events/basketball-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1574427",
     },
@@ -79,7 +79,7 @@ export function EventsSection() {
       date: "10-11 November",
       description:
         "Spike, set, and serve your way to glory in this thrilling team-based competition.",
-      participants: "Teams of 6",
+      participants: "Teams Event",
       prizePool: "Trophy & Medals",
       link: "https://unstop.com/events/volleyball-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1574426",
     },
@@ -129,7 +129,7 @@ export function EventsSection() {
   date: "10-11 November",
   description:
     "A traditional Indian sport that combines elements of tag and wrestling. Quick reflexes and strategy are key!",
-  participants: "Teams of 8",
+  participants: "Team event",
   prizePool: "Trophy & Medals",
   link: "https://unstop.com/events/kho-kho-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-1576180",
 },
@@ -140,7 +140,7 @@ export function EventsSection() {
       date: "10-11 November",
       description:
         "A traditional sport of strength, strategy, and breath control. Raid and defend for points.",
-      participants: "Teams of 7",
+      participants: "Teams Event",
       prizePool: "Trophy & Medals",
       link: "https://unstop.com/events/kabaddi-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-1576185",
     },
