@@ -191,7 +191,7 @@ export function EventsSection() {
         venue: "Open Stage",
         description:
           "An electrifying musical showdown where bands compete for ultimate supremacy.",
-        participants: "Bands of 4–8",
+        participants: "Bands of 4-12",
         prizePool: "Trophy & Certificates",
         link: "https://unstop.com/competitions/band-blitz-battle-of-bands-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-tec-1573067",
       },
