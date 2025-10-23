@@ -15,7 +15,7 @@ const festivalData = {
     faqs: [
       {
         question: 'What is Urja Sangam?',
-        answer: 'Urja Sangam is the annual mega festival of RGIPT that brings together four major festivals - Urjotsav (Tech), Kaltarang (Cultural), Energia (Sports), and Souhardya (Social) under one umbrella. It\'s a week-long celebration of innovation, creativity, sportsmanship, and social impact.'
+        answer: 'Urja Sangam is the annual mega fest of RGIPT that brings together four major fest - Urjotsav (Tech), Kaltarang (Cultural), Energia (Sports), and Souhardya (Social) under one umbrella. It\'s a week-long celebration of innovation, creativity, sportsmanship, and social impact.'
       },
       {
         question: 'When and where is Urja Sangam 2025?',
@@ -48,7 +48,7 @@ const festivalData = {
     faqs: [
       {
         question: 'What is Urjotsav?',
-        answer: 'Urjotsav is the technical fest of RGIPT, focusing on innovation, technology, and engineering excellence. It features hackathons, robotics events, tech competitions, workshops, and exhibitions showcasing cutting-edge technology.'
+        answer: 'Urjotsav is the annual technical fest of RGIPT, focusing on innovation, technology, and engineering excellence. It features hackathons, robotics events, tech competitions, workshops, and exhibitions showcasing cutting-edge technology.'
       },
       {
         question: 'What technical events are included in Urjotsav?',
@@ -81,7 +81,7 @@ const festivalData = {
     faqs: [
       {
         question: 'What is Kaltarang?',
-        answer: 'Kaltarang is the cultural fest of RGIPT, celebrating art, music, dance, drama, and creative expression. It\'s where reality and soul converge through various cultural performances and competitions.'
+        answer: 'Kaltarang is the annual cultural fest of RGIPT, celebrating art, music, dance, drama, and creative expression. It\'s where reality and soul converge through various cultural performances and competitions.'
       },
       {
         question: 'What cultural events are featured in Kaltarang?',
