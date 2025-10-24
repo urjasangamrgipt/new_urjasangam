@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 const fests = [
     { name: 'Energia', className: 'energia', image: './photos/UrjaSangam/Energia.png', route: '/energia', color: '#a855f7' },
     { name: 'Urjotsav', className: 'urjotsav', image: './photos/UrjaSangam/Urjotsav.png', route: '/urjotsav', color: '#3b82f6' },
-    { name: 'Souhardya', className: 'souhardya', image: './photos/UrjaSangam/Souhardya.jpeg', route: '/souhardya', color: '#f59e0b' },
+    { name: 'Souhardya', className: 'souhardya', image: './photos/UrjaSangam/Souhardya.png', route: '/souhardya', color: '#f59e0b' },
     { name: 'Kaltarang', className: 'kaltarang', image: './photos/UrjaSangam/Kaltarang.png', route: '/kaltarang', color: '#ef4444' }
 ];
 
