@@ -206,6 +206,7 @@ export default function FestWeekSection() {
             href={
               "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"
             }
+            target="_blank"
           >
             <button className="relative px-10 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#A78BFA] text-black shadow-lg hover:scale-105 transition-transform overflow-hidden">
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shine_3s_ease-in-out_infinite]" />
