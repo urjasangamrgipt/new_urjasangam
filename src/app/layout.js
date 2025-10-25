@@ -1,6 +1,4 @@
 import './globals.css'
-import Footer from '@/components/shared/Footer'
-import Preloader from '@/components/shared/Preloader'
 import KaltarangBackground from '@/components/shared/KaltarangBackground'
 
 export const metadata = {
@@ -50,7 +48,7 @@ export default function RootLayout({ children }) {
         {/* Scroll Progress Bar */}
         <div 
           id="scroll-progress" 
-          className="fixed top-0 left-0 h-1 bg-gradient-to-r from-energia via-urjotsav via-souardhya to-kaltarang z-[10001] transition-all duration-100"
+          className="fixed top-0 left-0 h-1 bg-gradient-to-r from-energia via-urjotsav to-kaltarang z-[10001] transition-all duration-100"
           style={{ width: '0%' }}
         />
       </body>

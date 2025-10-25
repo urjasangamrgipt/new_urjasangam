@@ -11,7 +11,7 @@ const Convergence = () => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
     const ctx = canvas.getContext('2d');
-    
+
     let width = container.clientWidth;
     let height = container.clientHeight;
     canvas.width = width;
@@ -90,7 +90,7 @@ const Convergence = () => {
       init();
     };
 
-    const handleMouseMove = () => {};
+    const handleMouseMove = () => { };
 
     const handleMouseLeave = () => {
       mouseRef.current.x = null;
@@ -141,10 +141,10 @@ const Convergence = () => {
           animation: fadeIn 2s ease-out;
         }
       `}</style>
-      
+
       <div className="font-['Montserrat',sans-serif] max-w-[950px] text-center relative z-10">
-        <h1 
-          className="font-['Bebas_Neue',cursive] text-[clamp(2rem,12vw,8rem)] md:text-[clamp(2rem,15vw,5rem)] font-normal mb-4 tracking-[0.2em] uppercase relative z-20 animate-fadeIn"
+        <h1
+          className="font-['Bebas_Neue',cursive] text-[clamp(2rem,12vw,8rem)] md:text-[clamp(2rem,15vw,5rem)] font-normal mb-2 tracking-[0.2em] uppercase relative z-20 animate-fadeIn"
           style={{
             color: '#e0e6f9',
             textShadow: '0 0 15px rgba(0, 191, 255, 0.4), 0 0 25px rgba(135, 206, 235, 0.2)'
@@ -152,65 +152,141 @@ const Convergence = () => {
         >
           CONVERGENCE
         </h1>
-        
-        <div ref={containerRef} className="w-[40rem] max-w-[90vw] h-[10rem] relative mx-auto mb-0">
-          <div 
+
+        <div ref={containerRef} className="w-[40rem] max-w-[90vw] h-[6rem] relative mx-auto mb-2">
+          <div
             className="absolute top-0 left-0 right-0 h-[2px] w-3/4 mx-auto blur-sm"
             style={{
               backgroundImage: 'linear-gradient(to right, transparent, #6366f1, transparent)'
             }}
           />
-          <div 
+          <div
             className="absolute top-0 left-0 right-0 h-[1px] w-3/4 mx-auto"
             style={{
               backgroundImage: 'linear-gradient(to right, transparent, #6366f1, transparent)'
             }}
           />
-          <div 
-            className="absolute top-0 left-0 right-0 h-[5px] w-1/4 mx-auto blur-sm"
+          <div
+            className="absolute top-0 left-0 right-0 h-[4px] w-1/4 mx-auto blur-sm"
             style={{
               backgroundImage: 'linear-gradient(to right, transparent, #0ea5e9, transparent)'
             }}
           />
-          <div 
+          <div
             className="absolute top-0 left-0 right-0 h-[1px] w-1/4 mx-auto"
             style={{
               backgroundImage: 'linear-gradient(to right, transparent, #0ea5e9, transparent)'
             }}
           />
-          <canvas 
-            ref={canvasRef}
-            className="absolute top-0 left-0 w-full h-full"
-          />
+          <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />
           <div className="sparkles-mask absolute inset-0 w-full h-full" />
         </div>
-        
+
+
+
         <div className="mb-0">
-          <p className="text-[1.3rem] md:text-[1.1rem] leading-[1.9] md:leading-[1.7] text-[#cccccc] font-light animate-fadeIn-slow">
-            Witness the genesis of a new era. <span 
+          <p className="text-[1.3rem] md:text-[1.1rem] leading-[1.7] text-[#cccccc] font-light animate-fadeIn-slow">
+            <span
               className="font-semibold"
               style={{
                 color: '#87CEEB',
-                textShadow: '0 0 10px rgba(135, 206, 235, 0.5)'
+                textShadow: '0 0 10px rgba(135, 206, 235, 0.5)',
               }}
-            >URJA SANGAM</span> is the ultimate convergence—a singular universe forged from the union of four legendary fests. Here, the raw power of <strong className="font-bold text-white">athleticism</strong>, the boundless innovation of <strong className="font-bold text-white">technology</strong>, the vibrant soul of <strong className="font-bold text-white">culture</strong>, and the profound impact of <strong className="font-bold text-white">community</strong> collide to create one unforgettable legacy.
+            >
+              URJA SANGAM
+            </span>{' '}
+            is the grand convergence of passion, talent, and innovation — the ultimate
+            7-day celebration at <strong className="font-bold text-white">RGIPT</strong>.
+            For the first time ever, RGIPT unites its four iconic festivals into one
+            electrifying experience — where{' '}
+            <strong className="font-bold text-white">Sports</strong>,{' '}
+            <strong className="font-bold text-white">Technology</strong>,{' '}
+            <strong className="font-bold text-white">Culture</strong>, and{' '}
+            <strong className="font-bold text-white">Community</strong> collide to create
+            a legacy of brilliance.
           </p>
-          
-          <div 
-            className="mt-12 text-[1.8rem] md:text-[1.4rem] font-medium animate-fadeIn-slower"
+
+          <p className="mt-5 text-[1.3rem] md:text-[1.1rem] leading-[1.7] text-[#cccccc] font-light animate-fadeIn-slow">
+            Witness the genesis of a new era: a week where the power of{' '}
+            <strong className="font-bold text-white">Athleticism</strong>, creativity of{' '}
+            <strong className="font-bold text-white">Innovation</strong>, rhythm of{' '}
+            <strong className="font-bold text-white">Culture</strong>, and spirit of{' '}
+            <strong className="font-bold text-white">Collaboration</strong> merge into one
+            unforgettable spectacle. True to its name —{' '}
+            <span
+              className="font-semibold"
+              style={{
+                color: '#87CEEB',
+                textShadow: '0 0 10px rgba(135, 206, 235, 0.5)',
+              }}
+            >
+              URJA
+            </span>{' '}
+            (energy) meets{' '}
+            <span
+              className="font-semibold"
+              style={{
+                color: '#87CEEB',
+                textShadow: '0 0 10px rgba(135, 206, 235, 0.5)',
+              }}
+            >
+              SANGAM
+            </span>{' '}
+            (confluence) — it transcends boundaries, inspiring students, creators, and
+            dreamers to connect, compete, and create something extraordinary.
+          </p>
+
+          <p className="mt-5 text-[1.3rem] md:text-[1.1rem] leading-[1.7] text-[#cccccc] font-light animate-fadeIn-slow">
+            With <strong className="font-bold text-white">10,000+</strong> participants
+            from <strong className="font-bold text-white">50+</strong> colleges,{' '}
+            <span
+              className="font-semibold"
+              style={{
+                color: '#87CEEB',
+                textShadow: '0 0 10px rgba(135, 206, 235, 0.5)',
+              }}
+            >
+              URJA SANGAM
+            </span>{' '}
+            stands as a symbol of synergy — where{' '}
+            <strong className="font-bold text-white">Passion</strong> meets{' '}
+            <strong className="font-bold text-white">Innovation</strong>,{' '}
+            <strong className="font-bold text-white">Tradition</strong> meets{' '}
+            <strong className="font-bold text-white">Creativity</strong>, and stories
+            become part of something timeless.
+          </p>
+
+          <div
+            className="mt-10 text-[1.8rem] md:text-[1.4rem] font-medium animate-fadeIn-slower"
             style={{
               color: '#87CEEB',
-              textShadow: '0 0 20px rgba(135, 206, 235, 0.6)'
+              textShadow: '0 0 20px rgba(135, 206, 235, 0.6)',
             }}
           >
-            The saga unfolds from <span 
-              className="font-['Bebas_Neue',cursive] text-[2.5rem] md:text-[1.8rem] tracking-[2px] font-normal text-white"
+            The saga unfolds from{' '}
+            <span
+              className="font-['Bebas_Neue',cursive] text-[2.3rem] md:text-[1.8rem] tracking-[1.5px] font-normal text-white"
               style={{
-                textShadow: '0 0 25px rgba(0, 191, 255, 0.8), 0 0 40px rgba(135, 206, 235, 0.6)'
+                textShadow:
+                  '0 0 25px rgba(0, 191, 255, 0.8), 0 0 40px rgba(135, 206, 235, 0.6)',
               }}
-            >10th to 16th November</span>.
+            >
+              10th to 16th November
+            </span>
+            .
           </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
   );
