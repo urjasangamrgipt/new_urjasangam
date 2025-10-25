@@ -12,9 +12,9 @@ export function EventsSection() {
     {
       title: "Science Exhibition",
       icon: "🧪",
-      date: "12 November",
-      time: "10:00 AM - 5:00 PM",
-      venue: "Auditorium",
+      date: "12-13 November",
+      // time: "10:00 AM - 5:00 PM",
+      // venue: "Auditorium",
       description:
         "Explore the wonders of science through engaging experiments, innovative models, and creative student projects across various disciplines.",
       participants: "Individual",
@@ -25,8 +25,8 @@ export function EventsSection() {
       title: "Nirmaan",
       icon: "🏗️",
       date: "12-13 November",
-      time: "7:00 AM - 11:00 AM",
-      venue: "Auditorium",
+      // time: "7:00 AM - 11:00 AM",
+      // venue: "Auditorium",
       description:
         "Join a dynamic conclave where NGOs, engineers, and innovators collaborate to design sustainable solutions for real-world social challenges.",
       participants: "Individual & Teams",
@@ -36,9 +36,9 @@ export function EventsSection() {
     {
       title: "Kavi Sammelan",
       icon: "🎤",
-      date: "14 November",
-      time: "7:30 PM - 11:00 PM",
-      venue: "Auditorium",
+      date: "12-13November",
+      // time: "7:30 PM - 11:00 PM",
+      // venue: "Auditorium",
       description:
         "A poetic gathering featuring renowned and budding poets who express emotions, stories, and social themes through powerful verses.",
       participants: "Audience",
@@ -49,8 +49,8 @@ export function EventsSection() {
       title: "Pratbimb",
       icon: "🎬",
       date: "12-13 November",
-      time: "2:00 PM - 5:00 PM",
-      venue: "Auditorium",
+      // time: "2:00 PM - 5:00 PM",
+      // venue: "Auditorium",
       description:
         "A short film-making competition for passionate storytellers. Showcase your creativity through impactful visual narratives.",
       participants: "Individual & Teams",
@@ -60,9 +60,9 @@ export function EventsSection() {
     {
       title: "Riwaaz",
       icon: "🧵",
-      date: "13 November",
-      time: "4:00 PM - 10:00 PM",
-      venue: "Ground",
+      date: "12-13 November",
+      // time: "4:00 PM - 10:00 PM",
+      // venue: "Ground",
       description:
         "A vibrant cultural exhibition showcasing traditional arts, crafts, music, and heritage through interactive displays and live demos.",
       participants: "Volunteers",
