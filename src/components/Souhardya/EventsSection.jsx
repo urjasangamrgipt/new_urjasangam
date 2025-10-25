@@ -1,83 +1,91 @@
-"use client"
+"use client";
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import Link from 'next/link';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 
 export function EventsSection() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const eventsData = [
-  {
-    title: "Science Exhibition",
-    icon: "🧪", // test tube – fits science & experiments
-    date: "12 November",
-    time: "10:00 AM - 5:00 PM",
-    venue: "Auditorium",
-    description: "Explore the wonders of science through engaging experiments, innovative models, and creative student projects across various disciplines.",
-    participants: "Individual",
-    prizePool: "Certificate & Refreshments",
-    link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
-  },
-  {
-    title: "Nirmaan",
-    icon: "🏗️", // building construction – fits NGO + engineering + innovation
-    date: "12-13 November",
-    time: "7:00 AM - 11:00 AM",
-    venue: "Auditorium",
-    description: "Join a dynamic conclave where NGOs, engineers, and innovators collaborate to design sustainable solutions for real-world social challenges.",
-    participants: "Individual & Teams",
-    prizePool: "Certificate of Participation",
-    link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
-  },
-  {
-    title: "Kavi Sammelan",
-    icon: "🎤", // mic – perfect for poetry performance
-    date: "14 November",
-    time: "7:30 PM - 11:00 PM",
-    venue: "Auditorium",
-    description: "A poetic gathering featuring renowned and budding poets who express emotions, stories, and social themes through powerful verses.",
-    participants: "Audience",
-    prizePool: "Certificate & Recognition",
-    link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
-  },
-  {
-    title: "Pratbimb",
-    icon: "🎬", // clapperboard – perfect for film-making
-    date: "12-13 November",
-    time: "2:00 PM - 5:00 PM",
-    venue: "Auditorium",
-    description: "A short film-making competition for passionate storytellers. Showcase your creativity through impactful visual narratives.",
-    participants: "Individual & Teams",
-    prizePool: "Certificate of Appreciation",
-    link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
-  },
-  {
-    title: "Riwaaz",
-    icon: "🧵", // thread & needle – symbol of tradition/culture
-    date: "13 November",
-    time: "4:00 PM - 10:00 PM",
-    venue: "Ground",
-    description: "A vibrant cultural exhibition showcasing traditional arts, crafts, music, and heritage through interactive displays and live demos.",
-    participants: "Volunteers",
-    prizePool: "Certificate & Recognition",
-    link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
-  },
-
+    {
+      title: "Science Exhibition",
+      icon: "🧪",
+      date: "12 November",
+      time: "10:00 AM - 5:00 PM",
+      venue: "Auditorium",
+      description:
+        "Explore the wonders of science through engaging experiments, innovative models, and creative student projects across various disciplines.",
+      participants: "Individual",
+      prizePool: "Certificate & Refreshments",
+      link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+    },
+    {
+      title: "Nirmaan",
+      icon: "🏗️",
+      date: "12-13 November",
+      time: "7:00 AM - 11:00 AM",
+      venue: "Auditorium",
+      description:
+        "Join a dynamic conclave where NGOs, engineers, and innovators collaborate to design sustainable solutions for real-world social challenges.",
+      participants: "Individual & Teams",
+      prizePool: "Certificate of Participation",
+      link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+    },
+    {
+      title: "Kavi Sammelan",
+      icon: "🎤",
+      date: "14 November",
+      time: "7:30 PM - 11:00 PM",
+      venue: "Auditorium",
+      description:
+        "A poetic gathering featuring renowned and budding poets who express emotions, stories, and social themes through powerful verses.",
+      participants: "Audience",
+      prizePool: "Certificate & Recognition",
+      link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+    },
+    {
+      title: "Pratbimb",
+      icon: "🎬",
+      date: "12-13 November",
+      time: "2:00 PM - 5:00 PM",
+      venue: "Auditorium",
+      description:
+        "A short film-making competition for passionate storytellers. Showcase your creativity through impactful visual narratives.",
+      participants: "Individual & Teams",
+      prizePool: "Certificate of Appreciation",
+      link: "https://unstop.com/events/pratibimb-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1578044",
+    },
+    {
+      title: "Riwaaz",
+      icon: "🧵",
+      date: "13 November",
+      time: "4:00 PM - 10:00 PM",
+      venue: "Ground",
+      description:
+        "A vibrant cultural exhibition showcasing traditional arts, crafts, music, and heritage through interactive displays and live demos.",
+      participants: "Volunteers",
+      prizePool: "Certificate & Recognition",
+      link: "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716",
+    },
   ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
+      transition: { staggerChildren: 0.1 },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    },
   };
 
   const renderEventCard = (event, index) => (
@@ -109,50 +117,83 @@ export function EventsSection() {
           <h3 className="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-400 mb-2">
             {event.title}
           </h3>
-          <p className="text-orange-300/80 mt-2 font-medium text-sm sm:text-base">{event.date}</p>
+          <p className="text-orange-300/80 mt-2 font-medium text-sm sm:text-base">
+            {event.date}
+          </p>
         </div>
 
         <div className="overflow-hidden max-h-0 opacity-0 group-hover:max-h-[500px] group-hover:opacity-100 group-hover:mt-4 sm:group-hover:mt-6 transition-all duration-500 ease-in-out">
           <div className="border-t border-orange-500/30 pt-4">
-            <p className="text-orange-100/90 leading-relaxed text-xs sm:text-sm mb-4">{event.description}</p>
+            <p className="text-orange-100/90 leading-relaxed text-xs sm:text-sm mb-4">
+              {event.description}
+            </p>
 
             <div className="grid grid-cols-2 gap-2 sm:gap-3">
-              <motion.div className="bg-orange-500/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg border border-orange-500/20 hover:border-orange-400/40 transition-all" whileHover={{ scale: 1.05 }}>
-                <div className="text-orange-400 text-xs font-bold mb-1">⏰ Time</div>
+              <motion.div
+                className="bg-orange-500/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg border border-orange-500/20 hover:border-orange-400/40 transition-all"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-orange-400 text-xs font-bold mb-1">
+                  ⏰ Time
+                </div>
                 <div className="text-white text-xs sm:text-sm">{event.time}</div>
               </motion.div>
-              <motion.div className="bg-orange-500/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg border border-orange-500/20 hover:border-orange-400/40 transition-all" whileHover={{ scale: 1.05 }}>
-                <div className="text-orange-400 text-xs font-bold mb-1">📍 Venue</div>
+
+              <motion.div
+                className="bg-orange-500/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg border border-orange-500/20 hover:border-orange-400/40 transition-all"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-orange-400 text-xs font-bold mb-1">
+                  📍 Venue
+                </div>
                 <div className="text-white text-xs sm:text-sm">{event.venue}</div>
               </motion.div>
-              <motion.div className="bg-orange-500/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg border border-orange-500/20 hover:border-orange-400/40 transition-all" whileHover={{ scale: 1.05 }}>
-                <div className="text-orange-400 text-xs font-bold mb-1">👥 Participants</div>
-                <div className="text-white text-xs sm:text-sm">{event.participants}</div>
+
+              <motion.div
+                className="bg-orange-500/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg border border-orange-500/20 hover:border-orange-400/40 transition-all"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-orange-400 text-xs font-bold mb-1">
+                  👥 Participants
+                </div>
+                <div className="text-white text-xs sm:text-sm">
+                  {event.participants}
+                </div>
               </motion.div>
-              <motion.div className="bg-orange-500/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg border border-orange-500/20 hover:border-orange-400/40 transition-all" whileHover={{ scale: 1.05 }}>
-                <div className="text-orange-400 text-xs font-bold mb-1">🏆 Recognition</div>
-                <div className="text-white text-xs sm:text-sm">{event.prizePool}</div>
+
+              <motion.div
+                className="bg-orange-500/10 backdrop-blur-sm p-2 sm:p-3 rounded-lg border border-orange-500/20 hover:border-orange-400/40 transition-all"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-orange-400 text-xs font-bold mb-1">
+                  🏆 Recognition
+                </div>
+                <div className="text-white text-xs sm:text-sm">
+                  {event.prizePool}
+                </div>
               </motion.div>
             </div>
 
-
-            <Link href={event.link}>   <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => window.open(event.link, "_blank")}
-              className="mt-4 sm:mt-6 w-full px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-orange-600 to-amber-600 border border-orange-400/50 rounded-full font-bold hover:from-orange-500 hover:to-amber-500 transition-all duration-300 text-white text-sm sm:text-base shadow-lg shadow-orange-500/30 relative overflow-hidden group/btn"
+            {/* ✅ Fixed button - Opens in new tab */}
+            <Link
+              href={event.link}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <span className="relative z-10">Join Now</span>
-              <motion.div
-                className="absolute inset-0 bg-white/20 pointer-events-none"  // <-- add this
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '100%' }}
-                transition={{ duration: 0.6 }}
-              />
-            </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-4 sm:mt-6 w-full px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-orange-600 to-amber-600 border border-orange-400/50 rounded-full font-bold hover:from-orange-500 hover:to-amber-500 transition-all duration-300 text-white text-sm sm:text-base shadow-lg shadow-orange-500/30 relative overflow-hidden group/btn"
+              >
+                <span className="relative z-10">Join Now</span>
+                <motion.div
+                  className="absolute inset-0 bg-white/20 pointer-events-none"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%" }}
+                  transition={{ duration: 0.6 }}
+                />
+              </motion.button>
             </Link>
-
-
           </div>
         </div>
 
@@ -165,33 +206,64 @@ export function EventsSection() {
 
   return (
     <section id="timeline" ref={sectionRef} className="py-12 sm:py-20 relative overflow-hidden">
-
       <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-        <motion.div initial={{ opacity: 0, y: -30 }} animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }} transition={{ duration: 0.8 }}>
-          <motion.h2 className="text-4xl sm:text-5xl md:text-7xl font-black mb-4 sm:mb-6 tracking-tight"
-            style={{ background: 'linear-gradient(135deg, #f97316 0%, #ea580c 25%, #fb923c 50%, #fdba74 75%, #f97316 100%)', backgroundSize: '200% 100%', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
-            animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h2
+            className="text-4xl sm:text-5xl md:text-7xl font-black mb-4 sm:mb-6 tracking-tight"
+            style={{
+              background:
+                "linear-gradient(135deg, #f97316 0%, #ea580c 25%, #fb923c 50%, #fdba74 75%, #f97316 100%)",
+              backgroundSize: "200% 100%",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+            animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
           >
             Social Services Events
           </motion.h2>
-          <motion.div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 mx-auto rounded-full mb-4 sm:mb-6"
-            initial={{ width: 0 }} animate={isInView ? { width: 96 } : { width: 0 }} transition={{ duration: 1, delay: 0.3 }} />
+
+          <motion.div
+            className="w-20 sm:w-24 h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 mx-auto rounded-full mb-4 sm:mb-6"
+            initial={{ width: 0 }}
+            animate={isInView ? { width: 96 } : { width: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+          />
+
           <p className="text-base sm:text-xl text-orange-300/80 mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
             Join us in making a positive impact on society
           </p>
         </motion.div>
 
-        <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
-          variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           {eventsData.map((event, index) => renderEventCard(event, index))}
         </motion.div>
 
+        {/* Floating glowing dots animation */}
         {[...Array(8)].map((_, i) => (
-          <motion.div key={i} className="absolute w-2 h-2 rounded-full bg-orange-400/40 hidden sm:block"
-            style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%` }}
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 rounded-full bg-orange-400/40 hidden sm:block"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
             animate={{ y: [-20, 20, -20], x: [-10, 10, -10], opacity: [0.2, 0.5, 0.2] }}
-            transition={{ duration: 3 + Math.random() * 2, repeat: Infinity, ease: "easeInOut", delay: Math.random() * 2 }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: Math.random() * 2,
+            }}
           />
         ))}
       </div>
