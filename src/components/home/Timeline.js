@@ -10,7 +10,7 @@ const festivals = [
     date: "10-11 November",
     description:
       "Witness the spirit of sportsmanship and competitive excellence.",
-    image: "/photos/energia/energia1.jpg",
+    image: "/photos/energia/Energia Timeline.jpg",
     tags: ["Sports Complex", "2000+"],
     color: "#9D50FF",
   },
