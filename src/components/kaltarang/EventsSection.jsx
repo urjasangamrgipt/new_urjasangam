@@ -252,77 +252,77 @@ export function EventsSection() {
       },
     ],
     dance: [
-  {
-    title: "Eka Kalaa - Solo Dance",
-    icon: "💃",
-    date: "14–16 November",
-    venue: "Vivekanand Sabhaghar",
-    description:
-      "A dynamic solo competition for dancers to showcase their Western-style moves.",
-    participants: "Solo",
-    prizePool: "Trophy & Certificates",
-    link: "https://unstop.com/events/eka-kalaa-solo-dance-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgi-1577062",
-  },
-  {
-    title: "Groove Fusion - Street Style Faceoff",
-    icon: "🕺",
-    date: "14–16 November",
-    venue: "RG Plaza",
-    description:
-      "An intense dance battle where street styles clash in an epic faceoff.",
-    participants: "Solo/Group",
-    prizePool: "Trophy & Certificates",
-    link: "https://unstop.com/events/groove-fusion-street-style-faceoff-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum--1577060",
-  },
-  {
-    title: "Sync & Soar - Group Dance",
-    icon: "👯‍♀️",
-    date: "14–16 November",
-    venue: "On Stage",
-    description:
-      "Group Dance is a lively performance where dancers unite to showcase coordination, energy, and creativity.",
-    participants: "Groups of 6–12",
-    prizePool: "Trophy & Certificates",
-    link: "https://unstop.com/events/sync-soar-group-dance-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rg-1577059",
-  },
-  {
-    title: "Nritya Rasa - Classical Dance Challenge",
-    icon: "🩰",
-    date: "14–16 November",
-    venue: "N/A",
-    description:
-      "A solo classical dance performance highlighting expressive storytelling, traditional choreography, and graceful movements. ",
-    participants: "Solo",
-    prizePool: "Trophy & Certificates",
-    link: "https://unstop.com/events/nritya-rasa-classical-dance-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleu-1573320",
-  },
-],
+      {
+        title: "Eka Kalaa - Solo Dance",
+        icon: "💃",
+        date: "14–16 November",
+        venue: "Vivekanand Sabhaghar",
+        description:
+          "A dynamic solo competition for dancers to showcase their Western-style moves.",
+        participants: "Solo",
+        prizePool: "Trophy & Certificates",
+        link: "https://unstop.com/events/eka-kalaa-solo-dance-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgi-1577062",
+      },
+      {
+        title: "Groove Fusion - Street Style Faceoff",
+        icon: "🕺",
+        date: "14–16 November",
+        venue: "RG Plaza",
+        description:
+          "An intense dance battle where street styles clash in an epic faceoff.",
+        participants: "Solo/Group",
+        prizePool: "Trophy & Certificates",
+        link: "https://unstop.com/events/groove-fusion-street-style-faceoff-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum--1577060",
+      },
+      {
+        title: "Sync & Soar - Group Dance",
+        icon: "👯‍♀️",
+        date: "14–16 November",
+        venue: "On Stage",
+        description:
+          "Group Dance is a lively performance where dancers unite to showcase coordination, energy, and creativity.",
+        participants: "Groups of 6–12",
+        prizePool: "Trophy & Certificates",
+        link: "https://unstop.com/events/sync-soar-group-dance-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rg-1577059",
+      },
+      {
+        title: "Nritya Rasa - Classical Dance Challenge",
+        icon: "🩰",
+        date: "14–16 November",
+        venue: "N/A",
+        description:
+          "A solo classical dance performance highlighting expressive storytelling, traditional choreography, and graceful movements. ",
+        participants: "Solo",
+        prizePool: "Trophy & Certificates",
+        link: "https://unstop.com/events/nritya-rasa-classical-dance-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleu-1573320",
+      },
+    ],
 
-fashion: [
-  {
-    title: "Mr & Ms Kaltarang",
-    icon: "👑",
-    date: "14–16 November",
-    venue: "On Stage",
-    description:
-      "A glamorous pageant celebrating charisma, confidence, and style.",
-    participants: "Solo",
-    prizePool: "Trophy & Certificates",
-    link: "https://unstop.com/events/mr-ms-kaltarang-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jai-1573321",
-  },
-  {
-    title: "Fashion walk - Volt Vogue",
-    icon: "🚶‍♀️",
-    date: "14–16 November",
-    venue: "On Stage",
-    description:
-      "A dazzling runway event showcasing cutting-edge style and confident strides.",
-    participants: "Team event",
-    prizePool: "Trophy & Certificates",
-    link: "https://unstop.com/events/fashion-walk-volt-vogue-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology--1577451",
-  },
+    fashion: [
+      {
+        title: "Mr & Ms Kaltarang",
+        icon: "👑",
+        date: "14–16 November",
+        venue: "On Stage",
+        description:
+          "A glamorous pageant celebrating charisma, confidence, and style.",
+        participants: "Solo",
+        prizePool: "Trophy & Certificates",
+        link: "https://unstop.com/events/mr-ms-kaltarang-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jai-1573321",
+      },
+      {
+        title: "Fashion walk - Volt Vogue",
+        icon: "🚶‍♀️",
+        date: "14–16 November",
+        venue: "On Stage",
+        description:
+          "A dazzling runway event showcasing cutting-edge style and confident strides.",
+        participants: "Team event",
+        prizePool: "Trophy & Certificates",
+        link: "https://unstop.com/events/fashion-walk-volt-vogue-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology--1577451",
+      },
 
-],
+    ],
   };
 
   const tabs = [
@@ -383,7 +383,7 @@ fashion: [
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
           }}
-            transition={{
+          transition={{
             duration: 3,
             repeat: Infinity,
             ease: "easeInOut",
@@ -545,47 +545,49 @@ fashion: [
         </motion.div>
 
         {/* Tab Switcher - Mobile Responsive */}
+        {/* Tab Switcher - Mobile Responsive */}
         <motion.div
-          className="flex justify-center mb-8 sm:mb-12 overflow-x-auto pb-2"
+          className="flex justify-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="bg-red-950/30 backdrop-blur-xl rounded-full p-1 sm:p-2 border border-red-500/30 shadow-lg shadow-red-500/20 inline-flex gap-1">
-            {tabs.map((tab) => (
-              <motion.button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`relative px-3 sm:px-6 py-2 sm:py-3 rounded-full font-bold transition-all duration-300 whitespace-nowrap text-xs sm:text-base ${
-                  activeTab === tab.id
-                    ? "text-white"
-                    : "text-red-300/70 hover:text-white"
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {activeTab === tab.id && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-gradient-to-r from-red-600 to-orange-600 rounded-full"
-                    style={{ boxShadow: "0 0 30px rgba(239, 68, 68, 0.6)" }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 380,
-                      damping: 30,
-                    }}
-                  />
-                )}
-                <span className="relative z-10 flex items-center gap-1 sm:gap-2">
-                  <span className="text-base sm:text-lg">{tab.icon}</span>
-                  <span className="hidden sm:inline">{tab.label}</span>
-                  <span className="sm:hidden">{tab.label}</span>
-                </span>
-              </motion.button>
-            ))}
+          {/* Outer container for horizontal scroll on small screens */}
+          <div className="overflow-x-auto max-w-full pb-2">
+            <div className="bg-red-950/30 backdrop-blur-xl rounded-full p-1 sm:p-2 border border-red-500/30 shadow-lg shadow-red-500/20 inline-flex gap-1 flex-nowrap">
+              {tabs.map((tab) => (
+                <motion.button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`relative px-3 sm:px-6 py-2 sm:py-3 rounded-full font-bold transition-all duration-300 whitespace-nowrap text-xs sm:text-base ${activeTab === tab.id
+                      ? "text-white"
+                      : "text-red-300/70 hover:text-white"
+                    }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {activeTab === tab.id && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0 bg-gradient-to-r from-red-600 to-orange-600 rounded-full"
+                      style={{ boxShadow: "0 0 30px rgba(239, 68, 68, 0.6)" }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
+                    />
+                  )}
+                  <span className="relative z-10 flex items-center gap-1 sm:gap-2">
+                    <span className="text-base sm:text-lg">{tab.icon}</span>
+                    <span className="hidden xs:inline">{tab.label}</span> {/* Changed sm:inline to xs:inline or keep it for small size visibility */}
+                    <span className="xs:hidden">{tab.label}</span> {/* Changed sm:hidden to xs:hidden */}
+                  </span>
+                </motion.button>
+              ))}
+            </div>
           </div>
         </motion.div>
-
         {/* Events Grid - Mobile Responsive */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"

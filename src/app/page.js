@@ -45,11 +45,13 @@ export default function HomePage() {
       </section>
       <Timeline />
       <Sponsors />
-      <Contact />
-      <Footer/>
-      <RegistrationModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
+      <section id="contact">
+        <Contact />
+      </section>
+      <Footer />
+      <RegistrationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
       />
     </>
   )
