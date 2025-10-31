@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/Urja.ico" />
       </head>
       <body className="font-dm bg-bg-dark text-text-light antialiased">
         {/*<Preloader />*/}
