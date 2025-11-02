@@ -32,9 +32,12 @@ export function EventsSection() {
       // UPDATED: Renamed 'Line Follower Robot' to 'Line Maze Solver'
       { title: "Meshmerize - Line Maze Solver", icon: "〰️", date: "12-13 November 2025", description: "A robotics challenge where participants build and program bots to follow complex line tracks with precision and smart navigation to solve a maze.", participants: "Teams", link: 'https://unstop.com/competitions/meshmerize-line-maze-solver-challenge-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-p-1579749' },
 
+
+
       { title: "RC Car", icon: "🏎️", date: "12-13 November 2025", description: "An exciting RC car racing challenge where teams design, build, and race durable electric cars built for speed, stability, and tough terrains.", participants: "Teams", link: 'https://unstop.com/competitions/rc-car-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-u-1573312' },
 
       { title: "Robotics Olympiad", icon: "🧠", date: "12-13 November 2025", description: "A robotics competition that tests participants’ knowledge, creativity, and innovation through a quiz and simulation-based challenges.", participants: "Teams", link: 'https://unstop.com/competitions/robotics-olympiad-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-r-1572897' },
+      { title: "Line Follower Robot", icon: "〰️", date: "12-13 November 2025", description: "A robotics challenge where participants build and program bots to follow complex line tracks with precision and smart navigation.", participants: "Teams", link: "https://unstop.com/competitions/line-follower-bot-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-te-1573294" },
     ],
 
 
