@@ -1,20 +1,9 @@
 import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { createRoot } from 'react-dom/client';
 
-// The main App component wraps the EventsSection and sets up the global theme
-const App = () => {
-  return (
-    // Set up global dark theme and the "Inter" font
-    <div className="min-h-screen bg-gray-900 text-white font-inter">
-      {/* Container for centering and styling */}
-      <div className="max-w-7xl mx-auto pt-16">
-        <EventsSection />
-      </div>
-    </div>
-  );
-};
-
+// NOTE: This component is now a pure, exportable function.
+// The self-rendering wrapper logic has been removed to prevent duplicate rendering
+// when used inside a larger application (like Next.js/UrjotsavPage.js).
 
 export function EventsSection() {
   const [activeTab, setActiveTab] = useState('coding');
@@ -37,25 +26,26 @@ export function EventsSection() {
       { title: "Maze Spark", icon: "🧩", date: "12-13 November 2025", description: "Design and program an autonomous robot that can solve a walled maze from start to finish in the shortest time.", participants: "Teams", link: "https://unstop.com/competitions/mazespark-wall-maze-solver-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-tec-1572719" },
       { title: "Robosoccer", icon: "🤖⚽", date: "12-13 November 2025", description: "Participants design and build manually or autonomously controlled robots that play football against opponents.", participants: "Teams", link: "https://unstop.com/competitions/robo-soccer-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt--1578294" },
       { title: "Robo Rescue", icon: "🚑", date: "12-13 November 2025", description: "Design and build a pick-and-place robot capable of navigating a rescue arena and transporting objects to a safe zone.", participants: "Teams", link: "https://unstop.com/competitions/pick-and-place-robo-rescue-race-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petrole-1579613" },
-      { title: "RC Plane", icon: "🛩️", date: "12-13 November 2025", description: "Design, build, and pilot a radio-controlled aircraft to demonstrate flight stability, control, and aerodynamic efficiency.", participants: "Teams", link: "https://unstop.com/competitions/rc-plane-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-1572895" },
-      { title: "RC Boat", icon: "🚤", date: "12-13 November 2025", description: "Participants design and build, and operate remote-controlled boats to test speed, control, and stability over a water track.", participants: "Teams", link: "https://unstop.com/competitions/rc-boat-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1572898" },
-      { title: "Line Follower Robot", icon: "〰️", date: "12-13 November 2025", description: "A robotics challenge where participants build and program bots to follow complex line tracks with precision and smart navigation.", participants: "Teams", link: "https://unstop.com/competitions/line-follower-bot-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-te-1573294" },
-      { title: "RC Car", icon: "🏎️", date: "12-13 November 2025", description: "An exciting RC car racing challenge where teams design, build, and race durable electric cars built for speed, stability, and tough terrains.", participants: "Teams", link: "https://unstop.com/competitions/rc-car-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-u-1573312" },
+      { title: "RC Plane", icon: "🛩️", date: "12-13 November 2025", description: "Design, build, and pilot a radio-controlled aircraft to demonstrate flight stability, control, and aerodynamic efficiency.", participants: "Teams", link: 'https://unstop.com/competitions/rc-plane-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-1572895' },
+      { title: "RC Boat", icon: "🚤", date: "12-13 November 2025", description: "Participants design and build, and operate remote-controlled boats to test speed, control, and stability over a water track.", participants: "Teams", link: 'https://unstop.com/competitions/rc-boat-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1572898' },
 
-      // NEW EVENT
-      { title: "Robotics Olympiad", icon: "🧠", date: "12-13 November 2025", description: "A robotics competition that tests participants’ knowledge, creativity, and innovation through a quiz and simulation-based challenges.", participants: "Teams", link: "https://unstop.com/competitions/robotics-olympiad-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-r-1572897" },
+      // UPDATED: Renamed 'Line Follower Robot' to 'Line Maze Solver'
+      { title: "Meshmerize - Line Maze Solver", icon: "〰️", date: "12-13 November 2025", description: "A robotics challenge where participants build and program bots to follow complex line tracks with precision and smart navigation to solve a maze.", participants: "Teams", link: 'https://unstop.com/competitions/meshmerize-line-maze-solver-challenge-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-p-1579749' },
+
+      { title: "RC Car", icon: "🏎️", date: "12-13 November 2025", description: "An exciting RC car racing challenge where teams design, build, and race durable electric cars built for speed, stability, and tough terrains.", participants: "Teams", link: 'https://unstop.com/competitions/rc-car-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-u-1573312' },
+
+      { title: "Robotics Olympiad", icon: "🧠", date: "12-13 November 2025", description: "A robotics competition that tests participants’ knowledge, creativity, and innovation through a quiz and simulation-based challenges.", participants: "Teams", link: 'https://unstop.com/competitions/robotics-olympiad-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-r-1572897' },
     ],
 
 
-
     entrepreneurial: [
-      { title: "Sell Me If You Can", icon: "🎤", date: "12-13 November 2025", description: "Pitch everyday or weird products in the most creative and convincing way possible.", participants: "Individual/Teams", link: "https://unstop.com/hackathons/sell-me-if-you-can-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rg-1573134" },
+      { title: "Sell Me If You Can", icon: "🎤", date: "12-13 November 2025", description: "Pitch everyday or weird products in the most creative and convincing way possible.", participants: "Individual/Teams", link: 'https://unstop.com/hackathons/sell-me-if-you-can-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rg-1573134' },
 
-      { title: "Trader's Arena", icon: "📈", date: "12-13 November 2025", description: "A virtual stock market game where participants buy, sell, and trade shares to build the biggest portfolio.", participants: "Individual/Teams", link: "https://unstop.com/hackathons/traders-arena-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-j-1573284" },
+      { title: "Trader's Arena", icon: "📈", date: "12-13 November 2025", description: "A virtual stock market game where participants buy, sell, and trade shares to build the biggest portfolio.", participants: "Individual/Teams", link: 'https://unstop.com/hackathons/traders-arena-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-j-1573284' },
 
-      { title: "Startup Fair", icon: "🚀", date: "12-13 November 2025", description: "A startup expo where innovators pitch ideas, showcase ventures, and network with industry leaders.", participants: "Startups", link: "https://unstop.com/competitions/startup-expo-the-ultimate-startup-showcase-expo-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-inst-1579728" },
+      { title: "Startup Fair", icon: "🚀", date: "12-13 November 2025", description: "A startup expo where innovators pitch ideas, showcase ventures, and network with industry leaders.", participants: "Startups", link: 'https://unstop.com/competitions/startup-expo-the-ultimate-startup-showcase-expo-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-inst-1579728' },
 
-      { title: "MUN (UNHRC)", icon: "🌐", date: "12-13 November 2025", description: "Simulate global debates on pressing international issues in a Model United Nations conference.", participants: "Delegates", link: "https://unstop.com/events/mun-unhrc-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1579276" },
+      { title: "MUN (UNHRC)", icon: "🌐", date: "12-13 November 2025", description: "Simulate global debates on pressing international issues in a Model United Nations conference.", participants: "Delegates", link: 'https://unstop.com/events/mun-unhrc-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1579276' },
 
       {
         title: "Quiz-O-preneur",
@@ -66,9 +56,9 @@ export function EventsSection() {
         link: "https://unstop.com/quiz/quizpreneur-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1579267"
       },
 
-      { title: "Ideathon", icon: "💡", date: "12-13 November 2025", description: "A creative competition where student teams present innovative greentech ideas that make a positive social impact.", participants: "Teams", link: "https://unstop.com/hackathons/ideathon-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-u-1573122" },
+      { title: "Ideathon", icon: "💡", date: "12-13 November 2025", description: "A creative competition where student teams present innovative greentech ideas that make a positive social impact.", participants: "Teams", link: 'https://unstop.com/hackathons/ideathon-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-u-1573122' },
 
-      { title: "Memetic", icon: "📱", date: "12-13 November 2025", description: "A fun ad-making challenge where participants create witty meme-style reels to turn everyday products into viral hits.", participants: "Individual/Teams", link: "https://unstop.com/hackathons/memetic-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-ut-1573127" },
+      { title: "Memetic", icon: "📱", date: "12-13 November 2025", description: "A fun ad-making challenge where participants create witty meme-style reels to turn everyday products into viral hits.", participants: "Individual/Teams", link: 'https://unstop.com/hackathons/memetic-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-ut-1573127' },
     ],
 
     creative: [
@@ -79,18 +69,12 @@ export function EventsSection() {
       { event_name: "Bridge Making", icon: '🌉', date: "12-13 November 2025", description: "Design and build a strong, stable, and creative truss bridge using provided materials.", participants: "Teams", link: 'https://unstop.com/competitions/bridge-making-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-techno-1573314' },
 
       { event_name: "KINεTIC KRASH", icon: '💥', date: "12-13 November 2025", description: "Construct an innovative bot powered purely by physics or chemistry that moves autonomously without any electrical power.", participants: "Teams", link: 'https://unstop.com/competitions/kinetic-krash-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-1573013' },
-      {
-        "event_name": "Rubik's Cube Solving Challenge",
-        "icon": "🧩",
-        "date": "12-13 November 2025",
-        "description": "A high-speed competition across multiple puzzles (including 4x4 and Mirror Cube) testing precision and complex problem-solving skills.",
-        "participants": "Solo",
-        "link": "https://unstop.com/competitions/rubiks-cube-solving-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum--1572899"
-      },
 
-      { event_name: "Innovation Challenge", icon: '💡', date: "12-13 November 2025", description: "A startup pitching competition where teams present innovative business ideas through pitch decks and live presentations to win exciting prizes.", participants: "Teams", link: "https://unstop.com/competitions/innovation-challenge-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technolo-1578257" },
+      { event_name: "Rubik's Cube Solving Challenge", icon: '🧩', date: "12-13 November 2025", description: "A high-speed competition across three puzzles (4x4, Mirror, Megaminx) testing precision, speed, and complex problem-solving skills.", participants: "Solo", link: "https://unstop.com/competitions/rubiks-cube-solving-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum--1572899" },
 
-      { event_name: "Design Sprint", icon: '🎨', date: "12-13 November 2025", description: "A creative design challenge where participants recreate posters and design logos to showcase their innovation and visual skills.", participants: "Individual", link: "https://unstop.com/competitions/design-sprint-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgip-1579064" },
+      { event_name: "Innovation Challenge", icon: '💡', date: "12-13 November 2025", description: "A startup pitching competition where teams present innovative business ideas through pitch decks and live presentations to win exciting prizes.", participants: "Teams", link: 'https://unstop.com/competitions/innovation-challenge-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technolo-1578257' },
+
+      { event_name: "Design Sprint", icon: '🎨', date: "12-13 November 2025", description: "A creative design challenge where participants recreate posters and design logos to showcase their innovation and visual skills.", participants: "Individual", link: 'https://unstop.com/competitions/design-sprint-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgip-1579064' },
     ]
 
   };
@@ -367,18 +351,4 @@ export function EventsSection() {
       </div>
     </section>
   );
-}
-
-// In a real environment, this would be handled by a bundler.
-// We include the root setup for the single file requirement.
-if (typeof document !== 'undefined') {
-  const rootElement = document.getElementById('root');
-  if (!rootElement) {
-    const newRoot = document.createElement('div');
-    newRoot.id = 'root';
-    document.body.appendChild(newRoot);
-    createRoot(newRoot).render(<App />);
-  } else {
-    createRoot(rootElement).render(<App />);
-  }
 }
