@@ -1,7 +1,20 @@
-"use client"
-
 import { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { createRoot } from 'react-dom/client';
+
+// The main App component wraps the EventsSection and sets up the global theme
+const App = () => {
+  return (
+    // Set up global dark theme and the "Inter" font
+    <div className="min-h-screen bg-gray-900 text-white font-inter">
+      {/* Container for centering and styling */}
+      <div className="max-w-7xl mx-auto pt-16">
+        <EventsSection />
+      </div>
+    </div>
+  );
+};
+
 
 export function EventsSection() {
   const [activeTab, setActiveTab] = useState('coding');
@@ -12,7 +25,7 @@ export function EventsSection() {
 
   const eventsData = {
     coding: [
-      { title: "Hack RGIPT Hackathon", icon: "💻", date: "Round 1 : 1-7 November, Round 2 : 12-13 November", time: "12 hours", venue: "Lecture Room", description: "Hack RGIPT is a two-round hackathon where teams first clear an online screening and then build and present a complete tech solution in a 12-hour offline finale.", participants: "Teams", link: 'https://unstop.com/hackathons/webxplore-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1573289' },
+      { title: "Hack Infinity Hackathon", icon: "💻", date: "Round 1 : 1-7 November, Round 2 : 12-13 November", time: "12 hours", venue: "Lecture Room", description: "Hack RGIPT is a two-round hackathon where teams first clear an online screening and then build and present a complete tech solution in a 12-hour offline finale.", participants: "Teams", link: 'https://unstop.com/hackathons/webxplore-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1573289' },
       { title: "Code Climb", icon: "👨‍💻", date: "12-13 November 2025", time: "3 hours", venue: "Lecture Room", description: "A 3-hour online coding hackathon where participants solve algorithmic problems on platforms like Codeforces or HackerEarth.", participants: "Individual", link: 'https://unstop.com/hackathons/codeclimb-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1573292' },
       { title: "RCPC", icon: "🏆", date: "12-13 November 2025", time: "3 hours", venue: "Lecture Room", description: "A team-based ICPC-style coding contest held offline at RGIPT, featuring 8 problems in 3 hours and a live leaderboard.", participants: "Teams", link: 'https://unstop.com/hackathons/rcpc-rgipt-collegiate-programming-contest-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of--1573313' },
       { title: "UI Express", icon: "🎨", date: "12-13 November 2025", time: "3 hours", venue: "Lecture Room", description: "A design challenge where teams create UI/UX solutions based on a surprise theme using tools like Figma or Canva.", participants: "Teams", link: 'https://unstop.com/hackathons/ui-xpress-design-that-speaks-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-tec-1573291' },
@@ -25,7 +38,7 @@ export function EventsSection() {
       { title: "Robosoccer", icon: "🤖⚽", date: "12-13 November 2025", description: "Participants design and build manually or autonomously controlled robots that play football against opponents.", participants: "Teams", link: "https://unstop.com/competitions/robo-soccer-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt--1578294" },
       { title: "Robo Rescue", icon: "🚑", date: "12-13 November 2025", description: "Design and build a pick-and-place robot capable of navigating a rescue arena and transporting objects to a safe zone.", participants: "Teams", link: "https://unstop.com/competitions/pick-and-place-robo-rescue-race-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petrole-1579613" },
       { title: "RC Plane", icon: "🛩️", date: "12-13 November 2025", description: "Design, build, and pilot a radio-controlled aircraft to demonstrate flight stability, control, and aerodynamic efficiency.", participants: "Teams", link: "https://unstop.com/competitions/rc-plane-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-1572895" },
-      { title: "RC Boat", icon: "🚤", date: "12-13 November 2025", description: "Participants design, build, and operate remote-controlled boats to test speed, control, and stability over a water track.", participants: "Teams", link: "https://unstop.com/competitions/rc-boat-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1572898" },
+      { title: "RC Boat", icon: "🚤", date: "12-13 November 2025", description: "Participants design and build, and operate remote-controlled boats to test speed, control, and stability over a water track.", participants: "Teams", link: "https://unstop.com/competitions/rc-boat-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais--1572898" },
       { title: "Line Follower Robot", icon: "〰️", date: "12-13 November 2025", description: "A robotics challenge where participants build and program bots to follow complex line tracks with precision and smart navigation.", participants: "Teams", link: "https://unstop.com/competitions/line-follower-bot-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-te-1573294" },
       { title: "RC Car", icon: "🏎️", date: "12-13 November 2025", description: "An exciting RC car racing challenge where teams design, build, and race durable electric cars built for speed, stability, and tough terrains.", participants: "Teams", link: "https://unstop.com/competitions/rc-car-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-u-1573312" },
 
@@ -38,15 +51,21 @@ export function EventsSection() {
     entrepreneurial: [
       { title: "Sell Me If You Can", icon: "🎤", date: "12-13 November 2025", description: "Pitch everyday or weird products in the most creative and convincing way possible.", participants: "Individual/Teams", link: "https://unstop.com/hackathons/sell-me-if-you-can-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rg-1573134" },
 
-      { title: "Trader's Arena", icon: "📈", date: "12-13 November 2025", description: "A virtual stock market game where participants buy, sell, and trade shares to build the biggest portfolio.", participants: "Individual/Teams", link: unstopLink },
+      { title: "Trader's Arena", icon: "📈", date: "12-13 November 2025", description: "A virtual stock market game where participants buy, sell, and trade shares to build the biggest portfolio.", participants: "Individual/Teams", link: "https://unstop.com/hackathons/traders-arena-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-j-1573284" },
 
-      // Capital Quest REMOVED
-
-      { title: "Startup Fair", icon: "🚀", date: "12-13 November 2025", description: "A startup expo where innovators pitch ideas, showcase ventures, and network with industry leaders.", participants: "Startups", link: unstopLink },
+      { title: "Startup Fair", icon: "🚀", date: "12-13 November 2025", description: "A startup expo where innovators pitch ideas, showcase ventures, and network with industry leaders.", participants: "Startups", link: "https://unstop.com/competitions/startup-expo-the-ultimate-startup-showcase-expo-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-inst-1579728" },
 
       { title: "MUN (UNHRC)", icon: "🌐", date: "12-13 November 2025", description: "Simulate global debates on pressing international issues in a Model United Nations conference.", participants: "Delegates", link: "https://unstop.com/events/mun-unhrc-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1579276" },
 
-      // ADDED NEW EVENTS
+      {
+        title: "Quiz-O-preneur",
+        icon: "💼",
+        date: "12-13 November 2025",
+        description: "An intense, multi-round quiz designed to test participants' knowledge of global startup ecosystems, business strategy, finance, and entrepreneurial history.",
+        participants: "Individual/Teams",
+        link: "https://unstop.com/quiz/quizpreneur-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-utt-1579267"
+      },
+
       { title: "Ideathon", icon: "💡", date: "12-13 November 2025", description: "A creative competition where student teams present innovative greentech ideas that make a positive social impact.", participants: "Teams", link: "https://unstop.com/hackathons/ideathon-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-u-1573122" },
 
       { title: "Memetic", icon: "📱", date: "12-13 November 2025", description: "A fun ad-making challenge where participants create witty meme-style reels to turn everyday products into viral hits.", participants: "Individual/Teams", link: "https://unstop.com/hackathons/memetic-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-ut-1573127" },
@@ -60,8 +79,15 @@ export function EventsSection() {
       { event_name: "Bridge Making", icon: '🌉', date: "12-13 November 2025", description: "Design and build a strong, stable, and creative truss bridge using provided materials.", participants: "Teams", link: 'https://unstop.com/competitions/bridge-making-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-techno-1573314' },
 
       { event_name: "KINεTIC KRASH", icon: '💥', date: "12-13 November 2025", description: "Construct an innovative bot powered purely by physics or chemistry that moves autonomously without any electrical power.", participants: "Teams", link: 'https://unstop.com/competitions/kinetic-krash-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-1573013' },
+      {
+        "event_name": "Rubik's Cube Solving Challenge",
+        "icon": "🧩",
+        "date": "12-13 November 2025",
+        "description": "A high-speed competition across multiple puzzles (including 4x4 and Mirror Cube) testing precision and complex problem-solving skills.",
+        "participants": "Solo",
+        "link": "https://unstop.com/competitions/rubiks-cube-solving-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum--1572899"
+      },
 
-      // NEW EVENTS
       { event_name: "Innovation Challenge", icon: '💡', date: "12-13 November 2025", description: "A startup pitching competition where teams present innovative business ideas through pitch decks and live presentations to win exciting prizes.", participants: "Teams", link: "https://unstop.com/competitions/innovation-challenge-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technolo-1578257" },
 
       { event_name: "Design Sprint", icon: '🎨', date: "12-13 November 2025", description: "A creative design challenge where participants recreate posters and design logos to showcase their innovation and visual skills.", participants: "Individual", link: "https://unstop.com/competitions/design-sprint-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgip-1579064" },
@@ -73,7 +99,7 @@ export function EventsSection() {
 
   const tabs = [
     { id: 'coding', label: 'Coding', icon: '💻' },
-    { id: 'robotic', label: 'Robotic', icon: '🤖' },
+    { id: 'robotic', label: 'Robotics', icon: '🤖' },
     { id: 'entrepreneurial', label: 'Entrepreneurial', icon: '🚀' },
     { id: 'creative', label: 'Creative', icon: '🎨' }
   ];
@@ -106,9 +132,11 @@ export function EventsSection() {
       }}
       className="relative group cursor-pointer h-full"
     >
+      {/* Background glow effect on hover */}
       <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-60 transition duration-500" />
 
       <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-xl p-6 rounded-2xl border border-blue-500/30 group-hover:border-blue-400/60 transition-all duration-300 overflow-hidden h-full flex flex-col">
+        {/* Pulsating light */}
         <motion.div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"
           animate={{
@@ -143,6 +171,7 @@ export function EventsSection() {
           <p className="text-blue-300/80 mt-2 font-medium">{event.date}</p>
         </div>
 
+        {/* Details section (Expands on hover) */}
         <div className="flex-grow flex flex-col justify-end overflow-hidden max-h-0 opacity-0 group-hover:max-h-[500px] group-hover:opacity-100 group-hover:mt-6 transition-all duration-500 ease-in-out">
           <div className="border-t border-blue-500/30 pt-4">
             <p className="text-blue-100/90 leading-relaxed text-sm mb-4">
@@ -250,51 +279,70 @@ export function EventsSection() {
           </p>
         </motion.div>
 
+        {/* Tab Switcher - Mobile Responsive with Scroll (The "Slider" Heading) */}
         <motion.div
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="bg-blue-950/30 backdrop-blur-xl rounded-full p-2 border border-blue-500/30 shadow-lg shadow-blue-500/20">
-            {tabs.map((tab) => (
-              <motion.button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`relative px-4 sm:px-8 py-3 rounded-full font-bold transition-all duration-300 ${activeTab === tab.id
-                  ? 'text-white'
-                  : 'text-blue-300/70 hover:text-white'
-                  }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {activeTab === tab.id && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full"
-                    style={{ boxShadow: '0 0 30px rgba(59, 130, 246, 0.6)' }}
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10 flex items-center gap-2">
-                  <span className="text-lg">{tab.icon}</span>
-                  <span className="hidden sm:inline">{tab.label}</span>
-                </span>
-              </motion.button>
-            ))}
+          {/* Outer container for horizontal scroll on small screens */}
+          <div className="overflow-x-auto max-w-full pb-2">
+            <div className="bg-blue-950/30 backdrop-blur-xl rounded-full p-1 sm:p-2 border border-blue-500/30 shadow-lg shadow-blue-500/20 inline-flex gap-1 flex-nowrap">
+              {tabs.map((tab) => (
+                <motion.button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`relative px-3 sm:px-6 py-2 sm:py-3 rounded-full font-bold transition-all duration-300 whitespace-nowrap text-xs sm:text-base ${activeTab === tab.id
+                    ? "text-white"
+                    : "text-blue-300/70 hover:text-white"
+                    }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {activeTab === tab.id && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full"
+                      style={{ boxShadow: "0 0 30px rgba(59, 130, 246, 0.6)" }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
+                    />
+                  )}
+                  <span className="relative z-10 flex items-center gap-1 sm:gap-2">
+                    <span className="text-base sm:text-lg">{tab.icon}</span>
+                    <span>{tab.label}</span>
+                  </span>
+                </motion.button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
+        {/* Events Stack (Mobile) / Grid (Desktop) */}
         <motion.div
           key={activeTab}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          // Forces events into a vertical stack (grid-cols-1) on mobile
+          // and a standard grid on larger screens.
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {eventsToShow.map((event) => renderEventCard(event))}
+          <AnimatePresence mode="wait">
+            {eventsToShow.map((event) => (
+              // Individual card wrapper: removed fixed width and snapping
+              <div key={event.title || event.event_name} className="h-full">
+                {renderEventCard(event)}
+              </div>
+            ))}
+          </AnimatePresence>
         </motion.div>
 
+        {/* Decorative background particles */}
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
@@ -319,4 +367,18 @@ export function EventsSection() {
       </div>
     </section>
   );
+}
+
+// In a real environment, this would be handled by a bundler.
+// We include the root setup for the single file requirement.
+if (typeof document !== 'undefined') {
+  const rootElement = document.getElementById('root');
+  if (!rootElement) {
+    const newRoot = document.createElement('div');
+    newRoot.id = 'root';
+    document.body.appendChild(newRoot);
+    createRoot(newRoot).render(<App />);
+  } else {
+    createRoot(rootElement).render(<App />);
+  }
 }
