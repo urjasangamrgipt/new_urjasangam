@@ -274,15 +274,18 @@ export function EventsSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           {/* Outer container for horizontal scroll on small screens */}
-          <div className="overflow-x-auto max-w-full pb-2">
-            <div className="bg-blue-950/30 backdrop-blur-xl rounded-full p-1 sm:p-2 border border-blue-500/30 shadow-lg shadow-blue-500/20 inline-flex gap-1 flex-nowrap">
+          {/* We remove overflow-x-auto and max-w-full */}
+          <div className="pb-2"> {/* <-- CHANGED: Removed scrolling classes */}
+            <div className="bg-blue-950/30 backdrop-blur-xl border border-blue-500/30 shadow-lg shadow-blue-500/20 
+                            rounded-2xl p-2 grid grid-cols-2 gap-2
+                            sm:rounded-full sm:p-1 sm:inline-flex sm:gap-1 sm:flex-nowrap"> {/* <-- CHANGED: Added grid/sm:inline-flex classes */}
               {tabs.map((tab) => (
                 <motion.button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`relative px-3 sm:px-6 py-2 sm:py-3 rounded-full font-bold transition-all duration-300 whitespace-nowrap text-xs sm:text-base ${activeTab === tab.id
-                    ? "text-white"
-                    : "text-blue-300/70 hover:text-white"
+                      ? "text-white"
+                      : "text-blue-300/70 hover:text-white"
                     }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -299,7 +302,7 @@ export function EventsSection() {
                       }}
                     />
                   )}
-                  <span className="relative z-10 flex items-center gap-1 sm:gap-2">
+                  <span className="relative z-10 flex items-center justify-center gap-1 sm:gap-2"> {/* <-- Added justify-center */}
                     <span className="text-base sm:text-lg">{tab.icon}</span>
                     <span>{tab.label}</span>
                   </span>
