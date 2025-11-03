@@ -252,23 +252,36 @@ export default function UrjaSangam() {
           </div>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="cta-buttons flex flex-row gap-6 mt-8 md:mt-16 flex-wrap justify-center max-w-screen-sm mx-auto">
-          <Link
-            href="https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"
-            className="min-w-max whitespace-nowrap px-6 md:px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm cursor-pointer"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Explore Events
-          </Link>
-          <a
-            href="#realms"
-            className="min-w-max whitespace-nowrap px-6 md:px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm"
-          >
-            About Us
-          </a>
-        </div>
+     {/* CTA Buttons */}
+<div className="cta-buttons flex flex-row gap-6 mt-8 md:mt-16 flex-wrap justify-center max-w-screen-sm mx-auto">
+  <Link
+    href="https://unstop.com/college-fests/urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"
+    className="min-w-max whitespace-nowrap px-6 md:px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm cursor-pointer"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Explore Events
+  </Link>
+  <a
+    href="#realms"
+    className="min-w-max whitespace-nowrap px-6 md:px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm"
+  >
+    About Us
+  </a>
+
+  {/* --- NEW BUTTON ADDED --- */}
+  <Link
+    href="https://docs.google.com/forms/d/e/1FAIpQLSeGGom4xNPuwkAVSdlocbx53jg69XbkVh5Lrpn7fIZ2Sx3mdQ/viewform?usp=header"
+    className="min-w-max whitespace-nowrap px-6 md:px-10 py-4 text-base font-semibold no-underline border-2 border-white/50 rounded-full text-white bg-transparent transition-all hover:bg-white hover:text-black hover:border-white backdrop-blur-sm cursor-pointer"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Get Fest Pass
+  </Link>
+  {/* --- END OF NEW BUTTON --- */}
+  
+</div>
+
       </div>
     </div>
   );

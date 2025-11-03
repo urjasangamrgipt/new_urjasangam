@@ -86,9 +86,8 @@ export default function FestWeekSection() {
 
       {/* Header Section */}
       <div
-        className={`text-center transition-all duration-1000 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-        }`}
+        className={`text-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+          }`}
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
           <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
@@ -119,9 +118,8 @@ export default function FestWeekSection() {
               <div
                 onMouseEnter={() => setActiveCard(fest.id)}
                 onMouseLeave={() => setActiveCard(null)}
-                className={`relative rounded-3xl p-8 border border-white/10 backdrop-blur-xl bg-white/[0.05] hover:-translate-y-3 transition-all duration-500 overflow-hidden shadow-xl ${
-                  isVisible ? "animate-[slideIn_0.8s_ease-out_forwards]" : ""
-                }`}
+                className={`relative rounded-3xl p-8 border border-white/10 backdrop-blur-xl bg-white/[0.05] hover:-translate-y-3 transition-all duration-500 overflow-hidden shadow-xl ${isVisible ? "animate-[slideIn_0.8s_ease-out_forwards]" : ""
+                  }`}
                 style={{ animationDelay: `${i * 0.2}s` }}
               >
                 {/* Accent bar */}
@@ -134,9 +132,8 @@ export default function FestWeekSection() {
                   <img
                     src={fest.imageSrc}
                     alt={fest.name}
-                    className={`object-cover w-full h-full transition-transform duration-300 ${
-                      activeCard === fest.id ? "scale-110 rotate-6" : ""
-                    }`}
+                    className={`object-cover w-full h-full transition-transform duration-300 ${activeCard === fest.id ? "scale-110 rotate-6" : ""
+                      }`}
                   />
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${fest.gradient} opacity-20 rounded-2xl`}
@@ -174,11 +171,10 @@ export default function FestWeekSection() {
                 {/* CTA Button */}
                 <a
                   href={`/${fest.name.toLowerCase()}`}
-                  className={`w-full py-3 rounded-xl border-2 font-semibold text-sm transition-all duration-300 flex justify-center items-center gap-2 ${
-                    activeCard === fest.id
-                      ? `bg-gradient-to-r ${fest.gradient} text-black`
-                      : "border-white/30 text-white hover:bg-white/10"
-                  }`}
+                  className={`w-full py-3 rounded-xl border-2 font-semibold text-sm transition-all duration-300 flex justify-center items-center gap-2 ${activeCard === fest.id
+                    ? `bg-gradient-to-r ${fest.gradient} text-black`
+                    : "border-white/30 text-white hover:bg-white/10"
+                    }`}
                 >
                   Explore {fest.name} →
                 </a>
@@ -189,9 +185,8 @@ export default function FestWeekSection() {
               key={fest.id}
               onMouseEnter={() => setActiveCard(fest.id)}
               onMouseLeave={() => setActiveCard(null)}
-              className={`relative rounded-3xl p-8 border border-white/10 backdrop-blur-xl bg-white/[0.05] hover:-translate-y-3 transition-all duration-500 overflow-hidden shadow-xl ${
-                isVisible ? "animate-[slideIn_0.8s_ease-out_forwards]" : ""
-              }`}
+              className={`relative rounded-3xl p-8 border border-white/10 backdrop-blur-xl bg-white/[0.05] hover:-translate-y-3 transition-all duration-500 overflow-hidden shadow-xl ${isVisible ? "animate-[slideIn_0.8s_ease-out_forwards]" : ""
+                }`}
               style={{ animationDelay: `${i * 0.2}s` }}
             >
               {/* Accent bar */}
@@ -204,9 +199,8 @@ export default function FestWeekSection() {
                 <img
                   src={fest.imageSrc}
                   alt={fest.name}
-                  className={`object-cover w-full h-full transition-transform duration-300 ${
-                    activeCard === fest.id ? "scale-110 rotate-6" : ""
-                  }`}
+                  className={`object-cover w-full h-full transition-transform duration-300 ${activeCard === fest.id ? "scale-110 rotate-6" : ""
+                    }`}
                 />
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${fest.gradient} opacity-20 rounded-2xl`}
@@ -244,11 +238,10 @@ export default function FestWeekSection() {
               {/* CTA Button */}
               <a
                 href={`/${fest.name.toLowerCase()}`}
-                className={`w-full py-3 rounded-xl border-2 font-semibold text-sm transition-all duration-300 flex justify-center items-center gap-2 ${
-                  activeCard === fest.id
-                    ? `bg-gradient-to-r ${fest.gradient} text-black`
-                    : "border-white/30 text-white hover:bg-white/10"
-                }`}
+                className={`w-full py-3 rounded-xl border-2 font-semibold text-sm transition-all duration-300 flex justify-center items-center gap-2 ${activeCard === fest.id
+                  ? `bg-gradient-to-r ${fest.gradient} text-black`
+                  : "border-white/30 text-white hover:bg-white/10"
+                  }`}
               >
                 Explore {fest.name} →
               </a>
@@ -259,9 +252,8 @@ export default function FestWeekSection() {
 
       {/* Bottom CTA */}
       <div
-        className={`text-center mt-24 transition-all duration-1000 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
+        className={`text-center mt-24 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
       >
         <div className="max-w-2xl mx-auto rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-10">
           <h3 className="text-3xl font-extrabold text-white mb-3">
@@ -270,18 +262,33 @@ export default function FestWeekSection() {
           <p className="text-white/60 mb-8">
             Register now and be part of something extraordinary
           </p>
-          <Link
-            href={
-              "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"
-            }
-            target="_blank"
-          >
-            {" "}
-            <button className="relative px-10 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#A78BFA] text-black shadow-lg hover:scale-105 transition-transform overflow-hidden">
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shine_3s_ease-in-out_infinite]" />
-              Register for Fest Week
-            </button>
-          </Link>
+
+          {/* Centered button container */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {/* Button 1 */}
+            <Link
+              href={
+                "https://unstop.com/college-fests/urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgipt-jais-uttar-pradesh-403716"
+              }
+              target="_blank"
+            >
+              <button className="relative px-10 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#A78BFA] text-black shadow-lg hover:scale-105 transition-transform overflow-hidden">
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shine_3s_ease-in-out_infinite]" />
+                Register for Fest Week
+              </button>
+            </Link>
+
+            {/* Button 2 */}
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeGGom4xNPuwkAVSdlocbx53jg69XbkVh5Lrpn7fIZ2Sx3mdQ/viewform?usp=header"
+              target="_blank"
+            >
+              <button className="relative px-10 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#A78BFA] text-black shadow-lg hover:scale-105 transition-transform overflow-hidden">
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shine_3s_ease-in-out_infinite]" />
+                Get Fest Pass
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 
