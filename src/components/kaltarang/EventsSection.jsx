@@ -88,7 +88,9 @@ export function EventsSection() {
         link: "",
       },
     ],
-    drama: [
+    // --- MODIFIED: 'drama' and 'fmc' are merged into 'filmAndDrama' ---
+    filmAndDrama: [
+      // Events from 'drama'
       {
         title: "Kalpana Kaarvan - Stageplay",
         icon: "🎭",
@@ -122,8 +124,7 @@ export function EventsSection() {
         prizePool: "Trophy & Certificates",
         link: "https://unstop.com/events/abhinay-vistaar-improv-challenge-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-tec-1573319",
       },
-    ],
-    fmc: [
+      // Events from 'fmc'
       {
         title: "51 Frames (51 Hour Short Film Making)",
         icon: "🎥",
@@ -147,6 +148,7 @@ export function EventsSection() {
         link: "https://unstop.com/quiz/film-fever-the-ultimate-film-quiz-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-tech-1573327",
       },
     ],
+    // --- 'drama' and 'fmc' keys are now removed ---
     art: [
       {
         title: "Re-Release (Movie Poster Redesign)",
@@ -181,7 +183,6 @@ export function EventsSection() {
         prizePool: "Trophy & Certificates",
         link: "https://unstop.com/competitions/comic-conquest-urjasangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology-rgip-1573110",
       },
-
     ],
     music: [
       {
@@ -321,15 +322,16 @@ export function EventsSection() {
         prizePool: "Trophy & Certificates",
         link: "https://unstop.com/events/fashion-walk-volt-vogue-urja-sangam-2k25-the-annual-fest-of-rgipt-rajiv-gandhi-institute-of-petroleum-technology--1577451",
       },
-
     ],
   };
 
+  // --- MODIFIED: The 'tabs' array now has 6 items ---
   const tabs = [
     { id: "music", label: "Mridang", icon: "🎵" },
     { id: "literary", label: "Kalam Kriti", icon: "📖" },
-    { id: "fmc", label: "Film & Media", icon: "🎥" },
-    { id: "drama", label: "Damru", icon: "🎭" },
+    { id: "filmAndDrama", label: "Film & Drama", icon: "🎬" }, // <-- New merged tab
+    // { id: "fmc", label: "Film & Media", icon: "🎥" }, // <-- Removed
+    // { id: "drama", label: "Damru", icon: "🎭" }, // <-- Removed
     { id: "art", label: "Pen&Pixel", icon: "🎨" },
     { id: "dance", label: "Tarang", icon: "💃" },
     { id: "fashion", label: "fashion", icon: "👑" },
@@ -502,7 +504,6 @@ export function EventsSection() {
       ref={sectionRef}
       className="py-12 sm:py-20 relative overflow-hidden"
     >
-
       <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
         {/* Header */}
         <motion.div
@@ -545,24 +546,27 @@ export function EventsSection() {
         </motion.div>
 
         {/* Tab Switcher - Mobile Responsive */}
-        {/* Tab Switcher - Mobile Responsive */}
         <motion.div
           className="flex justify-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          {/* Outer container for horizontal scroll on small screens */}
-          <div className="overflow-x-auto max-w-full pb-2">
-            <div className="bg-red-950/30 backdrop-blur-xl rounded-full p-1 sm:p-2 border border-red-500/30 shadow-lg shadow-red-500/20 inline-flex gap-1 flex-nowrap">
+          {/* --- MODIFIED: Removed the scrolling div --- */}
+          <div className="pb-2">
+            {/* --- MODIFIED: Applied the grid-cols-2 and sm:inline-flex classes --- */}
+            <div className="bg-red-950/30 backdrop-blur-xl border border-red-500/30 shadow-lg shadow-red-500/20 
+                            rounded-2xl p-2 grid grid-cols-2 gap-2
+                            sm:rounded-full sm:p-1 sm:inline-flex sm:gap-1 sm:flex-nowrap">
               {tabs.map((tab) => (
                 <motion.button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`relative px-3 sm:px-6 py-2 sm:py-3 rounded-full font-bold transition-all duration-300 whitespace-nowrap text-xs sm:text-base ${activeTab === tab.id
+                  className={`relative px-3 sm:px-6 py-2 sm:py-3 rounded-full font-bold transition-all duration-300 whitespace-nowrap text-xs sm:text-base ${
+                    activeTab === tab.id
                       ? "text-white"
                       : "text-red-300/70 hover:text-white"
-                    }`}
+                  }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -578,10 +582,10 @@ export function EventsSection() {
                       }}
                     />
                   )}
-                  <span className="relative z-10 flex items-center gap-1 sm:gap-2">
+                  {/* --- MODIFIED: Added justify-center and simplified spans --- */}
+                  <span className="relative z-10 flex items-center justify-center gap-1 sm:gap-2">
                     <span className="text-base sm:text-lg">{tab.icon}</span>
-                    <span className="hidden xs:inline">{tab.label}</span> {/* Changed sm:inline to xs:inline or keep it for small size visibility */}
-                    <span className="xs:hidden">{tab.label}</span> {/* Changed sm:hidden to xs:hidden */}
+                    <span>{tab.label}</span>
                   </span>
                 </motion.button>
               ))}
